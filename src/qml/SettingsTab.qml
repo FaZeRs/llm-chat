@@ -59,6 +59,20 @@ ColumnLayout {
             }
 
             Label {
+                text: qsTr("Model")
+            }
+            ComboBox {
+                id: modelComboBox
+                Layout.fillWidth: true
+                model: chatBackend.modelList
+                Component.onCompleted: {
+                    chatBackend.fetchModelList()
+                    currentIndex = indexOfValue(chatBackend.modelName)
+                }
+                onActivated: chatBackend.setModelName(currentText)
+            }
+
+            Label {
                 text: qsTr("Window opacity")
             }
             Slider {

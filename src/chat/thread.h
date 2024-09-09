@@ -7,8 +7,8 @@
 
 namespace llm_chat {
 
-/// @brief The ChatModel class provides a model for the chat interface.
-class ChatModel : public QAbstractListModel {
+/// @brief The ChatThread class provides a model for the chat interface.
+class ChatThread : public QAbstractListModel {
   Q_OBJECT
   Q_PROPERTY(QList<Message *> messages READ messages CONSTANT)
 
@@ -16,9 +16,9 @@ class ChatModel : public QAbstractListModel {
   /// @brief The data roles for the model.
   enum MessageRoles { TextRole = Qt::UserRole + 1, IsUserRole, ContextRole };
 
-  /// @brief Constructs a new ChatModel object.
+  /// @brief Constructs a new ChatThread object.
   /// @param parent The parent object.
-  explicit ChatModel(QObject *parent = nullptr);
+  explicit ChatThread(QObject *parent = nullptr);
 
   /// @brief Returns the number of rows under the given parent.
   /// @param parent The parent index.

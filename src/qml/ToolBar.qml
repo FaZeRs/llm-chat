@@ -40,5 +40,17 @@ ToolBar {
 
             onClicked: toggleFullScreen()
         }
+
+        App.ToolButton {
+            id: settingsToolButton
+            objectName: "settingsToolButton"
+            text: "\uf013"
+            font.family: "Font Awesome 6 Free Solid"
+            font.weight: 900
+            font.pixelSize: 18
+            ToolTip.text: qsTr("Settings")
+
+            onClicked: optionsDialog.open()
+        }
     }
 }

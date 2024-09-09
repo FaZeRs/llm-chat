@@ -13,7 +13,7 @@ ColumnLayout {
         Layout.fillHeight: true
         spacing: 8
         clip: true
-        model: chatBackend.model
+        model: chatBackend.thread
         delegate: Rectangle {
             x: model.isUser ? 0 : chatList.width - width
             width: Math.min(messageText.implicitWidth + 24, (chatList.width * 0.8))

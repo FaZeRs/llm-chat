@@ -41,9 +41,7 @@ ApplicationWindow {
         anchors.right: parent.right
         anchors.bottom: statusBar.top
 
-        App.ChatView {
-
-        }
+        App.ChatView {}
     }
     
     footer: App.StatusBar {

@@ -2,7 +2,7 @@ qt_add_library(chat
     STATIC
     backend.cpp
     message.cpp
-    model.cpp
+    thread.cpp
 )
 
 target_include_directories(chat

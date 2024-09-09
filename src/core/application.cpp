@@ -112,7 +112,7 @@ void Application::initializeSentry() {
 
 void Application::registerQmlTypes() const {
   qRegisterMetaType<Settings*>();
-  qRegisterMetaType<ChatModel*>();
+  qRegisterMetaType<ChatThread*>();
 }
 
 void Application::addFonts() const {
