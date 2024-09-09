@@ -1,6 +1,5 @@
 #include <QtQml/qqmlextensionplugin.h>
-
-#include "core/application.h"
+#include <core/application.h>
 
 Q_IMPORT_QML_PLUGIN(QuickWidgetsPlugin)
 
