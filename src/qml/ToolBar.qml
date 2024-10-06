@@ -15,18 +15,6 @@ ToolBar {
         anchors.fill: parent
 
         App.ToolButton {
-            id: clearToolButton
-            objectName: "clearToolButton"
-            text: "\uf057"
-            font.family: "Font Awesome 6 Free Solid"
-            font.weight: 900
-            font.pixelSize: 18
-            ToolTip.text: qsTr("Clear chat")
-
-            onClicked: chatBackend.clearMessages()
-        }
-
-        App.ToolButton {
             id: fullScreenToolButton
             objectName: "fullScreenToolButton"
             text: "\uf065"

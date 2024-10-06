@@ -65,11 +65,14 @@ ColumnLayout {
                 id: modelComboBox
                 Layout.fillWidth: true
                 model: chatBackend.modelList
-                Component.onCompleted: {
-                    chatBackend.fetchModelList()
-                    currentIndex = indexOfValue(chatBackend.modelName)
+                onActivated: chatBackend.setModel(currentText)
+            }
+
+            Connections {
+                target: chatBackend
+                function onModelListFetched() {
+                    modelComboBox.currentIndex = modelComboBox.indexOfValue(chatBackend.model)
                 }
-                onActivated: chatBackend.setModelName(currentText)
             }
 
             Label {
