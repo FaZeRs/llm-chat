@@ -8,18 +8,18 @@ ColumnLayout {
 
     function applyChangesToSettings() {
         for (var i = 0; i < shortcutModel.count; ++i) {
-            var row = shortcutModel.get(i)
+            var row = shortcutModel.get(i);
             if (row.hasChanged) {
-                settings[row.shortcutName] = row.newSequence
+                settings[row.shortcutName] = row.newSequence;
             }
         }
     }
 
     function revertToOldSettings() {
         for (var i = 0; i < shortcutModel.count; ++i) {
-            var row = shortcutModel.get(i)
+            var row = shortcutModel.get(i);
             if (row.hasChanged) {
-                row.reset()
+                row.reset();
             }
         }
     }

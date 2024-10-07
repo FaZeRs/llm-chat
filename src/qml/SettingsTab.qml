@@ -9,15 +9,15 @@ ColumnLayout {
     id: settingsTab
 
     function applyChangesToSettings() {
-        settings.language = languageComboBox.currentValue
-        settings.fpsVisible = showFpsCheckBox.checked
-        settings.windowOpacity = windowOpacitySlider.value
+        settings.language = languageComboBox.currentValue;
+        settings.fpsVisible = showFpsCheckBox.checked;
+        settings.windowOpacity = windowOpacitySlider.value;
     }
 
     function revertToOldSettings() {
-        languageComboBox.currentIndex = languageComboBox.indexOfValue(settings.language)
-        showFpsCheckBox.checked = settings.fpsVisible
-        windowOpacitySlider.value = settings.windowOpacity
+        languageComboBox.currentIndex = languageComboBox.indexOfValue(settings.language);
+        showFpsCheckBox.checked = settings.fpsVisible;
+        windowOpacitySlider.value = settings.windowOpacity;
     }
 
     Item {
@@ -71,7 +71,7 @@ ColumnLayout {
             Connections {
                 target: chatBackend
                 function onModelListFetched() {
-                    modelComboBox.currentIndex = modelComboBox.indexOfValue(chatBackend.model)
+                    modelComboBox.currentIndex = modelComboBox.indexOfValue(chatBackend.model);
                 }
             }
 

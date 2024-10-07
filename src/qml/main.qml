@@ -16,11 +16,10 @@ ApplicationWindow {
 
     function toggleFullScreen() {
         if (window.visibility === Window.FullScreen) {
-            window.visibility = oldWindowVisibility
-        }
-        else {
-            oldWindowVisibility = window.visibility
-            window.visibility = Window.FullScreen
+            window.visibility = oldWindowVisibility;
+        } else {
+            oldWindowVisibility = window.visibility;
+            window.visibility = Window.FullScreen;
         }
     }
 
@@ -43,7 +42,7 @@ ApplicationWindow {
 
         App.ChatView {}
     }
-    
+
     footer: App.StatusBar {
         id: statusBar
         objectName: "statusBar"
@@ -51,7 +50,6 @@ ApplicationWindow {
         width: parent.width
         anchors.bottom: parent.bottom
     }
-
 
     App.AboutDialog {
         id: aboutDialog

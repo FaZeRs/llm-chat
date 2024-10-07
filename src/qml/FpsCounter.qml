@@ -31,8 +31,8 @@ Label {
         repeat: true
         running: root.visible
         onTriggered: {
-            root.fps = rotationItem.timesUpdated / (interval / 1000)
-            rotationItem.timesUpdated = 0
+            root.fps = rotationItem.timesUpdated / (interval / 1000);
+            rotationItem.timesUpdated = 0;
         }
     }
 }

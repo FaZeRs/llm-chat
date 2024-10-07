@@ -20,17 +20,18 @@ Dialog {
     onAboutToShow: revertToOldSettings()
 
     function applyChangesToSettings() {
-        settingsTab.applyChangesToSettings()
-        shortcutsTab.applyChangesToSettings()
+        settingsTab.applyChangesToSettings();
+        shortcutsTab.applyChangesToSettings();
     }
 
     function revertToOldSettings() {
-        settingsTab.revertToOldSettings()
-        shortcutsTab.revertToOldSettings()
+        settingsTab.revertToOldSettings();
+        shortcutsTab.revertToOldSettings();
     }
 
     header: TabBar {
         id: tabBar
+
         // For the Universal style.
         // clip: true
 

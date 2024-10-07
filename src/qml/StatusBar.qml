@@ -34,7 +34,7 @@ Pane {
         FpsCounter {
             id: fpsCounter
             visible: settings.fpsVisible
-            
+
             Layout.alignment: Qt.AlignVCenter
             Layout.minimumWidth: fpsMaxTextMetrics.width
             Layout.maximumWidth: fpsMaxTextMetrics.width
