@@ -3,6 +3,8 @@ qt_add_library(chat
     backend.cpp
     message.cpp
     thread.cpp
+    thread_list.cpp
+    thread_proxy_list.cpp
 )
 
 target_include_directories(chat

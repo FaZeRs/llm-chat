@@ -19,7 +19,12 @@ set(QML_FILES
     qml/FpsCounter.qml
     qml/ToolBar.qml
     qml/ToolButton.qml
-    qml/ChatView.qml)
+    qml/chat/ChatView.qml
+    qml/chat/components/ChatItem.qml
+    qml/chat/components/ChatBubble.qml
+    qml/chat/components/ChatInput.qml
+    qml/chat/components/ChatThread.qml
+    qml/chat/components/ChatSidebar.qml)
 
 set(RESOURCE_FILES
     assets/fonts/font-awesome-regular.otf
