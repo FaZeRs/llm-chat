@@ -1,5 +1,3 @@
-include(cmake/CPM.cmake)
-
 function(setup_dependencies)
     find_package(QT NAMES Qt6 REQUIRED COMPONENTS Core)
 

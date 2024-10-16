@@ -56,7 +56,7 @@ target_link_system_libraries(${CMAKE_PROJECT_NAME} PRIVATE
     Qt::Core
     Qt::Gui)
 
-include(${CMAKE_SOURCE_DIR}/cmake/StaticAnalyzers.cmake)
+include(static-analyzers)
 
 if(ENABLE_CPPCHECK)
     enable_cppcheck(${CMAKE_PROJECT_NAME} ${WARNINGS_AS_ERRORS} "")

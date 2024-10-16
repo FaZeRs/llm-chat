@@ -1,6 +1,11 @@
 cmake_minimum_required(VERSION 3.27)
 
-include(cmake/Version.cmake)
+include(cmake/CPM.cmake)
+
+CPMAddPackage("gh:fazers/cmake#1.0.0")
+set(CMAKE_MODULE_PATH "${cmake_SOURCE_DIR};")
+
+include(version)
 
 project(llm-chat
   VERSION ${VERSION_SHORT}
@@ -10,10 +15,10 @@ project(llm-chat
 
 include(cmake/Options.cmake)
 include(cmake/CompilationFlags.cmake)
-include(cmake/SystemLink.cmake)
+include(system-link)
 
 if(ENABLE_IPO)
-  include(cmake/InterproceduralOptimization.cmake)
+  include(interprocedural-optimization)
   enable_ipo()
 endif()
 
@@ -23,15 +28,15 @@ setup_dependencies()
 add_library(project_warnings INTERFACE)
 add_library(project_options INTERFACE)
 
-include(cmake/CompilerWarnings.cmake)
+include(compiler-warnings)
 set_project_warnings(project_warnings ${WARNINGS_AS_ERRORS} "" "" "")
 
 if(ENABLE_USER_LINKER)
-  include(cmake/Linker.cmake)
+  include(linker)
   configure_linker(project_options)
 endif()
 
-include(cmake/Sanitizers.cmake)
+include(sanitizers)
 enable_sanitizers(project_options
   ${ENABLE_SANITIZER_ADDRESS}
   ${ENABLE_SANITIZER_LEAK}
@@ -40,7 +45,7 @@ enable_sanitizers(project_options
   ${ENABLE_SANITIZER_MEMORY})
 
 if(ENABLE_HARDENING)
-  include(cmake/Hardening.cmake)
+  include(hardening)
 
   if(NOT SUPPORTS_UBSAN
     OR ENABLE_SANITIZER_UNDEFINED
@@ -66,12 +71,12 @@ if(ENABLE_PCH)
 endif()
 
 if(ENABLE_CACHE)
-  include(cmake/Cache.cmake)
+  include(cache)
   enable_cache()
 endif()
 
 if(ENABLE_COVERAGE)
-  include(cmake/CodeCoverage.cmake)
+  include(code-coverage)
   enable_coverage(project_options)
 endif()
 
@@ -90,7 +95,7 @@ if(COMPILE_TESTS)
 endif()
 
 if(ENABLE_DOCS)
-  include(cmake/Doxygen.cmake)
+  include(doxygen)
   enable_doxygen("")
 endif()
 
