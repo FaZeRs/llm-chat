@@ -2,12 +2,13 @@ cmake_minimum_required(VERSION 3.27)
 
 include(cmake/CPM.cmake)
 
-CPMAddPackage("gh:fazers/cmake#1.0.0")
+cpmaddpackage("gh:fazers/cmake#1.0.0")
 set(CMAKE_MODULE_PATH "${cmake_SOURCE_DIR};")
 
 include(version)
 
-project(llm-chat
+project(
+  llm-chat
   VERSION ${VERSION_SHORT}
   DESCRIPTION "LLM-Chat"
   HOMEPAGE_URL "https://naurislinde.dev"
@@ -29,7 +30,12 @@ add_library(project_warnings INTERFACE)
 add_library(project_options INTERFACE)
 
 include(compiler-warnings)
-set_project_warnings(project_warnings ${WARNINGS_AS_ERRORS} "" "" "")
+set_project_warnings(
+  project_warnings
+  ${WARNINGS_AS_ERRORS}
+  ""
+  ""
+  "")
 
 if(ENABLE_USER_LINKER)
   include(linker)
@@ -37,7 +43,8 @@ if(ENABLE_USER_LINKER)
 endif()
 
 include(sanitizers)
-enable_sanitizers(project_options
+enable_sanitizers(
+  project_options
   ${ENABLE_SANITIZER_ADDRESS}
   ${ENABLE_SANITIZER_LEAK}
   ${ENABLE_SANITIZER_UNDEFINED}
@@ -48,10 +55,10 @@ if(ENABLE_HARDENING)
   include(hardening)
 
   if(NOT SUPPORTS_UBSAN
-    OR ENABLE_SANITIZER_UNDEFINED
-    OR ENABLE_SANITIZER_ADDRESS
-    OR ENABLE_SANITIZER_THREAD
-    OR ENABLE_SANITIZER_LEAK)
+     OR ENABLE_SANITIZER_UNDEFINED
+     OR ENABLE_SANITIZER_ADDRESS
+     OR ENABLE_SANITIZER_THREAD
+     OR ENABLE_SANITIZER_LEAK)
     set(ENABLE_UBSAN_MINIMAL_RUNTIME FALSE)
   else()
     set(ENABLE_UBSAN_MINIMAL_RUNTIME TRUE)
