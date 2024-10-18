@@ -85,8 +85,7 @@ Application::Application(int& argc, char** argv)
   addFonts();
 
   m_Engine->rootContext()->setContextProperty("settings", m_Settings.get());
-  m_Engine->rootContext()->setContextProperty("chatBackend",
-                                              m_ChatBackend.get());
+  m_Engine->rootContext()->setContextProperty("chat", m_ChatBackend.get());
   m_Engine->load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
   if (m_Engine->rootObjects().isEmpty()) qWarning("Failed to load main.qml");
 }
@@ -112,7 +111,8 @@ void Application::initializeSentry() {
 
 void Application::registerQmlTypes() const {
   qRegisterMetaType<Settings*>();
-  qRegisterMetaType<ChatThread*>();
+  qRegisterMetaType<Thread*>();
+  qRegisterMetaType<ChatBackend*>();
 }
 
 void Application::addFonts() const {

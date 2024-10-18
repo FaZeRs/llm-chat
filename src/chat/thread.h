@@ -5,23 +5,23 @@
 #include <QSortFilterProxyModel>
 #include <QVector>
 
-#include "message.h"
-
 namespace llm_chat {
 
-/// @brief The ChatThread class provides a model for the chat interface.
-class ChatThread : public QAbstractListModel {
+class Message;
+
+/// @brief The Thread class provides a model for the chat interface.
+class Thread : public QAbstractListModel {
   Q_OBJECT
-  Q_PROPERTY(QList<Message *> messages READ messages CONSTANT)
-  Q_PROPERTY(QDateTime createdAt READ createdAt CONSTANT)
+  Q_PROPERTY(QList<Message *> messages READ messages CONSTANT FINAL)
+  Q_PROPERTY(QDateTime createdAt READ createdAt CONSTANT FINAL)
 
  public:
   /// @brief The data roles for the model.
   enum MessageRoles { TextRole = Qt::UserRole + 1, IsUserRole, ContextRole };
 
-  /// @brief Constructs a new ChatThread object.
+  /// @brief Constructs a new Thread object.
   /// @param parent The parent object.
-  explicit ChatThread(QObject *parent = nullptr);
+  explicit Thread(QObject *parent = nullptr);
 
   /// @brief Returns the number of rows under the given parent.
   /// @param parent The parent index.
@@ -78,69 +78,6 @@ class ChatThread : public QAbstractListModel {
   /// @param new_context The new context of the message.
   void updateMessageContext(const qsizetype index,
                             const QVector<QVariant> &new_context);
-};
-
-class ChatThreadsModel : public QAbstractListModel {
-  Q_OBJECT
-  Q_PROPERTY(QList<ChatThread *> threads READ threads CONSTANT)
-
- public:
-  /// @brief The data roles for the model.
-  enum ThreadRoles { TextRole = Qt::UserRole + 1, CreatedAtRole };
-
-  /// @brief Constructs a new ChatThread object.
-  /// @param parent The parent object.
-  explicit ChatThreadsModel(QObject *parent = nullptr);
-
-  /// @brief Returns the number of rows under the given parent.
-  /// @param parent The parent index.
-  [[nodiscard]] int rowCount(
-      const QModelIndex &parent = QModelIndex()) const override;
-  /// @brief Returns the data stored under the given role for the item referred
-  /// to by the index.
-  /// @param index The model index.
-  /// @param role The data role.
-  [[nodiscard]] QVariant data(const QModelIndex &index,
-                              int role = Qt::DisplayRole) const override;
-  /// @brief Returns the role names for the model.
-  /// @return The role names for the model.
-  [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
-
-  /// @brief Returns the list of threads.
-  /// @return The list of threads.
-  [[nodiscard]] inline const QList<ChatThread *> &threads() const {
-    return m_Threads;
-  }
-  /// @brief Creates a new thread.
-  /// @details This function creates a new thread and sets it as the active
-  /// thread.
-  ChatThread *createNewThread();
-  /// @brief Removes the thread at the given index.
-  /// @param index The index of the thread to remove.
-  void deleteThread(const QModelIndex &model_index);
-  /// @brief Removes all the threads.
-  void deleteAllThreads();
-
- private:
-  QList<ChatThread *> m_Threads;
-};
-
-/// @brief The SortedChatThreadsModel class provides a sorted model for the chat
-class SortedChatThreadsModel : public QSortFilterProxyModel {
-  Q_OBJECT
-
- public:
-  /// @brief Constructs a new SortedChatThreadsModel object.
-  /// @param parent The parent object.
-  explicit SortedChatThreadsModel(QObject *parent = nullptr);
-
- protected:
-  /// @brief Returns true if the left item is less than the right item.
-  /// @param left The left model index.
-  /// @param right The right model index.
-  /// @return True if the left item is less than the right item.
-  [[nodiscard]] bool lessThan(const QModelIndex &left,
-                              const QModelIndex &right) const override;
 };
 
 }  // namespace llm_chat

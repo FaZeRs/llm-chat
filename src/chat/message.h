@@ -10,9 +10,9 @@ namespace llm_chat {
 /// @brief The Message class represents a chat message.
 class Message : public QObject {
   Q_OBJECT
-  Q_PROPERTY(QString text READ text CONSTANT)
-  Q_PROPERTY(bool isUser READ isUser CONSTANT)
-  Q_PROPERTY(QVector<QVariant> context READ context CONSTANT)
+  Q_PROPERTY(QString text READ text CONSTANT FINAL)
+  Q_PROPERTY(bool isUser READ isUser CONSTANT FINAL)
+  Q_PROPERTY(QVector<QVariant> context READ context CONSTANT FINAL)
 
  public:
   /// @brief Constructs a new Message object.

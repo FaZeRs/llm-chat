@@ -64,14 +64,14 @@ ColumnLayout {
             ComboBox {
                 id: modelComboBox
                 Layout.fillWidth: true
-                model: chatBackend.modelList
-                onActivated: chatBackend.setModel(currentText)
+                model: chat.modelList
+                onActivated: chat.setModel(currentText)
             }
 
             Connections {
-                target: chatBackend
+                target: chat
                 function onModelListFetched() {
-                    modelComboBox.currentIndex = modelComboBox.indexOfValue(chatBackend.model);
+                    modelComboBox.currentIndex = modelComboBox.indexOfValue(chat.model);
                 }
             }
 

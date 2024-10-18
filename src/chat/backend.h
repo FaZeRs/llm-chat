@@ -4,6 +4,8 @@
 #include <QObject>
 
 #include "thread.h"
+#include "thread_list.h"
+#include "thread_proxy_list.h"
 
 namespace llm_chat {
 
@@ -11,8 +13,7 @@ namespace llm_chat {
 /// server.
 class ChatBackend : public QObject {
   Q_OBJECT
-  Q_PROPERTY(
-      SortedChatThreadsModel *sortedThreads READ sortedThreads CONSTANT FINAL)
+  Q_PROPERTY(ThreadProxyList *sortedThreads READ threadProxyList CONSTANT FINAL)
   Q_PROPERTY(QString model READ model WRITE setModel NOTIFY modelChanged)
   Q_PROPERTY(QStringList modelList READ modelList NOTIFY modelListFetched)
 
@@ -22,12 +23,11 @@ class ChatBackend : public QObject {
   explicit ChatBackend(QObject *parent = nullptr);
   /// @brief Returns the chat threads.
   /// @return All the chat threads.
-  [[nodiscard]] ChatThreadsModel *threads() const { return m_Threads; }
-
+  [[nodiscard]] ThreadList *threadList() const { return m_ThreadList.get(); }
   /// @brief Returns the sorted chat threads.
   /// @return The sorted chat threads.
-  [[nodiscard]] SortedChatThreadsModel *sortedThreads() const {
-    return m_SortedThreads;
+  [[nodiscard]] ThreadProxyList *threadProxyList() const {
+    return m_ThreadProxyList.get();
   }
   /// @brief Get the name of the model.
   /// @return The name of the model as a QString.
@@ -35,11 +35,7 @@ class ChatBackend : public QObject {
   /// @brief Get the list of available models.
   [[nodiscard]] QStringList modelList() const { return m_ModelList; }
 
- public slots:
-  /// @brief Sends a message to the Ollama server.
-  /// @param index The index of the thread to send
-  /// @param message The message to send.
-  void sendMessage(const int index, const QString &message);
+ public Q_SLOTS:
   /// @brief Sets the model name.
   ///@details This function sets the name of the model to be used in the
   /// backend.
@@ -47,36 +43,43 @@ class ChatBackend : public QObject {
   void setModel(const QString &model);
   /// @brief Fetches the list of available models from the Ollama server.
   void fetchModelList();
-  /// @brief Returns the active chat thread.
-  /// @param index The index of the thread to get.
-  /// @return The active chat thread. If no thread e
-  [[nodiscard]] ChatThread *thread(const int index) const;
+  /// @brief Returns the thread at the given index.
+  /// @param index The index of the thread in proxy model.
+  /// @return The thread at the given index.
+  Thread *getThread(const int index);
   /// @brief Removes the thread at the given index.
-  /// @param index The index of the thread to remove.
+  /// @param index The index of the thread in proxy model.
   void deleteThread(const int index);
-  /// @brief Clears all the threads
+  /// @brief Removes all the threads.
   void clearThreads();
 
+ private Q_SLOTS:
+  /// @brief Sends a message to the Ollama server.
+  /// @param message The message to send.
+  void onSendMessage(const int index, const QString &message);
+
  signals:
+  /// @brief Emitted
+  void sendMessage(const int index, const QString &message);
   /// @brief Emitted when the list of models is fetched.
   void modelListFetched();
   /// @brief Emitted when the model is changed.
   void modelChanged();
   /// @brief Emitted when the current thread is changed.
-  void currentThreadChanged(const int index);
+  void newThreadCreated();
 
  private:
-  QScopedPointer<QNetworkAccessManager> m_Manager;
-  ChatThreadsModel *m_Threads;
-  SortedChatThreadsModel *m_SortedThreads;
+  QScopedPointer<QNetworkAccessManager> m_Manager{new QNetworkAccessManager};
+  QScopedPointer<ThreadList> m_ThreadList{new ThreadList};
+  QScopedPointer<ThreadProxyList> m_ThreadProxyList{new ThreadProxyList};
   QList<QString> m_ModelList;
 
   /// @brief Sends a request to the Ollama server.
   /// @param prompt The prompt to send.
-  void sendRequestToOllama(ChatThread *thread, const QString &prompt);
+  void sendRequestToOllama(Thread *thread, const QString &prompt);
   /// @brief Handles the response from the Ollama server.
   /// @param reply The response from the Ollama server.
-  void handleStreamResponse(ChatThread *thread, QNetworkReply *reply);
+  void handleStreamResponse(Thread *thread, QNetworkReply *reply);
 };
 
 }  // namespace llm_chat

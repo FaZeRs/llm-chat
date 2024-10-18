@@ -29,7 +29,7 @@ RowLayout {
             Layout.fillHeight: true
             spacing: 8
             clip: true
-            model: chatBackend.sortedThreads
+            model: chat.sortedThreads
             delegate: Rectangle {
                 property bool active: index == threadList.currentIndex
                 width: threadList.width
@@ -81,7 +81,7 @@ RowLayout {
                             if (index == threadList.currentIndex) {
                                 threadList.currentIndex = -1;
                             }
-                            chatBackend.deleteThread(index);
+                            chat.deleteThread(index);
                         }
                     }
                 }
@@ -89,10 +89,20 @@ RowLayout {
             focus: true
             ScrollBar.vertical: ScrollBar {}
             Connections {
-                target: chatBackend
-                function onCurrentThreadChanged(index) {
-                    threadList.currentIndex = index;
+                target: chat
+                function onNewThreadCreated() {
+                    threadList.currentIndex = 0;
                 }
+            }
+        }
+
+        Button {
+            Layout.fillWidth: true
+            Layout.alignment: Qt.AlignCenter
+            text: qsTr("Clear all chats")
+            onClicked: {
+                chat.clearThreads();
+                threadList.currentIndex = -1;
             }
         }
     }
@@ -106,16 +116,17 @@ RowLayout {
     ColumnLayout {
         Layout.fillWidth: true
         Layout.fillHeight: true
+
         ListView {
-            id: chatList
+            id: chatThread
             Layout.fillWidth: true
             Layout.fillHeight: true
             spacing: 8
             clip: true
-            model: chatBackend.thread(threadList.currentIndex)
+            model: chat.getThread(threadList.currentIndex)
             delegate: Rectangle {
-                x: model.isUser ? 0 : chatList.width - width
-                width: Math.min(messageText.implicitWidth + 24, (chatList.width * 0.8))
+                x: model.isUser ? 0 : chatThread.width - width
+                width: Math.min(messageText.implicitWidth + 24, (chatThread.width * 0.8))
                 height: messageText.implicitHeight + 20
                 gradient: Gradient {
                     orientation: Gradient.Horizontal
@@ -144,6 +155,8 @@ RowLayout {
         }
 
         RowLayout {
+            id: chatInput
+
             TextField {
                 id: messageField
                 placeholderText: qsTr("Type your message here...")
@@ -169,7 +182,7 @@ RowLayout {
         if (messageField.text == "") {
             return;
         }
-        chatBackend.sendMessage(threadList.currentIndex, messageField.text);
+        chat.sendMessage(threadList.currentIndex, messageField.text);
         messageField.text = "";
     }
 }

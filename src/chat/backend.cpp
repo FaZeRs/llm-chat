@@ -6,37 +6,35 @@
 #include <QNetworkReply>
 #include <QSettings>
 
-#include "thread.h"
+#include "message.h"
 
 namespace llm_chat {
 
-ChatBackend::ChatBackend(QObject *parent)
-    : QObject(parent), m_Manager(new QNetworkAccessManager(this)) {
+ChatBackend::ChatBackend(QObject *parent) : QObject(parent) {
   fetchModelList();
 
-  m_Threads = new ChatThreadsModel(this);
-  m_SortedThreads = new SortedChatThreadsModel(this);
-  m_SortedThreads->setSourceModel(m_Threads);
+  m_ThreadProxyList->setSourceModel(m_ThreadList.get());
+
+  connect(this, &ChatBackend::sendMessage, this, &ChatBackend::onSendMessage,
+          Qt::QueuedConnection);
 }
 
-void ChatBackend::sendMessage(const int index, const QString &message) {
-  auto curr_thread = thread(index);
-  bool new_thread = false;
-  if (!curr_thread) {
-    curr_thread = m_Threads->createNewThread();
-    new_thread = true;
+void ChatBackend::onSendMessage(const int index, const QString &message) {
+  Thread *thread = nullptr;
+  if (index >= 0) {
+    const auto proxy_index = m_ThreadProxyList->index(index, 0);
+    const auto source_index = m_ThreadProxyList->mapToSource(proxy_index);
+    thread = m_ThreadList->getThread(source_index);
+    thread->addMessage(message, true, {});
+  } else {
+    thread = m_ThreadList->createNewThread();
+    thread->addMessage(message, true, {});
+    emit newThreadCreated();
   }
-  curr_thread->addMessage(message, true, {});
-  sendRequestToOllama(curr_thread, message);
-  if (new_thread) {
-    const auto source_index = m_Threads->index(m_Threads->rowCount() - 1, 0);
-    const auto proxy_index = m_SortedThreads->mapFromSource(source_index);
-    emit currentThreadChanged(proxy_index.row());
-  }
+  sendRequestToOllama(thread, message);
 }
 
-void ChatBackend::sendRequestToOllama(ChatThread *thread,
-                                      const QString &prompt) {
+void ChatBackend::sendRequestToOllama(Thread *thread, const QString &prompt) {
   if (!thread) {
     qWarning() << "Thread is null";
     return;
@@ -46,7 +44,7 @@ void ChatBackend::sendRequestToOllama(ChatThread *thread,
 
   // Get all the messages from the model that were sent by AI
   QJsonArray context;
-  for (const Message *message : thread->messages()) {
+  for (const auto &message : thread->messages()) {
     if (!message->isUser()) {
       const auto message_context = message->context();
       for (const auto &context_item : message_context) {
@@ -77,8 +75,7 @@ void ChatBackend::sendRequestToOllama(ChatThread *thread,
   });
 }
 
-void ChatBackend::handleStreamResponse(ChatThread *thread,
-                                       QNetworkReply *reply) {
+void ChatBackend::handleStreamResponse(Thread *thread, QNetworkReply *reply) {
   if (!thread) return;
   QByteArray data = reply->readAll();
   QStringList lines = QString(data).split("\n", Qt::SkipEmptyParts);
@@ -120,25 +117,22 @@ void ChatBackend::fetchModelList() {
   });
 }
 
-ChatThread *ChatBackend::thread(const int index) const {
+Thread *ChatBackend::getThread(const int index) {
   if (index < 0) return nullptr;
-
-  const auto proxy_index = m_SortedThreads->index(index, 0);
-  const auto source_index = m_SortedThreads->mapToSource(proxy_index);
-  const auto &threads = m_Threads->threads();
-  if (source_index.row() < 0 || source_index.row() >= threads.size()) {
-    return nullptr;
-  }
-  return m_Threads->threads()[source_index.row()];
+  const auto proxy_index = m_ThreadProxyList->index(index, 0);
+  const auto source_index = m_ThreadProxyList->mapToSource(proxy_index);
+  return m_ThreadList->getThread(source_index);
 }
 
 void ChatBackend::deleteThread(const int index) {
   if (index < 0) return;
-  const auto proxy_index = m_SortedThreads->index(index, 0);
-  const auto source_index = m_SortedThreads->mapToSource(proxy_index);
-  m_Threads->deleteThread(source_index);
+  const auto proxy_index = m_ThreadProxyList->index(index, 0);
+  const auto source_index = m_ThreadProxyList->mapToSource(proxy_index);
+  m_ThreadList->deleteThread(source_index);
 }
 
-void ChatBackend::clearThreads() { m_Threads->deleteAllThreads(); }
+void ChatBackend::clearThreads() {
+  m_ThreadList->deleteAllThreads();
+}
 
 }  // namespace llm_chat
