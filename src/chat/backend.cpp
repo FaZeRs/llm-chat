@@ -7,17 +7,10 @@
 #include <QSettings>
 
 #include "message.h"
-#include "thread.h"
-#include "thread_list.h"
-#include "thread_proxy_list.h"
 
 namespace llm_chat {
 
-ChatBackend::ChatBackend(QObject *parent)
-    : QObject(parent),
-      m_Manager(new QNetworkAccessManager(this)),
-      m_ThreadList(new ThreadList(this)),
-      m_ThreadProxyList(new ThreadProxyList(this)) {
+ChatBackend::ChatBackend(QObject *parent) : QObject(parent) {
   fetchModelList();
 
   m_ThreadProxyList->setSourceModel(m_ThreadList.get());
@@ -26,13 +19,19 @@ ChatBackend::ChatBackend(QObject *parent)
           Qt::QueuedConnection);
 }
 
-void ChatBackend::onSendMessage(const QString &message) {
-  if (!m_OpenedThread) {
-    m_OpenedThread = m_ThreadList->createNewThread();
-    emit openedThreadChanged();
+void ChatBackend::onSendMessage(const int index, const QString &message) {
+  Thread *thread = nullptr;
+  if (index >= 0) {
+    const auto proxy_index = m_ThreadProxyList->index(index, 0);
+    const auto source_index = m_ThreadProxyList->mapToSource(proxy_index);
+    thread = m_ThreadList->getThread(source_index);
+    thread->addMessage(message, true, {});
+  } else {
+    thread = m_ThreadList->createNewThread();
+    thread->addMessage(message, true, {});
+    emit newThreadCreated();
   }
-  m_OpenedThread->addMessage(message, true, {});
-  sendRequestToOllama(m_OpenedThread, message);
+  sendRequestToOllama(thread, message);
 }
 
 void ChatBackend::sendRequestToOllama(Thread *thread, const QString &prompt) {
@@ -118,35 +117,22 @@ void ChatBackend::fetchModelList() {
   });
 }
 
-[[nodiscard]] Thread *ChatBackend::openedThread() const {
-  return m_OpenedThread;
+Thread *ChatBackend::getThread(const int index) {
+  if (index < 0) return nullptr;
+  const auto proxy_index = m_ThreadProxyList->index(index, 0);
+  const auto source_index = m_ThreadProxyList->mapToSource(proxy_index);
+  return m_ThreadList->getThread(source_index);
 }
 
-void ChatBackend::setOpenedThread(Thread *new_opened_thread) {
-  if (m_OpenedThread == new_opened_thread) return;
-  m_OpenedThread = new_opened_thread;
-  emit openedThreadChanged();
+void ChatBackend::deleteThread(const int index) {
+  if (index < 0) return;
+  const auto proxy_index = m_ThreadProxyList->index(index, 0);
+  const auto source_index = m_ThreadProxyList->mapToSource(proxy_index);
+  m_ThreadList->deleteThread(source_index);
 }
 
-// ChatThread *ChatBackend::thread(const int index) const {
-//   if (index < 0) return nullptr;
-
-//   const auto proxy_index = m_SortedThreads->index(index, 0);
-//   const auto source_index = m_SortedThreads->mapToSource(proxy_index);
-//   const auto &threads = m_Threads->threads();
-//   if (source_index.row() < 0 || source_index.row() >= threads.size()) {
-//     return nullptr;
-//   }
-//   return m_Threads->threads()[source_index.row()];
-// }
-
-// void ChatBackend::deleteThread(const int index) {
-//   if (index < 0) return;
-//   const auto proxy_index = m_SortedThreads->index(index, 0);
-//   const auto source_index = m_SortedThreads->mapToSource(proxy_index);
-//   m_Threads->deleteThread(source_index);
-// }
-
-// void ChatBackend::clearThreads() { m_Threads->deleteAllThreads(); }
+void ChatBackend::clearThreads() {
+  m_ThreadList->deleteAllThreads();
+}
 
 }  // namespace llm_chat

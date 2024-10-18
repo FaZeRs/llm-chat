@@ -2,7 +2,6 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import "." as App
-import "./chat" as Chat
 
 ApplicationWindow {
     id: window
@@ -41,7 +40,7 @@ ApplicationWindow {
         anchors.right: parent.right
         anchors.bottom: statusBar.top
 
-        Chat.ChatView {}
+        App.ChatView {}
     }
 
     footer: App.StatusBar {

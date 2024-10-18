@@ -38,6 +38,10 @@ class ThreadList : public QAbstractListModel {
   [[nodiscard]] inline const QList<Thread *> &threads() const {
     return m_Threads;
   }
+  /// @brief Returns the thread at the given index.
+  /// @param model_index The index of the thread.
+  /// @return The thread at the given index.
+  [[nodiscard]] Thread *getThread(const QModelIndex &model_index);
   /// @brief Creates a new thread.
   /// @details This function creates a new thread and sets it as the active
   /// thread.

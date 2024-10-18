@@ -34,6 +34,11 @@ QHash<int, QByteArray> ThreadList::roleNames() const {
   return roles;
 }
 
+Thread *ThreadList::getThread(const QModelIndex &model_index) {
+  if (!model_index.isValid()) return nullptr;
+  return m_Threads.at(model_index.row());
+}
+
 Thread *ThreadList::createNewThread() {
   const auto new_thread = new Thread(this);
   beginInsertRows(QModelIndex(), rowCount(), rowCount());
