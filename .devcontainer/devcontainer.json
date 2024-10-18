@@ -1,60 +1,63 @@
 {
-    "name": "C++",
-    "build": {
-        "dockerfile": "Dockerfile",
-        "args": {
-            "VARIANT": "jammy",
-            "GCC_VER": "13",
-            "LLVM_VER": "18",
-            "QT_VERSION": "6.7.0"
-        }
-    },
-    "runArgs": [
-        "--cap-add=SYS_PTRACE",
-        "--security-opt",
-        "seccomp=unconfined",
-        "--env-file",
-        ".devcontainer/devcontainer.env",
-        "--privileged"
-    ],
-    "mounts": [
-        "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind",
-        "source=qt-template-bashhistory,target=/commandhistory,type=volume"
-    ],
-    "customizations": {
-        "vscode": {
-            "settings": {
-                "cmake.configureOnOpen": true,
-                "editor.formatOnSave": true,
-                "terminal.integrated.shell.linux": "/bin/zsh",
-                "terminal.integrated.fontFamily": "'Fira Code', monospace",
-                "sonarlint.pathToNodeExecutable": "/usr/bin/node"
-            },
-            "extensions": [
-                "ms-vscode.cpptools",
-                "ms-vscode.cmake-tools",
-                "twxs.cmake",
-                "ms-vscode.cpptools-themes",
-                "cschlosser.doxdocgen",
-                "eamodio.gitlens",
-                "mutantdino.resourcemonitor",
-                "github.copilot",
-                "github.copilot-labs",
-                "github.vscode-github-actions",
-                "xaver.clang-format",
-                "sonarsource.sonarlint-vscode",
-                "felgo.felgo",
-                "josetr.cmake-language-support-vscode"
-            ]
-        }
-    },
-    "remoteUser": "vscode",
-    "features": {
-        "ghcr.io/devcontainers/features/git:1": {
-            "version": "latest"
-        },
-        "ghcr.io/devcontainers/features/git-lfs:1": {
-            "version": "latest"
-        }
+  "name": "C++",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {
+      "VARIANT": "noble",
+      "GCC_VER": "14",
+      "LLVM_VER": "18",
+      "QT_VERSION": "6.8.0"
     }
+  },
+  "runArgs": [
+    "--cap-add=SYS_PTRACE",
+    "--security-opt",
+    "seccomp=unconfined",
+    "--env-file",
+    ".devcontainer/devcontainer.env",
+    "--privileged"
+  ],
+  "forwardPorts": [3000, "db:5432", 11434],
+  "mounts": [
+    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind",
+    "source=qt-template-bashhistory,target=/commandhistory,type=volume"
+  ],
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "cmake.configureOnOpen": true,
+        "editor.formatOnSave": true,
+        "terminal.integrated.shell.linux": "/bin/zsh",
+        "terminal.integrated.fontFamily": "'Fira Code', monospace",
+        "sonarlint.pathToNodeExecutable": "/usr/bin/node"
+      },
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools",
+        "twxs.cmake",
+        "josetr.cmake-language-support-vscode",
+        "ms-vscode.cpptools-themes",
+        "ms-vscode.makefile-tools",
+        "cschlosser.doxdocgen",
+        "eamodio.gitlens",
+        "mutantdino.resourcemonitor",
+        "github.copilot",
+        "github.copilot-labs",
+        "github.vscode-github-actions",
+        "xaver.clang-format",
+        "sonarsource.sonarlint-vscode",
+        "felgo.felgo",
+        "josetr.cmake-language-support-vscode",
+        "bbenoist.qml",
+        "delgan.qml-format"
+      ]
+    }
+  },
+  "remoteUser": "vscode",
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {
+      "version": "latest",
+      "ppa": "false"
+    }
+  }
 }
