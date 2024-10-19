@@ -1,0 +1,7 @@
+<map id="llm_chat::Settings::setOptionsShortcut" name="llm_chat::Settings::setOptionsShortcut">
+<area shape="rect" id="Node000001" title="Sets the current options shortcut for the application." alt="" coords="5,37,160,77"/>
+<area shape="rect" id="Node000002" href="$classllm__chat_1_1Settings.html#a8836def98eb3f395c253e83ada24503f" title="Returns the default options shortcut for the application." alt="" coords="213,5,393,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,44,198,38,199,43,160,49"/>
+<area shape="rect" id="Node000003" href="$classllm__chat_1_1Settings.html#af0030e9c4c952fa3253a95dd2ec2df2e" title="Emitted when the options shortcut is changed." alt="" coords="208,69,397,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="160,66,195,71,194,76,160,71"/>
+</map>

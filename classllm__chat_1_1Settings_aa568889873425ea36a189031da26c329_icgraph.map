@@ -1,0 +1,5 @@
+<map id="llm_chat::Settings::fpsVisibleChanged" name="llm_chat::Settings::fpsVisibleChanged">
+<area shape="rect" id="Node000001" title="Emitted when the FPS visibility is changed." alt="" coords="192,5,343,45"/>
+<area shape="rect" id="Node000002" href="$classllm__chat_1_1Settings.html#a57fae91799323fe2bf3712c680c9afe6" title="Sets the current FPS visibility for the application." alt="" coords="5,5,144,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="179,28,145,28,145,23,179,23"/>
+</map>

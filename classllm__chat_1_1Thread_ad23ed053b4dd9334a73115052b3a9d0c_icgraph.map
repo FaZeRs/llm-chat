@@ -1,0 +1,5 @@
+<map id="llm_chat::Thread::rowCount" name="llm_chat::Thread::rowCount">
+<area shape="rect" id="Node000001" title="Returns the number of rows under the given parent." alt="" coords="275,5,476,31"/>
+<area shape="rect" id="Node000002" href="$classllm__chat_1_1Thread.html#aec5638ae53473ed7d9918db4d60a5f7a" title="Adds a new message to the model." alt="" coords="5,5,227,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="261,21,227,21,227,15,261,15"/>
+</map>

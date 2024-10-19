@@ -1,0 +1,5 @@
+<map id="llm_chat::ChatBackend::fetchModelList" name="llm_chat::ChatBackend::fetchModelList">
+<area shape="rect" id="Node000001" title="Fetches the list of available models from the Ollama server." alt="" coords="5,5,176,45"/>
+<area shape="rect" id="Node000002" href="$classllm__chat_1_1ChatBackend.html#aed4ef11a9afca0e6f45e095f697eb686" title="Emitted when the list of models is fetched." alt="" coords="224,5,395,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,23,210,23,210,28,176,28"/>
+</map>

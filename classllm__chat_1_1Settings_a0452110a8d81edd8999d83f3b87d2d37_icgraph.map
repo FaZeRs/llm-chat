@@ -1,0 +1,5 @@
+<map id="llm_chat::Settings::defaultWindowOpacity" name="llm_chat::Settings::defaultWindowOpacity">
+<area shape="rect" id="Node000001" title="Returns the default window opacity for the application." alt="" coords="192,5,371,45"/>
+<area shape="rect" id="Node000002" href="$classllm__chat_1_1Settings.html#a14da88d8488923e0ba83c807cf98804f" title="Returns the current window opacity for the application." alt="" coords="5,5,144,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="178,28,144,28,144,23,178,23"/>
+</map>

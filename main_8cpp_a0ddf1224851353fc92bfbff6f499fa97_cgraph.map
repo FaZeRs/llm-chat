@@ -1,0 +1,7 @@
+<map id="main" name="main">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,42,60,67"/>
+<area shape="rect" id="Node000002" href="$classllm__chat_1_1Application.html#afa0436fb8e73e7947fa22328e80da56f" title="Returns the QML Application Engine instance." alt="" coords="123,5,281,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="60,47,109,39,110,44,61,53"/>
+<area shape="rect" id="Node000003" href="$classllm__chat_1_1Application.html#af1755a4cf87465cf84ae68e810dc8e73" title="Runs the application." alt="" coords="108,70,296,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="60,56,112,65,112,70,60,62"/>
+</map>

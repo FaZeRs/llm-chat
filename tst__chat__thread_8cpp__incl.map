@@ -1,0 +1,17 @@
+<map id="tests/tst_chat_thread.cpp" name="tests/tst_chat_thread.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="303,5,489,31"/>
+<area shape="rect" id="Node000002" href="$thread_8h.html" title=" " alt="" coords="266,79,342,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="383,33,331,72,328,68,380,29"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="367,79,425,104"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="399,31,399,65,393,65,393,31"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="449,79,604,104"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="418,28,495,70,492,74,416,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,152,155,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="269,107,130,150,128,145,267,101"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="179,152,275,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="293,106,251,144,248,141,290,102"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="299,152,467,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="318,102,362,141,358,145,315,106"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="491,152,565,177"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="341,101,480,145,478,150,339,107"/>
+</map>

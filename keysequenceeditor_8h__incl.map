@@ -1,0 +1,15 @@
+<map id="src/quick/keysequenceeditor.h" name="src/quick/keysequenceeditor.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="454,5,673,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,260,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="495,33,216,79,215,74,494,28"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="284,79,413,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="530,33,397,77,396,72,528,28"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="437,79,556,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="554,33,519,70,515,67,550,29"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="581,79,679,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="576,29,612,67,608,70,572,33"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="704,79,775,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="593,28,699,71,697,76,591,33"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="799,79,872,104"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="608,28,786,74,785,80,606,33"/>
+</map>

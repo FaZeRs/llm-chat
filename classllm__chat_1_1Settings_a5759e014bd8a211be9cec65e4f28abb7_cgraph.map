@@ -1,0 +1,7 @@
+<map id="llm_chat::Settings::setLanguage" name="llm_chat::Settings::setLanguage">
+<area shape="rect" id="Node000001" title="Sets the current language for the application." alt="" coords="5,37,144,77"/>
+<area shape="rect" id="Node000002" href="$classllm__chat_1_1Settings.html#a8473aa7d97a98ecb2d61f39c0d3e71ce" title="Returns the default language for the application." alt="" coords="196,5,335,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,43,182,37,183,42,145,48"/>
+<area shape="rect" id="Node000003" href="$classllm__chat_1_1Settings.html#ac43f971d34b67dfc21ccb343a2ef0f50" title="Emitted when the language is changed." alt="" coords="192,69,339,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="145,66,179,72,178,77,144,72"/>
+</map>

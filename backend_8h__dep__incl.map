@@ -1,0 +1,11 @@
+<map id="src/chat/backend.h" name="src/chat/backend.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="105,5,248,31"/>
+<area shape="rect" id="Node000002" href="$backend_8cpp.html" title=" " alt="" coords="5,79,164,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="153,41,101,81,98,76,150,37"/>
+<area shape="rect" id="Node000003" href="$application_8h.html" title=" " alt="" coords="188,79,349,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="204,37,255,76,252,81,200,41"/>
+<area shape="rect" id="Node000004" href="$application_8cpp.html" title=" " alt="" coords="98,152,274,177"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="247,115,201,154,198,150,243,111"/>
+<area shape="rect" id="Node000005" href="$main_8cpp.html" title=" " alt="" coords="299,152,404,177"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="294,111,340,150,336,154,291,115"/>
+</map>

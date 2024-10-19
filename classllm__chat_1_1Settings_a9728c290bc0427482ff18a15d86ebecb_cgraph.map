@@ -1,0 +1,7 @@
+<map id="llm_chat::Settings::setQuitShortcut" name="llm_chat::Settings::setQuitShortcut">
+<area shape="rect" id="Node000001" title="Sets the current quit shortcut for the application." alt="" coords="5,37,144,77"/>
+<area shape="rect" id="Node000002" href="$classllm__chat_1_1Settings.html#a9ecf0b092162b318f57f3811c16045b2" title="Returns the default quit shortcut for the application." alt="" coords="197,5,354,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,44,183,37,183,43,145,49"/>
+<area shape="rect" id="Node000003" href="$classllm__chat_1_1Settings.html#af6582a0c88d6912d895f9463ee62845c" title="Emitted when the quit shortcut is changed." alt="" coords="192,69,359,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="145,66,179,71,178,76,144,71"/>
+</map>

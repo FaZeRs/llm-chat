@@ -1,0 +1,5 @@
+<map id="llm_chat::ThreadList::rowCount" name="llm_chat::ThreadList::rowCount">
+<area shape="rect" id="Node000001" title="Returns the number of rows under the given parent." alt="" coords="208,5,363,45"/>
+<area shape="rect" id="Node000002" href="$classllm__chat_1_1ThreadList.html#a7c358087b13c7e8b5581db19d62712f3" title="Creates a new thread." alt="" coords="5,5,160,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="194,28,161,28,161,23,194,23"/>
+</map>

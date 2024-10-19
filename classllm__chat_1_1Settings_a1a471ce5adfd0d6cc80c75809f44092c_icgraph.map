@@ -1,0 +1,7 @@
+<map id="llm_chat::Settings::defaultFpsVisible" name="llm_chat::Settings::defaultFpsVisible">
+<area shape="rect" id="Node000001" title="Returns the default FPS visibility for the application." alt="" coords="192,37,335,77"/>
+<area shape="rect" id="Node000002" href="$classllm__chat_1_1Settings.html#aa6ebf65deff8f0c40c524a9ce17c01af" title="Returns the current FPS visibility for the application." alt="" coords="5,5,144,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="178,46,144,40,145,35,179,40"/>
+<area shape="rect" id="Node000003" href="$classllm__chat_1_1Settings.html#a57fae91799323fe2bf3712c680c9afe6" title="Sets the current FPS visibility for the application." alt="" coords="5,69,144,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="179,74,145,80,144,75,178,69"/>
+</map>

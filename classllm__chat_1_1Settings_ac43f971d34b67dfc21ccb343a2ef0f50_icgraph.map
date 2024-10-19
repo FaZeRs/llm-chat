@@ -1,0 +1,5 @@
+<map id="llm_chat::Settings::languageChanged" name="llm_chat::Settings::languageChanged">
+<area shape="rect" id="Node000001" title="Emitted when the language is changed." alt="" coords="192,5,339,45"/>
+<area shape="rect" id="Node000002" href="$classllm__chat_1_1Settings.html#a5759e014bd8a211be9cec65e4f28abb7" title="Sets the current language for the application." alt="" coords="5,5,144,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="178,28,145,28,145,23,178,23"/>
+</map>

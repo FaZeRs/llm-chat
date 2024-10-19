@@ -1,0 +1,9 @@
+<map id="KeySequenceEditor::setOriginalSequence" name="KeySequenceEditor::setOriginalSequence">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,69,161,109"/>
+<area shape="rect" id="Node000002" href="$classKeySequenceEditor.html#ab6bdf43e6b9bc3f54de37095cf25f2d1" title=" " alt="" coords="210,5,399,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="153,67,221,47,223,52,154,72"/>
+<area shape="rect" id="Node000003" href="$classKeySequenceEditor.html#a42e335b5ee6f3842328b2a1845526f35" title=" " alt="" coords="225,69,384,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="162,87,211,87,211,92,162,92"/>
+<area shape="rect" id="Node000004" href="$classKeySequenceEditor.html#ae0513df1612227c7c003181d2c83630c" title=" " alt="" coords="209,133,400,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="154,107,223,127,221,132,153,112"/>
+</map>

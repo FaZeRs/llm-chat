@@ -1,0 +1,5 @@
+<map id="llm_chat::Settings::fullScreenShortcut" name="llm_chat::Settings::fullScreenShortcut">
+<area shape="rect" id="Node000001" title="Returns the current full screen shortcut for the application." alt="" coords="5,5,155,45"/>
+<area shape="rect" id="Node000002" href="$classllm__chat_1_1Settings.html#a68dc63465d41a4a1501631a41523d777" title="Returns the default full screen shortcut for the application." alt="" coords="203,5,400,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="155,23,189,23,189,28,155,28"/>
+</map>

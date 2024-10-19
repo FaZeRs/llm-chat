@@ -1,0 +1,5 @@
+<map id="llm_chat::Settings::setWindowOpacity" name="llm_chat::Settings::setWindowOpacity">
+<area shape="rect" id="Node000001" title="Sets the current window opacity for the application." alt="" coords="5,5,157,45"/>
+<area shape="rect" id="Node000002" href="$classllm__chat_1_1Settings.html#af4ea5ab8f8e16b3dd4976d67966cf68e" title="Emitted when the window opacity is changed." alt="" coords="205,5,392,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="158,23,192,23,192,28,158,28"/>
+</map>
