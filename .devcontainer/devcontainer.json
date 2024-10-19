@@ -13,11 +13,12 @@
     "--cap-add=SYS_PTRACE",
     "--security-opt",
     "seccomp=unconfined",
-    "--env-file",
-    ".devcontainer/devcontainer.env",
-    "--privileged"
+    "--privileged",
+    "-e",
+    "DISPLAY=${env:DISPLAY}",
+    "-v",
+    "/tmp/.X11-unix:/tmp/.X11-unix"
   ],
-  "forwardPorts": [3000, "db:5432", 11434],
   "mounts": [
     "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind",
     "source=qt-template-bashhistory,target=/commandhistory,type=volume"
