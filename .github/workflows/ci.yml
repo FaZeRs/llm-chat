@@ -50,14 +50,14 @@ jobs:
             compiler: msvc
             generator: "Visual Studio 17 2022"
             qt_host: windows
-            qt_arch: win64_msvc2019_64
+            qt_arch: win64_msvc2022_64
             build_type: Release
 
           - os: windows-latest
             compiler: msvc
             generator: "Visual Studio 17 2022"
             qt_host: windows
-            qt_arch: win64_msvc2019_64
+            qt_arch: win64_msvc2022_64
             build_type: Debug
 
           - compiler: gcc-14
