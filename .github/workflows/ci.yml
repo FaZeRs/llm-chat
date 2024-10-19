@@ -124,7 +124,7 @@ jobs:
         run: cmake --build . --parallel ${{ env.nproc }} --config ${{ matrix.build_type }}
 
       - name: Ubuntu - Test and coverage
-        if: ${{ runner.os == 'Ubuntu' && matrix.build_type == 'Debug' }}
+        if: ${{ contains(matrix.os, 'ubuntu') && matrix.build_type == 'Debug' }}
         working-directory: ${{ runner.workspace }}/build
         shell: bash
         run: |
@@ -132,7 +132,7 @@ jobs:
           gcovr -j ${{ env.nproc }} --delete --root ../ --print-summary --xml-pretty --xml coverage.xml . --gcov-executable '${{ matrix.gcov_executable }}'
 
       - name: Windows - Test and coverage
-        if: ${{ runner.os == 'Windows' && matrix.build_type == 'Debug' }}
+        if: ${{ contains(matrix.os, 'windows') && matrix.build_type == 'Debug' }}
         working-directory: ${{ runner.workspace }}/build
         shell: bash
         run: |
@@ -160,7 +160,7 @@ jobs:
           publish_dir: ${{ runner.workspace }}/build/html
 
       - name: Publish to codecov
-        if: ${{ (runner.os == 'Ubuntu' || runner.os == 'Windows') && matrix.build_type == 'Debug' }}
+        if: ${{ (contains(matrix.os, 'ubuntu') || contains(matrix.os, 'windows')) && matrix.build_type == 'Debug' }}
         uses: codecov/codecov-action@v4
         with:
           flags: ${{ runner.os }}
