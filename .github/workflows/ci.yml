@@ -157,7 +157,7 @@ jobs:
         if: ${{ github.ref == 'refs/heads/main' && matrix.build_type == 'Release' && contains(matrix.os, 'ubuntu') && contains(matrix.compiler, 'gcc') }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build/html
+          publish_dir: ${{ runner.workspace }}/build/html
 
       - name: Publish to codecov
         if: ${{ (runner.os == 'Ubuntu' || runner.os == 'Windows') && matrix.build_type == 'Debug' }}
