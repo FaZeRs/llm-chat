@@ -116,7 +116,7 @@ jobs:
         shell: bash
         working-directory: ${{ runner.workspace }}/build
         run: |
-          cmake -G "${{ matrix.generator }}" $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE:STRING=${{ matrix.build_type }} -DENABLE_COVERAGE:BOOL=${{ matrix.build_type == 'Debug' }} -DENABLE_DOCS:BOOL=${{ matrix.build_type == 'Release' && contains(matrix.os, 'ubuntu') && contains(matrix.compiler, 'gcc') }} -DCPACK_IFW_ROOT=$IQTA_TOOLS/QtInstallerFramework/4.7/bin
+          cmake -G "${{ matrix.generator }}" $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE:STRING=${{ matrix.build_type }} -DCOMPILE_TESTS:BOOL=${{ matrix.build_type == 'Debug' }} -DENABLE_COVERAGE:BOOL=${{ matrix.build_type == 'Debug' }} -DENABLE_DOCS:BOOL=${{ matrix.build_type == 'Release' && contains(matrix.os, 'ubuntu') && contains(matrix.compiler, 'gcc') }} -DCPACK_IFW_ROOT=$IQTA_TOOLS/QtInstallerFramework/4.7/bin
 
       - name: Build
         working-directory: ${{ runner.workspace }}/build
