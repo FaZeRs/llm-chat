@@ -47,7 +47,7 @@ class ThreadList : public QAbstractListModel {
   /// thread.
   Thread *createNewThread();
   /// @brief Removes the thread at the given index.
-  /// @param index The index of the thread to remove.
+  /// @param model_index The index of the thread to remove.
   void deleteThread(const QModelIndex &model_index);
   /// @brief Removes all the threads.
   void deleteAllThreads();
