@@ -165,6 +165,6 @@ jobs:
         with:
           flags: ${{ runner.os }}
           name: ${{ runner.os }}-coverage
-          files: ./build/coverage.xml
+          files: ${{ runner.workspace }}/build/coverage.xml
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
