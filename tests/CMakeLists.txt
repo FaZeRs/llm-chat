@@ -2,43 +2,36 @@ cmake_minimum_required(VERSION 3.27)
 
 project(unit-tests LANGUAGES CXX)
 
-find_package(
-  Qt6 REQUIRED
-  COMPONENTS Core
-             Gui
-             Qml
-             Test)
-
-set(CMAKE_INCLUDE_CURRENT_DIR ON)
-set(CMAKE_AUTOMOC ON)
+find_package(Qt6 REQUIRED COMPONENTS Core Test)
 
 enable_testing(true)
+add_executable(unit-tests tst_settings.cpp tst_chat_thread.cpp tst_chat_message.cpp)
 
-qt_add_executable(settings-tests tst_settings.cpp)
-add_test(NAME settings-tests COMMAND settings-tests)
-target_link_libraries(settings-tests PRIVATE libs::project_warnings libs::project_options libs::core)
-target_link_system_libraries(
-  settings-tests
-  PRIVATE
-  Qt::Core
-  Qt::Gui
-  Qt::Qml
-  Qt::Test)
+cpmaddpackage(
+  NAME
+  Catch2
+  VERSION
+  3.7.1
+  GITHUB_REPOSITORY
+  catchorg/Catch2
+  SYSTEM
+  YES)
 
-qt_add_executable(chat-thread-tests tst_chat_thread.cpp)
-add_test(NAME chat-thread-tests COMMAND chat-thread-tests)
-target_link_libraries(chat-thread-tests PRIVATE libs::project_warnings libs::project_options libs::chat)
-target_link_system_libraries(
-  chat-thread-tests
-  PRIVATE
-  Qt::Core
-  Qt::Test)
+target_link_libraries(
+  unit-tests
+  PRIVATE libs::project_warnings
+          libs::project_options
+          libs::core
+          libs::chat
+          Catch2::Catch2WithMain)
 
-qt_add_executable(chat-message-tests tst_chat_message.cpp)
-add_test(NAME chat-message-tests COMMAND chat-message-tests)
-target_link_libraries(chat-message-tests PRIVATE libs::project_warnings libs::project_options libs::chat)
 target_link_system_libraries(
-  chat-message-tests
+  unit-tests
   PRIVATE
   Qt::Core
   Qt::Test)
+
+list(APPEND CMAKE_MODULE_PATH ${Catch2_SOURCE_DIR}/extras)
+include(CTest)
+include(Catch)
+catch_discover_tests(unit-tests)

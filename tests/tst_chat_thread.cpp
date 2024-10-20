@@ -1,61 +1,68 @@
 #include <thread.h>
 
+#include <QJsonArray>
+#include <QJsonObject>
 #include <QTest>
+#include <catch2/catch_test_macros.hpp>
 
-class TestChatThread : public QObject {
-  Q_OBJECT
-
- private slots:
-  void testAddMessage() const;
-  void testUpdateMessageText() const;
-  void testClearMessages() const;
-};
-
-void TestChatThread::testAddMessage() const {
+TEST_CASE("Test add message", "[Thread]") {
   llm_chat::Thread thread;
-  QCOMPARE(thread.rowCount(), 0);
+  REQUIRE(thread.createdAt().isValid());
+  REQUIRE(thread.createdAt().isNull() == false);
+  REQUIRE(thread.createdAt() == QDateTime::currentDateTime());
 
+  REQUIRE(thread.rowCount() == 0);
   thread.addMessage("Hello", true, {});
-  QCOMPARE(thread.rowCount(), 1);
-  QCOMPARE(
-      thread.data(thread.index(0, 0), llm_chat::Thread::TextRole).toString(),
+  REQUIRE(thread.rowCount() == 1);
+  REQUIRE(
+      thread.data(thread.index(0, 0), llm_chat::Thread::TextRole).toString() ==
       "Hello");
-  QCOMPARE(
-      thread.data(thread.index(0, 0), llm_chat::Thread::IsUserRole).toBool(),
+  REQUIRE(
+      thread.data(thread.index(0, 0), llm_chat::Thread::IsUserRole).toBool() ==
       true);
-
+  REQUIRE(
+      thread.data(thread.index(0, 0), llm_chat::Thread::IsUserRole).toBool() ==
+      true);
   thread.addMessage("World", false, {QVariant("context")});
-  QCOMPARE(thread.rowCount(), 2);
-  QCOMPARE(
-      thread.data(thread.index(1, 0), llm_chat::Thread::TextRole).toString(),
+  REQUIRE(thread.rowCount() == 2);
+  REQUIRE(
+      thread.data(thread.index(1, 0), llm_chat::Thread::TextRole).toString() ==
       "World");
-  QCOMPARE(
-      thread.data(thread.index(1, 0), llm_chat::Thread::IsUserRole).toBool(),
+  REQUIRE(
+      thread.data(thread.index(1, 0), llm_chat::Thread::IsUserRole).toBool() ==
       false);
-  QCOMPARE(
-      thread.data(thread.index(1, 0), llm_chat::Thread::ContextRole).toList(),
+  REQUIRE(
+      thread.data(thread.index(1, 0), llm_chat::Thread::ContextRole).toList() ==
       QVariantList({"context"}));
 }
 
-void TestChatThread::testUpdateMessageText() const {
+TEST_CASE("Test update latest message text", "[Thread]") {
   llm_chat::Thread thread;
   thread.addMessage("Hello", true, {});
-
   thread.updateLatestMessage(" World");
-  QCOMPARE(
-      thread.data(thread.index(0, 0), llm_chat::Thread::TextRole).toString(),
+  REQUIRE(
+      thread.data(thread.index(0, 0), llm_chat::Thread::TextRole).toString() ==
       "Hello World");
 }
 
-void TestChatThread::testClearMessages() const {
+TEST_CASE("Test update latest message from json", "[Thread]") {
+  llm_chat::Thread thread;
+  thread.addMessage("Hello", true, {});
+  thread.updateLatestMessage(
+      {{"response", " World"}, {"context", QJsonArray{"Context"}}});
+  REQUIRE(
+      thread.data(thread.index(0, 0), llm_chat::Thread::TextRole).toString() ==
+      "Hello World");
+  REQUIRE(
+      thread.data(thread.index(0, 0), llm_chat::Thread::ContextRole).toList() ==
+      QVariantList({"Context"}));
+}
+
+TEST_CASE("Test clear messages", "[Thread]") {
   llm_chat::Thread thread;
   thread.addMessage("Hello", true, {});
   thread.addMessage("World", false, {});
-  QCOMPARE(thread.rowCount(), 2);
-
+  REQUIRE(thread.rowCount() == 2);
   thread.clearMessages();
-  QCOMPARE(thread.rowCount(), 0);
+  REQUIRE(thread.rowCount() == 0);
 }
-
-QTEST_MAIN(TestChatThread)
-#include "tst_chat_thread.moc"

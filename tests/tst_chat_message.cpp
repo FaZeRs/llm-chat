@@ -1,34 +1,22 @@
 #include <message.h>
 
-#include <QTest>
+#include <catch2/catch_test_macros.hpp>
 
-class TestChatMessage : public QObject {
-  Q_OBJECT
-
- private slots:
-  void testConstructor() const;
-  void testSetText() const;
-  void testSetContext() const;
-};
-
-void TestChatMessage::testConstructor() const {
+TEST_CASE("Test constructor", "[Message]") {
   llm_chat::Message message("Hello", true, {QVariant("context")});
-  QCOMPARE(message.text(), "Hello");
-  QCOMPARE(message.isUser(), true);
-  QCOMPARE(message.context(), QVector<QVariant>({"context"}));
+  REQUIRE(message.text() == "Hello");
+  REQUIRE(message.isUser() == true);
+  REQUIRE(message.context() == QVector<QVariant>({QVariant("context")}));
 }
 
-void TestChatMessage::testSetText() const {
+TEST_CASE("Test set text", "[Message]") {
   llm_chat::Message message("Hello", true, {});
   message.setText("World");
-  QCOMPARE(message.text(), "World");
+  REQUIRE(message.text() == "World");
 }
 
-void TestChatMessage::testSetContext() const {
+TEST_CASE("Test set context", "[Message]") {
   llm_chat::Message message("Hello", true, {});
   message.setContext({QVariant("context")});
-  QCOMPARE(message.context(), QVector<QVariant>({"context"}));
+  REQUIRE(message.context() == QVector<QVariant>({QVariant("context")}));
 }
-
-QTEST_MAIN(TestChatMessage)
-#include "tst_chat_message.moc"
