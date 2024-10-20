@@ -128,7 +128,7 @@ jobs:
         working-directory: ${{ runner.workspace }}/build
         shell: bash
         run: |
-          ctest -C ${{ matrix.build_type }}
+          ctest -C ${{ matrix.build_type }} --output-on-failure
           gcovr -j ${{ env.nproc }} --delete --root ${{ runner.workspace }}  --print-summary --xml-pretty --xml coverage.xml . --gcov-executable '${{ matrix.gcov_executable }}'
 
       - name: Windows - Test and coverage
@@ -136,7 +136,7 @@ jobs:
         working-directory: ${{ runner.workspace }}/build
         shell: bash
         run: |
-          OpenCppCoverage.exe --export_type cobertura:coverage.xml --cover_children -- ctest -C ${{matrix.build_type}}
+          OpenCppCoverage.exe --export_type cobertura:coverage.xml --cover_children -- ctest -C ${{matrix.build_type}} --output-on-failure
 
       - name: CPack
         if: ${{ matrix.build_type == 'Release' }}
