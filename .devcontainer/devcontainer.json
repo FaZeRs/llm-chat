@@ -10,6 +10,7 @@
     }
   },
   "runArgs": [
+    "--network=host",
     "--cap-add=SYS_PTRACE",
     "--security-opt",
     "seccomp=unconfined",
@@ -51,7 +52,8 @@
         "felgo.felgo",
         "josetr.cmake-language-support-vscode",
         "bbenoist.qml",
-        "delgan.qml-format"
+        "delgan.qml-format",
+        "ms-azuretools.vscode-docker"
       ]
     }
   },
