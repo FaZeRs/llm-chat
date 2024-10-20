@@ -10,6 +10,8 @@
 
 namespace llm_chat {
 
+constexpr auto OLLAMA_HOST = "http://localhost:11434";
+
 ChatBackend::ChatBackend(QObject *parent) : QObject(parent) {
   fetchModelList();
 
@@ -39,7 +41,8 @@ void ChatBackend::sendRequestToOllama(Thread *thread, const QString &prompt) {
     qWarning() << "Thread is null";
     return;
   }
-  QNetworkRequest request(QUrl("http://localhost:11434/api/generate"));
+
+  QNetworkRequest request(QUrl(QString("%1/api/generate").arg(OLLAMA_HOST)));
   request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
 
   // Get all the messages from the model that were sent by AI
@@ -68,14 +71,19 @@ void ChatBackend::sendRequestToOllama(Thread *thread, const QString &prompt) {
 
   connect(reply, &QNetworkReply::finished, this, [thread, reply]() {
     if (reply->error() != QNetworkReply::NoError) {
-      QString errorMessage = "Error: " + reply->errorString();
-      thread->updateLatestMessage(errorMessage);
+      qWarning()
+          << "Error: " << reply->error()
+          << ", Message: " << reply->errorString() << ", Code: "
+          << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
+      const auto error_message = "Error: " + reply->errorString();
+      thread->updateLatestMessage(error_message);
     }
     reply->deleteLater();
   });
 }
 
-void ChatBackend::handleStreamResponse(Thread *thread, QNetworkReply *reply) {
+void ChatBackend::handleStreamResponse(Thread *thread,
+                                       QNetworkReply *reply) const {
   if (!thread) return;
   QByteArray data = reply->readAll();
   QStringList lines = QString(data).split("\n", Qt::SkipEmptyParts);
@@ -100,7 +108,7 @@ void ChatBackend::setModel(const QString &model) {
 }
 
 void ChatBackend::fetchModelList() {
-  QNetworkRequest request(QUrl("http://localhost:11434/api/tags"));
+  QNetworkRequest request(QUrl(QString("%1/api/tags").arg(OLLAMA_HOST)));
   QNetworkReply *reply = m_Manager->get(request);
   connect(reply, &QNetworkReply::finished, this, [this, reply]() {
     if (reply->error() == QNetworkReply::NoError) {
@@ -131,8 +139,6 @@ void ChatBackend::deleteThread(const int index) {
   m_ThreadList->deleteThread(source_index);
 }
 
-void ChatBackend::clearThreads() {
-  m_ThreadList->deleteAllThreads();
-}
+void ChatBackend::clearThreads() { m_ThreadList->deleteAllThreads(); }
 
 }  // namespace llm_chat
