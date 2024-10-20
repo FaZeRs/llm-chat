@@ -124,7 +124,7 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:afb20b2c47715849d1cd737c51407631e" id="r_afb20b2c47715849d1cd737c51407631e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb20b2c47715849d1cd737c51407631e">GET_SHORTCUT</a>(shortcut_name,  defaultValueFunction)</td></tr>
+<tr class="memitem:afb20b2c47715849d1cd737c51407631e" id="r_afb20b2c47715849d1cd737c51407631e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb20b2c47715849d1cd737c51407631e">GET_SHORTCUT</a>(shortcut_name,  defaultValueFunction)&#160;&#160;&#160;  return value(shortcut_name, defaultValueFunction()).toString();</td></tr>
 <tr class="separator:afb20b2c47715849d1cd737c51407631e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a723ad83cf6e7bc7adea6caad89185180" id="r_a723ad83cf6e7bc7adea6caad89185180"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a723ad83cf6e7bc7adea6caad89185180">SET_SHORTCUT</a>(shortcut_name,  defaultValueFunction,  notifySignal)</td></tr>
 <tr class="separator:a723ad83cf6e7bc7adea6caad89185180"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -144,13 +144,11 @@ Macros</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>defaultValueFunction</em></span>&#160;)</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>defaultValueFunction</em></span>&#160;)&#160;&#160;&#160;  return value(shortcut_name, defaultValueFunction()).toString();</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">  <span class="keywordflow">return</span> contains(shortcut_name) ? value(shortcut_name).toString() \</div>
-<div class="line">                                 : defaultValueFunction();</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a723ad83cf6e7bc7adea6caad89185180" name="a723ad83cf6e7bc7adea6caad89185180"></a>
@@ -176,15 +174,9 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">  <span class="keyword">const</span> QVariant existing_value = value(shortcut_name);                 \</div>
-<div class="line">  QString existing_string_value = defaultValueFunction();               \</div>
-<div class="line">  if (contains(shortcut_name)) {                                        \</div>
-<div class="line">    existing_string_value = existing_value.toString();                  \</div>
-<div class="line">  }                                                                     \</div>
-<div class="line">                                                                        \</div>
-<div class="line">  if (shortcut == existing_string_value) <span class="keywordflow">return</span>;                        \</div>
-<div class="line">                                                                        \</div>
-<div class="line">  setValue(shortcut_name, shortcut);                                    \</div>
+<b>Value:</b><div class="fragment"><div class="line">  <span class="keywordflow">if</span> (shortcut == value(shortcut_name, defaultValueFunction()).toString()) \</div>
+<div class="line">    <span class="keywordflow">return</span>;                                                                \</div>
+<div class="line">  setValue(shortcut_name, shortcut);                                       \</div>
 <div class="line">  emit notifySignal();</div>
 </div><!-- fragment -->
 </div>
