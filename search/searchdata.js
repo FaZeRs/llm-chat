@@ -9,8 +9,7 @@ var indexSectionsWithContent =
   6: "mt",
   7: "cit",
   8: "cdfhilmnoqstw",
-  9: "gs",
-  10: "cl"
+  9: "cl"
 };
 
 var indexSectionNames =
@@ -24,8 +23,7 @@ var indexSectionNames =
   6: "enums",
   7: "enumvalues",
   8: "properties",
-  9: "defines",
-  10: "pages"
+  9: "pages"
 };
 
 var indexSectionLabels =
@@ -39,7 +37,6 @@ var indexSectionLabels =
   6: "Enumerations",
   7: "Enumerator",
   8: "Properties",
-  9: "Macros",
-  10: "Pages"
+  9: "Pages"
 };
 

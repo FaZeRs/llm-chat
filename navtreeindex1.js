@@ -1,7 +1,6 @@
 var NAVTREEINDEX1 =
 {
 "globals.html":[3,1,0],
-"globals_defs.html":[3,1,2],
 "globals_func.html":[3,1,1],
 "hierarchy.html":[2,2],
 "index.html":[],
@@ -25,8 +24,6 @@ var NAVTREEINDEX1 =
 "parameters_8h.html":[3,0,0,1,2],
 "parameters_8h_source.html":[3,0,0,1,2],
 "settings_8cpp.html":[3,0,0,1,3],
-"settings_8cpp.html#a723ad83cf6e7bc7adea6caad89185180":[3,0,0,1,3,1],
-"settings_8cpp.html#afb20b2c47715849d1cd737c51407631e":[3,0,0,1,3,0],
 "settings_8h.html":[3,0,0,1,4],
 "settings_8h_source.html":[3,0,0,1,4],
 "thread_8cpp.html":[3,0,0,0,4],
