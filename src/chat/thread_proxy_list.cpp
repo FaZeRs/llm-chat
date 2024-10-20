@@ -24,11 +24,4 @@ bool ThreadProxyList::lessThan(const QModelIndex &left,
   return left_date_time > right_date_time;
 }
 
-// Thread *ThreadProxyList::get(const int index) const {
-//   if (index < 0 || index >= rowCount()) return nullptr;
-
-//   const auto model_index = this->index(index, 0);
-//   const auto source_index = mapToSource(model_index);
-// }
-
 }  // namespace llm_chat

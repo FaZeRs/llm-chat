@@ -79,7 +79,7 @@ class ChatBackend : public QObject {
   void sendRequestToOllama(Thread *thread, const QString &prompt);
   /// @brief Handles the response from the Ollama server.
   /// @param reply The response from the Ollama server.
-  void handleStreamResponse(Thread *thread, QNetworkReply *reply);
+  void handleStreamResponse(Thread *thread, QNetworkReply *reply) const;
 };
 
 }  // namespace llm_chat

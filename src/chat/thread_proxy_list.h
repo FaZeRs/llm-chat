@@ -4,8 +4,6 @@
 
 namespace llm_chat {
 
-// class Thread;
-
 /// @brief The ThreadProxyList class provides a sorted model for the chat
 class ThreadProxyList : public QSortFilterProxyModel {
   Q_OBJECT
@@ -14,8 +12,6 @@ class ThreadProxyList : public QSortFilterProxyModel {
   /// @brief Constructs a new ThreadProxyList object.
   /// @param parent The parent object.
   explicit ThreadProxyList(QObject *parent = nullptr);
-
-  // Q_INVOKABLE [[nodiscard]] Thread *get(const int index) const;
 
  protected:
   /// @brief Returns true if the left item is less than the right item.
