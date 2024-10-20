@@ -168,6 +168,8 @@ RowLayout {
                 id: sendButton
                 text: "\uf054"
                 font.family: "Font Awesome 6 Free Solid"
+                font.weight: 900
+                font.pixelSize: 18
                 onClicked: sendMessage()
             }
 
