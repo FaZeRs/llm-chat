@@ -77,14 +77,15 @@ void Thread::updateLatestMessage(const QString &text) {
 }
 
 void Thread::updateLatestMessage(const QJsonObject &json) {
-  if (!m_Messages.empty()) {
-    if (const auto content = json["response"].toString(); !content.isEmpty()) {
-      updateMessageText(m_Messages.size() - 1, content);
-    }
-    if (const auto context = json["context"].toArray().toVariantList();
-        !context.isEmpty()) {
-      updateMessageContext(m_Messages.size() - 1, context);
-    }
+  if (m_Messages.empty()) {
+    return;
+  }
+  if (const auto content = json["response"].toString(); !content.isEmpty()) {
+    updateMessageText(m_Messages.size() - 1, content);
+  }
+  if (const auto context = json["context"].toArray().toVariantList();
+      !context.isEmpty()) {
+    updateMessageContext(m_Messages.size() - 1, context);
   }
 }
 

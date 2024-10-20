@@ -1,8 +1,5 @@
 #pragma once
 
-#include <qtmetamacros.h>
-#include <qtypes.h>
-
 #include <QSettings>
 #include <QString>
 
