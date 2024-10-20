@@ -15,12 +15,12 @@ TEST_CASE("Test default values", "[Settings]") {
 
 TEST_CASE("Test language", "[Settings]") {
   llm_chat::Settings settings;
-  settings.setLanguage("fr");
-  REQUIRE(settings.language() == "fr");
+  settings.setLanguage(QString("fr"));
+  REQUIRE(settings.language() == QString("fr"));
   QSignalSpy spy(&settings, &llm_chat::Settings::languageChanged);
-  settings.setLanguage("de");
+  settings.setLanguage(QString("de"));
   REQUIRE(spy.count() == 1);
-  REQUIRE(settings.language() == "de");
+  REQUIRE(settings.language() == QString("de"));
 }
 
 TEST_CASE("Test window opacity", "[Settings]") {
