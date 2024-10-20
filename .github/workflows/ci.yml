@@ -129,7 +129,7 @@ jobs:
         shell: bash
         run: |
           ctest -C ${{ matrix.build_type }}
-          gcovr -j ${{ env.nproc }} --delete --root ../ --print-summary --xml-pretty --xml coverage.xml . --gcov-executable '${{ matrix.gcov_executable }}'
+          gcovr -j ${{ env.nproc }} --delete --root ../ . --gcov-executable '${{ matrix.gcov_executable }}'
 
       - name: Windows - Test and coverage
         if: ${{ contains(matrix.os, 'windows') && matrix.build_type == 'Debug' }}
@@ -164,7 +164,7 @@ jobs:
         uses: codecov/codecov-action@v4
         with:
           flags: ${{ runner.os }}
-          name: ${{ runner.os }}-coverage
+          name: ${{ runner.os }}-${{ matrix.compiler }}-${{ matrix.generator }}-${{ matrix.build_type }}-coverage
           files: ${{ runner.workspace }}/build/coverage.xml
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
