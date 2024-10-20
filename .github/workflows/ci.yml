@@ -90,7 +90,7 @@ jobs:
           ccache: ${{ contains(matrix.os, 'ubuntu') || contains(matrix.os, 'windows') }}
           clangtidy: ${{ contains(matrix.os, 'ubuntu') || contains(matrix.os, 'windows') }}
           cppcheck: ${{ contains(matrix.os, 'ubuntu') || contains(matrix.os, 'windows') }}
-          gcovr: ${{ contains(matrix.os, 'ubuntu') }}
+          gcovr: ${{ contains(matrix.os, 'ubuntu') && '8.2' || false }}
           opencppcoverage: ${{ contains(matrix.os, 'windows') }}
           doxygen: ${{ matrix.build_type == 'Release' && contains(matrix.os, 'ubuntu') }}
           graphviz: ${{ matrix.build_type == 'Release' && contains(matrix.os, 'ubuntu') }}
