@@ -37,6 +37,7 @@
         "ms-vscode.cmake-tools",
         "twxs.cmake",
         "josetr.cmake-language-support-vscode",
+        "cheshirekow.cmake-format",
         "ms-vscode.cpptools-themes",
         "ms-vscode.makefile-tools",
         "cschlosser.doxdocgen",
