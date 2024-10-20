@@ -1,5 +1,8 @@
 <map id="llm_chat::Settings::windowOpacityChanged" name="llm_chat::Settings::windowOpacityChanged">
-<area shape="rect" id="Node000001" title="Emitted when the window opacity is changed." alt="" coords="205,5,392,45"/>
-<area shape="rect" id="Node000002" href="$classllm__chat_1_1Settings.html#a34aaf6dc7fe9c205de69dc71ab76c045" title="Sets the current window opacity for the application." alt="" coords="5,5,157,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,28,157,28,157,23,192,23"/>
+<area shape="rect" id="Node000001" title="Emitted when the window opacity is changed." alt="" coords="348,35,535,75"/>
+<area shape="rect" id="Node000002" href="$classllm__chat_1_1Settings.html#a34aaf6dc7fe9c205de69dc71ab76c045" title="Sets the current window opacity for the application." alt="" coords="148,5,300,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="334,43,300,38,300,33,335,38"/>
+<area shape="rect" id="Node000003" href="$tst__settings_8cpp.html#afa4944155863b5df223df38ab12eaadf" title=" " alt="" coords="5,42,100,67"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="334,60,300,60,148,60,100,59,100,54,148,55,300,55,334,54"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="135,43,101,49,100,44,134,38"/>
 </map>

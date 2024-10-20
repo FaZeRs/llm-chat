@@ -1,5 +1,15 @@
 <map id="llm_chat::Thread::rowCount" name="llm_chat::Thread::rowCount">
-<area shape="rect" id="Node000001" title="Returns the number of rows under the given parent." alt="" coords="275,5,476,31"/>
-<area shape="rect" id="Node000002" href="$classllm__chat_1_1Thread.html#aec5638ae53473ed7d9918db4d60a5f7a" title="Adds a new message to the model." alt="" coords="5,5,227,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="261,21,227,21,227,15,261,15"/>
+<area shape="rect" id="Node000001" title="Returns the number of rows under the given parent." alt="" coords="417,68,619,93"/>
+<area shape="rect" id="Node000002" href="$classllm__chat_1_1Thread.html#aec5638ae53473ed7d9918db4d60a5f7a" title="Adds a new message to the model." alt="" coords="148,68,369,93"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="403,83,369,83,369,78,403,78"/>
+<area shape="rect" id="Node000003" href="$tst__chat__thread_8cpp.html#a6dd2e7534ba2ec91b05e3aae796ecb21" title=" " alt="" coords="5,5,100,31"/>
+<area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="433,68,369,58,100,25,100,20,370,53,434,63"/>
+<area shape="rect" id="Node000004" href="$tst__chat__thread_8cpp.html#a05f07c583eac73f030a43a5d1e954556" title=" " alt="" coords="5,153,100,179"/>
+<area shape="poly" id="edge7_Node000001_Node000004" title=" " alt="" coords="435,98,101,160,100,155,434,93"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="202,67,95,33,96,28,204,61"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="213,101,149,127,83,156,81,151,147,122,211,96"/>
+<area shape="rect" id="Node000005" href="$tst__chat__thread_8cpp.html#a5ae9eb7eb9bce825d5784e7dbd9ca04f" title=" " alt="" coords="5,55,100,80"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="134,75,100,73,101,68,134,70"/>
+<area shape="rect" id="Node000006" href="$tst__chat__thread_8cpp.html#a8a3124b4aa32bdc8049e4e5500b27cd5" title=" " alt="" coords="5,104,100,129"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="173,98,101,111,100,106,172,93"/>
 </map>

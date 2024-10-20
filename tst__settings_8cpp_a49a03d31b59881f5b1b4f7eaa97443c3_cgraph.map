@@ -1,0 +1,10 @@
+<map id="TEST_CASE" name="TEST_CASE">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,42,100,67"/>
+<area shape="rect" id="Node000002" href="$classllm__chat_1_1Settings.html#a0066617f9bd870ade08711ad6a181165" title="Emitted when the full screen shortcut is changed." alt="" coords="367,5,573,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,49,352,31,353,36,101,54"/>
+<area shape="rect" id="Node000003" href="$classllm__chat_1_1Settings.html#a57e93503eb392912cf52ebc53e39542c" title="Sets the current full screen shortcut for the application." alt="" coords="148,63,319,103"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="101,59,135,65,134,70,100,65"/>
+<area shape="poly" id="edge4_Node000003_Node000002" title=" " alt="" coords="316,60,373,46,375,51,317,65"/>
+<area shape="rect" id="Node000004" href="$classllm__chat_1_1Settings.html#a68dc63465d41a4a1501631a41523d777" title="Returns the default full screen shortcut for the application." alt="" coords="371,69,569,109"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="319,82,358,84,358,89,319,88"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="llm_chat::Thread::data" name="llm_chat::Thread::data">
+<area shape="rect" id="Node000001" title="Returns the data stored under the given role for the item referred to by the index." alt="" coords="148,55,316,80"/>
+<area shape="rect" id="Node000002" href="$tst__chat__thread_8cpp.html#a6dd2e7534ba2ec91b05e3aae796ecb21" title=" " alt="" coords="5,5,100,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,53,99,33,101,28,173,48"/>
+<area shape="rect" id="Node000003" href="$tst__chat__thread_8cpp.html#a5ae9eb7eb9bce825d5784e7dbd9ca04f" title=" " alt="" coords="5,55,100,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="134,70,100,70,100,65,134,65"/>
+<area shape="rect" id="Node000004" href="$tst__chat__thread_8cpp.html#a8a3124b4aa32bdc8049e4e5500b27cd5" title=" " alt="" coords="5,104,100,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="173,86,101,106,99,101,171,81"/>
+</map>

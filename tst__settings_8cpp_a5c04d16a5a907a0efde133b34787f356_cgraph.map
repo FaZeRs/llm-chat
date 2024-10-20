@@ -1,0 +1,10 @@
+<map id="TEST_CASE" name="TEST_CASE">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,42,100,67"/>
+<area shape="rect" id="Node000002" href="$classllm__chat_1_1Settings.html#ac43f971d34b67dfc21ccb343a2ef0f50" title="Emitted when the language is changed." alt="" coords="335,5,481,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,48,320,30,321,35,100,53"/>
+<area shape="rect" id="Node000003" href="$classllm__chat_1_1Settings.html#a5759e014bd8a211be9cec65e4f28abb7" title="Sets the current language for the application." alt="" coords="148,63,287,103"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="101,60,135,66,134,71,100,65"/>
+<area shape="poly" id="edge4_Node000003_Node000002" title=" " alt="" coords="284,60,327,47,328,52,285,65"/>
+<area shape="rect" id="Node000004" href="$classllm__chat_1_1Settings.html#a8473aa7d97a98ecb2d61f39c0d3e71ce" title="Returns the default language for the application." alt="" coords="339,69,477,109"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="287,82,325,84,325,89,287,88"/>
+</map>

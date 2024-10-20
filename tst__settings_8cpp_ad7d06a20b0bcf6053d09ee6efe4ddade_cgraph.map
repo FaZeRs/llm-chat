@@ -1,0 +1,10 @@
+<map id="TEST_CASE" name="TEST_CASE">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,42,100,67"/>
+<area shape="rect" id="Node000002" href="$classllm__chat_1_1Settings.html#af0030e9c4c952fa3253a95dd2ec2df2e" title="Emitted when the options shortcut is changed." alt="" coords="351,5,540,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,49,337,31,337,36,100,54"/>
+<area shape="rect" id="Node000003" href="$classllm__chat_1_1Settings.html#a34c867c8c8b5847cada71fe0e4cbb0ec" title="Sets the current options shortcut for the application." alt="" coords="148,63,303,103"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="100,60,135,65,134,71,100,65"/>
+<area shape="poly" id="edge4_Node000003_Node000002" title=" " alt="" coords="302,60,354,46,356,51,303,65"/>
+<area shape="rect" id="Node000004" href="$classllm__chat_1_1Settings.html#a8836def98eb3f395c253e83ada24503f" title="Returns the default options shortcut for the application." alt="" coords="355,69,535,109"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="303,82,342,84,341,89,303,88"/>
+</map>

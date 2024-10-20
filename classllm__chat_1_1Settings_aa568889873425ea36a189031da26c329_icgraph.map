@@ -1,5 +1,8 @@
 <map id="llm_chat::Settings::fpsVisibleChanged" name="llm_chat::Settings::fpsVisibleChanged">
-<area shape="rect" id="Node000001" title="Emitted when the FPS visibility is changed." alt="" coords="192,5,343,45"/>
-<area shape="rect" id="Node000002" href="$classllm__chat_1_1Settings.html#a57fae91799323fe2bf3712c680c9afe6" title="Sets the current FPS visibility for the application." alt="" coords="5,5,144,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="179,28,145,28,145,23,179,23"/>
+<area shape="rect" id="Node000001" title="Emitted when the FPS visibility is changed." alt="" coords="335,35,485,75"/>
+<area shape="rect" id="Node000002" href="$classllm__chat_1_1Settings.html#a57fae91799323fe2bf3712c680c9afe6" title="Sets the current FPS visibility for the application." alt="" coords="148,5,287,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="321,44,287,39,288,33,322,39"/>
+<area shape="rect" id="Node000003" href="$tst__settings_8cpp.html#ad92d094058c332311f48714e87bab29d" title=" " alt="" coords="5,42,100,67"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="321,59,287,60,148,60,100,59,100,54,148,55,287,55,321,54"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="135,43,101,49,100,44,134,37"/>
 </map>

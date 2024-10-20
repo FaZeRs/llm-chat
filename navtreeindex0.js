@@ -28,9 +28,6 @@ var NAVTREEINDEX0 =
 "classKeySequenceEditor.html#ae0513df1612227c7c003181d2c83630c":[2,0,1,12],
 "classKeySequenceEditor.html#ae8579a8b9bf44b864b5ba21dafb74562":[2,0,1,8],
 "classKeySequenceEditor.html#aee0fe2808c51f62b42c0a0e233eaab5c":[2,0,1,15],
-"classSettingsTest.html":[2,0,2],
-"classTestChatMessage.html":[2,0,3],
-"classTestChatThread.html":[2,0,4],
 "classes.html":[2,1],
 "classllm__chat_1_1Application.html":[1,0,0,1],
 "classllm__chat_1_1Application.html":[2,0,0,0],
@@ -249,5 +246,8 @@ var NAVTREEINDEX0 =
 "dir_aebb8dcc11953d78e620bbef0b9e2183.html":[3,0,0,1],
 "files.html":[3,0],
 "functions.html":[2,3,0],
-"functions_enum.html":[2,3,2]
+"functions_enum.html":[2,3,2],
+"functions_eval.html":[2,3,3],
+"functions_func.html":[2,3,1],
+"functions_prop.html":[2,3,4]
 };

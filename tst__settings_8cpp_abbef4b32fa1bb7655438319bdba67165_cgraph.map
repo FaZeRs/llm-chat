@@ -1,0 +1,10 @@
+<map id="TEST_CASE" name="TEST_CASE">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,42,100,67"/>
+<area shape="rect" id="Node000002" href="$classllm__chat_1_1Settings.html#af6582a0c88d6912d895f9463ee62845c" title="Emitted when the quit shortcut is changed." alt="" coords="335,5,501,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,48,321,30,321,36,101,54"/>
+<area shape="rect" id="Node000003" href="$classllm__chat_1_1Settings.html#a9728c290bc0427482ff18a15d86ebecb" title="Sets the current quit shortcut for the application." alt="" coords="148,63,287,103"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="101,60,135,66,134,71,100,65"/>
+<area shape="poly" id="edge4_Node000003_Node000002" title=" " alt="" coords="286,60,334,47,335,52,288,65"/>
+<area shape="rect" id="Node000004" href="$classllm__chat_1_1Settings.html#a9ecf0b092162b318f57f3811c16045b2" title="Returns the default quit shortcut for the application." alt="" coords="339,69,497,109"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="287,82,326,84,326,89,287,88"/>
+</map>

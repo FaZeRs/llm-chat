@@ -100,25 +100,247 @@ $(function(){initNavTree('tst__settings_8cpp.html',''); initResizable(true); });
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">tst_settings.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="settings_8h_source.html">settings.h</a>&gt;</code><br />
 <code>#include &lt;QSignalSpy&gt;</code><br />
-<code>#include &lt;QTest&gt;</code><br />
-<code>#include &quot;tst_settings.moc&quot;</code><br />
+<code>#include &lt;catch2/catch_test_macros.hpp&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for tst_settings.cpp:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="tst__settings_8cpp__incl.svg" width="659" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="tst__settings_8cpp__incl.svg" width="511" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSettingsTest.html">SettingsTest</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ad9d8c2ff30fae39b4ceba73773acf481" id="r_ad9d8c2ff30fae39b4ceba73773acf481"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9d8c2ff30fae39b4ceba73773acf481">TEST_CASE</a> (&quot;Test default values&quot;, &quot;[Settings]&quot;)</td></tr>
+<tr class="separator:ad9d8c2ff30fae39b4ceba73773acf481"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c04d16a5a907a0efde133b34787f356" id="r_a5c04d16a5a907a0efde133b34787f356"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5c04d16a5a907a0efde133b34787f356">TEST_CASE</a> (&quot;Test language&quot;, &quot;[Settings]&quot;)</td></tr>
+<tr class="separator:a5c04d16a5a907a0efde133b34787f356"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa4944155863b5df223df38ab12eaadf" id="r_afa4944155863b5df223df38ab12eaadf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa4944155863b5df223df38ab12eaadf">TEST_CASE</a> (&quot;Test window opacity&quot;, &quot;[Settings]&quot;)</td></tr>
+<tr class="separator:afa4944155863b5df223df38ab12eaadf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad92d094058c332311f48714e87bab29d" id="r_ad92d094058c332311f48714e87bab29d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad92d094058c332311f48714e87bab29d">TEST_CASE</a> (&quot;Test fps visible&quot;, &quot;[Settings]&quot;)</td></tr>
+<tr class="separator:ad92d094058c332311f48714e87bab29d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbef4b32fa1bb7655438319bdba67165" id="r_abbef4b32fa1bb7655438319bdba67165"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abbef4b32fa1bb7655438319bdba67165">TEST_CASE</a> (&quot;Test quit shortcut&quot;, &quot;[Settings]&quot;)</td></tr>
+<tr class="separator:abbef4b32fa1bb7655438319bdba67165"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7d06a20b0bcf6053d09ee6efe4ddade" id="r_ad7d06a20b0bcf6053d09ee6efe4ddade"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7d06a20b0bcf6053d09ee6efe4ddade">TEST_CASE</a> (&quot;Test options shortcut&quot;, &quot;[Settings]&quot;)</td></tr>
+<tr class="separator:ad7d06a20b0bcf6053d09ee6efe4ddade"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49a03d31b59881f5b1b4f7eaa97443c3" id="r_a49a03d31b59881f5b1b4f7eaa97443c3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a49a03d31b59881f5b1b4f7eaa97443c3">TEST_CASE</a> (&quot;Test full screen shortcut&quot;, &quot;[Settings]&quot;)</td></tr>
+<tr class="separator:a49a03d31b59881f5b1b4f7eaa97443c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21102cab53cc05cb45a7ceda014091d7" id="r_a21102cab53cc05cb45a7ceda014091d7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21102cab53cc05cb45a7ceda014091d7">TEST_CASE</a> (&quot;Test reset shortcuts to defaults&quot;, &quot;[Settings]&quot;)</td></tr>
+<tr class="separator:a21102cab53cc05cb45a7ceda014091d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ad9d8c2ff30fae39b4ceba73773acf481" name="ad9d8c2ff30fae39b4ceba73773acf481"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9d8c2ff30fae39b4ceba73773acf481">&#9670;&#160;</a></span>TEST_CASE() <span class="overload">[1/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;Test default values&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span>[Settings]&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="tst__settings_8cpp_ad9d8c2ff30fae39b4ceba73773acf481_cgraph.svg" width="351" height="371"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="ad92d094058c332311f48714e87bab29d" name="ad92d094058c332311f48714e87bab29d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad92d094058c332311f48714e87bab29d">&#9670;&#160;</a></span>TEST_CASE() <span class="overload">[2/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;Test fps visible&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span>[Settings]&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="tst__settings_8cpp_ad92d094058c332311f48714e87bab29d_cgraph.svg" width="491" height="143"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a49a03d31b59881f5b1b4f7eaa97443c3" name="a49a03d31b59881f5b1b4f7eaa97443c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49a03d31b59881f5b1b4f7eaa97443c3">&#9670;&#160;</a></span>TEST_CASE() <span class="overload">[3/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;Test full screen shortcut&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span>[Settings]&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="tst__settings_8cpp_a49a03d31b59881f5b1b4f7eaa97443c3_cgraph.svg" width="579" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a5c04d16a5a907a0efde133b34787f356" name="a5c04d16a5a907a0efde133b34787f356"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c04d16a5a907a0efde133b34787f356">&#9670;&#160;</a></span>TEST_CASE() <span class="overload">[4/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;Test language&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span>[Settings]&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="tst__settings_8cpp_a5c04d16a5a907a0efde133b34787f356_cgraph.svg" width="487" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="ad7d06a20b0bcf6053d09ee6efe4ddade" name="ad7d06a20b0bcf6053d09ee6efe4ddade"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7d06a20b0bcf6053d09ee6efe4ddade">&#9670;&#160;</a></span>TEST_CASE() <span class="overload">[5/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;Test options shortcut&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span>[Settings]&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="tst__settings_8cpp_ad7d06a20b0bcf6053d09ee6efe4ddade_cgraph.svg" width="546" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="abbef4b32fa1bb7655438319bdba67165" name="abbef4b32fa1bb7655438319bdba67165"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbef4b32fa1bb7655438319bdba67165">&#9670;&#160;</a></span>TEST_CASE() <span class="overload">[6/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;Test quit shortcut&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span>[Settings]&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="tst__settings_8cpp_abbef4b32fa1bb7655438319bdba67165_cgraph.svg" width="507" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a21102cab53cc05cb45a7ceda014091d7" name="a21102cab53cc05cb45a7ceda014091d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21102cab53cc05cb45a7ceda014091d7">&#9670;&#160;</a></span>TEST_CASE() <span class="overload">[7/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;Test reset shortcuts to defaults&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span>[Settings]&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="tst__settings_8cpp_a21102cab53cc05cb45a7ceda014091d7_cgraph.svg" width="602" height="411"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="afa4944155863b5df223df38ab12eaadf" name="afa4944155863b5df223df38ab12eaadf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa4944155863b5df223df38ab12eaadf">&#9670;&#160;</a></span>TEST_CASE() <span class="overload">[8/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">&quot;Test window opacity&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;&quot;</td>          <td class="paramname"><span class="paramname"><em></em></span>[Settings]&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="tst__settings_8cpp_afa4944155863b5df223df38ab12eaadf_cgraph.svg" width="540" height="80"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

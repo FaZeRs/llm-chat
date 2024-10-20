@@ -1,7 +1,14 @@
 <map id="llm_chat::Settings::defaultQuitShortcut" name="llm_chat::Settings::defaultQuitShortcut">
-<area shape="rect" id="Node000001" title="Returns the default quit shortcut for the application." alt="" coords="192,37,349,77"/>
-<area shape="rect" id="Node000002" href="$classllm__chat_1_1Settings.html#aaa9dedc95fab6a917833987d789940a7" title="Returns the current quit shortcut for the application." alt="" coords="5,5,144,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="178,45,144,39,145,34,179,40"/>
-<area shape="rect" id="Node000003" href="$classllm__chat_1_1Settings.html#a9728c290bc0427482ff18a15d86ebecb" title="Sets the current quit shortcut for the application." alt="" coords="5,69,144,109"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="179,75,145,81,144,75,178,70"/>
+<area shape="rect" id="Node000001" title="Returns the default quit shortcut for the application." alt="" coords="335,99,492,139"/>
+<area shape="rect" id="Node000002" href="$classllm__chat_1_1Settings.html#aaa9dedc95fab6a917833987d789940a7" title="Returns the current quit shortcut for the application." alt="" coords="148,5,287,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="358,95,286,60,260,48,263,43,288,55,361,90"/>
+<area shape="rect" id="Node000003" href="$classllm__chat_1_1Settings.html#a9728c290bc0427482ff18a15d86ebecb" title="Sets the current quit shortcut for the application." alt="" coords="148,69,287,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="321,108,286,102,287,97,321,102"/>
+<area shape="rect" id="Node000005" href="$tst__settings_8cpp.html#a21102cab53cc05cb45a7ceda014091d7" title=" " alt="" coords="5,130,100,155"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="321,127,101,142,100,137,320,122"/>
+<area shape="rect" id="Node000006" href="$tst__settings_8cpp.html#ad9d8c2ff30fae39b4ceba73773acf481" title=" " alt="" coords="170,185,265,210"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="351,146,251,187,249,182,349,141"/>
+<area shape="rect" id="Node000004" href="$tst__settings_8cpp.html#abbef4b32fa1bb7655438319bdba67165" title=" " alt="" coords="5,77,100,102"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="134,92,100,92,100,87,134,87"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="143,116,93,133,92,127,141,111"/>
 </map>

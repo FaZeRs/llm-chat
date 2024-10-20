@@ -1,0 +1,13 @@
+<map id="TEST_CASE" name="TEST_CASE">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,41,100,66"/>
+<area shape="rect" id="Node000002" href="$classllm__chat_1_1Settings.html#aa568889873425ea36a189031da26c329" title="Emitted when the FPS visibility is changed." alt="" coords="335,5,485,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="83,38,113,27,148,19,237,11,321,14,321,19,237,17,148,24,115,32,84,43"/>
+<area shape="rect" id="Node000003" href="$classllm__chat_1_1Settings.html#aa6ebf65deff8f0c40c524a9ce17c01af" title="Returns the current FPS visibility for the application." alt="" coords="148,97,287,137"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="87,64,153,90,151,95,85,69"/>
+<area shape="rect" id="Node000005" href="$classllm__chat_1_1Settings.html#a57fae91799323fe2bf3712c680c9afe6" title="Sets the current FPS visibility for the application." alt="" coords="148,33,287,73"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="100,51,134,51,134,56,100,56"/>
+<area shape="rect" id="Node000004" href="$classllm__chat_1_1Settings.html#a1a471ce5adfd0d6cc80c75809f44092c" title="Returns the default FPS visibility for the application." alt="" coords="339,83,481,123"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="287,109,325,106,325,112,287,115"/>
+<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="286,41,321,36,322,41,287,46"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="287,68,326,78,325,84,286,74"/>
+</map>

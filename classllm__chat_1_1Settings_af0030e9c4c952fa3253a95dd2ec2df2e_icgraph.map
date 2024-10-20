@@ -1,5 +1,10 @@
 <map id="llm_chat::Settings::optionsShortcutChanged" name="llm_chat::Settings::optionsShortcutChanged">
-<area shape="rect" id="Node000001" title="Emitted when the options shortcut is changed." alt="" coords="208,5,397,45"/>
-<area shape="rect" id="Node000002" href="$classllm__chat_1_1Settings.html#a34c867c8c8b5847cada71fe0e4cbb0ec" title="Sets the current options shortcut for the application." alt="" coords="5,5,160,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="194,28,160,28,160,23,194,23"/>
+<area shape="rect" id="Node000001" title="Emitted when the options shortcut is changed." alt="" coords="351,23,540,63"/>
+<area shape="rect" id="Node000002" href="$classllm__chat_1_1Settings.html#a34c867c8c8b5847cada71fe0e4cbb0ec" title="Sets the current options shortcut for the application." alt="" coords="148,51,303,91"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="337,60,303,64,302,59,337,54"/>
+<area shape="rect" id="Node000003" href="$tst__settings_8cpp.html#ad7d06a20b0bcf6053d09ee6efe4ddade" title=" " alt="" coords="5,5,100,31"/>
+<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="337,39,100,24,100,18,337,34"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="146,50,94,33,95,28,148,45"/>
+<area shape="rect" id="Node000004" href="$tst__settings_8cpp.html#a21102cab53cc05cb45a7ceda014091d7" title=" " alt="" coords="5,59,100,84"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="135,74,100,74,100,69,135,69"/>
 </map>

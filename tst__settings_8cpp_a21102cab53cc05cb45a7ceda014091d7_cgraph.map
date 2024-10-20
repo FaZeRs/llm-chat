@@ -1,0 +1,26 @@
+<map id="TEST_CASE" name="TEST_CASE">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,185,100,210"/>
+<area shape="rect" id="Node000002" href="$classllm__chat_1_1Settings.html#a68dc63465d41a4a1501631a41523d777" title="Returns the default full screen shortcut for the application." alt="" coords="394,5,591,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="55,183,66,154,85,117,111,79,147,48,203,24,263,10,324,5,380,7,380,12,324,11,264,15,204,29,149,53,115,82,89,119,71,156,60,185"/>
+<area shape="rect" id="Node000003" href="$classllm__chat_1_1Settings.html#a8836def98eb3f395c253e83ada24503f" title="Returns the default options shortcut for the application." alt="" coords="403,153,583,193"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="83,182,113,171,148,163,210,156,273,153,389,158,389,164,273,159,210,161,148,168,115,176,84,187"/>
+<area shape="rect" id="Node000004" href="$classllm__chat_1_1Settings.html#a9ecf0b092162b318f57f3811c16045b2" title="Returns the default quit shortcut for the application." alt="" coords="414,301,571,341"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="64,208,97,251,121,273,149,291,211,313,277,325,342,329,400,328,400,333,342,334,277,330,210,318,147,296,118,278,93,255,60,212"/>
+<area shape="rect" id="Node000005" href="$classllm__chat_1_1Settings.html#af8c523da867f8009b4ccd3cfaeea3b36" title="Resets all shortcuts to their default values." alt="" coords="148,177,341,217"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="100,195,134,195,134,200,100,200"/>
+<area shape="rect" id="Node000006" href="$classllm__chat_1_1Settings.html#a57e93503eb392912cf52ebc53e39542c" title="Sets the current full screen shortcut for the application." alt="" coords="159,63,330,103"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="65,183,101,152,147,119,172,106,175,111,149,124,104,156,69,187"/>
+<area shape="rect" id="Node000008" href="$classllm__chat_1_1Settings.html#a34c867c8c8b5847cada71fe0e4cbb0ec" title="Sets the current options shortcut for the application." alt="" coords="167,241,322,281"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="92,208,149,227,171,234,170,239,147,232,91,213"/>
+<area shape="rect" id="Node000010" href="$classllm__chat_1_1Settings.html#a9728c290bc0427482ff18a15d86ebecb" title="Sets the current quit shortcut for the application." alt="" coords="175,356,314,396"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="62,209,94,269,119,304,150,335,168,347,165,352,146,339,115,308,89,271,57,211"/>
+<area shape="poly" id="edge6_Node000006_Node000002" title=" " alt="" coords="329,60,392,46,393,51,331,66"/>
+<area shape="rect" id="Node000007" href="$classllm__chat_1_1Settings.html#a0066617f9bd870ade08711ad6a181165" title="Emitted when the full screen shortcut is changed." alt="" coords="389,69,596,109"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="330,82,376,84,376,89,330,88"/>
+<area shape="poly" id="edge9_Node000008_Node000003" title=" " alt="" coords="306,239,340,227,425,196,427,201,342,232,307,244"/>
+<area shape="rect" id="Node000009" href="$classllm__chat_1_1Settings.html#af0030e9c4c952fa3253a95dd2ec2df2e" title="Emitted when the options shortcut is changed." alt="" coords="398,237,587,277"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="322,257,384,256,384,262,322,263"/>
+<area shape="poly" id="edge12_Node000010_Node000004" title=" " alt="" coords="314,358,400,339,401,344,315,363"/>
+<area shape="rect" id="Node000011" href="$classllm__chat_1_1Settings.html#af6582a0c88d6912d895f9463ee62845c" title="Emitted when the quit shortcut is changed." alt="" coords="409,365,576,405"/>
+<area shape="poly" id="edge13_Node000010_Node000011" title=" " alt="" coords="314,376,396,379,395,384,314,381"/>
+</map>

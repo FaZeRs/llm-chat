@@ -1,7 +1,14 @@
 <map id="llm_chat::Settings::defaultFullScreenShortcut" name="llm_chat::Settings::defaultFullScreenShortcut">
-<area shape="rect" id="Node000001" title="Returns the default full screen shortcut for the application." alt="" coords="224,37,421,77"/>
-<area shape="rect" id="Node000002" href="$classllm__chat_1_1Settings.html#a95a054e57600769d23d184ed35057883" title="Returns the current full screen shortcut for the application." alt="" coords="16,5,165,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="210,44,165,38,166,33,211,39"/>
-<area shape="rect" id="Node000003" href="$classllm__chat_1_1Settings.html#a57e93503eb392912cf52ebc53e39542c" title="Sets the current full screen shortcut for the application." alt="" coords="5,69,176,109"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="210,75,177,80,176,75,210,70"/>
+<area shape="rect" id="Node000001" title="Returns the default full screen shortcut for the application." alt="" coords="367,99,564,139"/>
+<area shape="rect" id="Node000002" href="$classllm__chat_1_1Settings.html#a95a054e57600769d23d184ed35057883" title="Returns the current full screen shortcut for the application." alt="" coords="159,5,308,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="404,96,318,60,287,48,289,43,320,55,406,91"/>
+<area shape="rect" id="Node000003" href="$classllm__chat_1_1Settings.html#a57e93503eb392912cf52ebc53e39542c" title="Sets the current full screen shortcut for the application." alt="" coords="148,69,319,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="352,107,319,103,319,97,353,102"/>
+<area shape="rect" id="Node000005" href="$tst__settings_8cpp.html#a21102cab53cc05cb45a7ceda014091d7" title=" " alt="" coords="5,130,100,155"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="353,128,101,143,100,137,353,123"/>
+<area shape="rect" id="Node000006" href="$tst__settings_8cpp.html#ad9d8c2ff30fae39b4ceba73773acf481" title=" " alt="" coords="186,185,281,210"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="394,146,273,187,271,182,392,141"/>
+<area shape="rect" id="Node000004" href="$tst__settings_8cpp.html#a49a03d31b59881f5b1b4f7eaa97443c3" title=" " alt="" coords="5,77,100,102"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="134,92,100,92,100,87,134,87"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="153,116,97,133,96,127,151,111"/>
 </map>

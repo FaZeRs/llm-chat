@@ -15,7 +15,6 @@ var searchData=
   ['settings_12',['settings',['../classllm__chat_1_1Application.html#a29fab1c16a4072ed18ee05bf3aa18294',1,'llm_chat::Application']]],
   ['settings_2ecpp_13',['settings.cpp',['../settings_8cpp.html',1,'']]],
   ['settings_2eh_14',['settings.h',['../settings_8h.html',1,'']]],
-  ['settingstest_15',['SettingsTest',['../classSettingsTest.html',1,'']]],
-  ['setwindowopacity_16',['setWindowOpacity',['../classllm__chat_1_1Settings.html#a34aaf6dc7fe9c205de69dc71ab76c045',1,'llm_chat::Settings']]],
-  ['sortedthreads_17',['sortedThreads',['../classllm__chat_1_1ChatBackend.html#a7eb09df07c34eb8426ad9c738b5fd820',1,'llm_chat::ChatBackend']]]
+  ['setwindowopacity_15',['setWindowOpacity',['../classllm__chat_1_1Settings.html#a34aaf6dc7fe9c205de69dc71ab76c045',1,'llm_chat::Settings']]],
+  ['sortedthreads_16',['sortedThreads',['../classllm__chat_1_1ChatBackend.html#a7eb09df07c34eb8426ad9c738b5fd820',1,'llm_chat::ChatBackend']]]
 ];

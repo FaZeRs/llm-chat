@@ -1,0 +1,10 @@
+<map id="TEST_CASE" name="TEST_CASE">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,100,81"/>
+<area shape="rect" id="Node000002" href="$classllm__chat_1_1Thread.html#aec5638ae53473ed7d9918db4d60a5f7a" title="Adds a new message to the model." alt="" coords="148,5,369,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,55,193,31,194,37,101,60"/>
+<area shape="rect" id="Node000003" href="$classllm__chat_1_1Thread.html#ad23ed053b4dd9334a73115052b3a9d0c" title="Returns the number of rows under the given parent." alt="" coords="417,31,619,56"/>
+<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="100,63,403,47,404,52,100,69"/>
+<area shape="rect" id="Node000004" href="$classllm__chat_1_1Thread.html#a5d6b691962bf5ee1778f1d737305d731" title="Returns the data stored under the given role for the item referred to by the index." alt="" coords="175,107,343,132"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="101,78,194,101,193,106,99,83"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="370,26,404,30,404,35,369,31"/>
+</map>

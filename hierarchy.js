@@ -6,9 +6,6 @@ var hierarchy =
       [ "llm_chat::ThreadList", "classllm__chat_1_1ThreadList.html", null ]
     ] ],
     [ "QObject", null, [
-      [ "SettingsTest", "classSettingsTest.html", null ],
-      [ "TestChatMessage", "classTestChatMessage.html", null ],
-      [ "TestChatThread", "classTestChatThread.html", null ],
       [ "llm_chat::ChatBackend", "classllm__chat_1_1ChatBackend.html", null ],
       [ "llm_chat::Message", "classllm__chat_1_1Message.html", null ]
     ] ],

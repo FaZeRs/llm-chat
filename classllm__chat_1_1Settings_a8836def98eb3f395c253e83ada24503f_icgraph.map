@@ -1,7 +1,14 @@
 <map id="llm_chat::Settings::defaultOptionsShortcut" name="llm_chat::Settings::defaultOptionsShortcut">
-<area shape="rect" id="Node000001" title="Returns the default options shortcut for the application." alt="" coords="208,37,388,77"/>
-<area shape="rect" id="Node000002" href="$classllm__chat_1_1Settings.html#ad47e92f616054fa802cdf1cb6f4f95e7" title="Returns the current options shortcut for the application." alt="" coords="13,5,152,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="194,45,152,38,153,33,195,39"/>
-<area shape="rect" id="Node000003" href="$classllm__chat_1_1Settings.html#a34c867c8c8b5847cada71fe0e4cbb0ec" title="Sets the current options shortcut for the application." alt="" coords="5,69,160,109"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="195,75,161,80,160,75,194,70"/>
+<area shape="rect" id="Node000001" title="Returns the default options shortcut for the application." alt="" coords="351,99,531,139"/>
+<area shape="rect" id="Node000002" href="$classllm__chat_1_1Settings.html#ad47e92f616054fa802cdf1cb6f4f95e7" title="Returns the current options shortcut for the application." alt="" coords="156,5,295,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="382,95,302,60,274,48,276,43,304,55,384,90"/>
+<area shape="rect" id="Node000003" href="$classllm__chat_1_1Settings.html#a34c867c8c8b5847cada71fe0e4cbb0ec" title="Sets the current options shortcut for the application." alt="" coords="148,69,303,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="337,107,303,103,303,97,337,102"/>
+<area shape="rect" id="Node000005" href="$tst__settings_8cpp.html#a21102cab53cc05cb45a7ceda014091d7" title=" " alt="" coords="5,130,100,155"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="337,128,101,142,100,137,337,122"/>
+<area shape="rect" id="Node000006" href="$tst__settings_8cpp.html#ad9d8c2ff30fae39b4ceba73773acf481" title=" " alt="" coords="178,185,273,210"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="373,146,262,187,261,182,372,141"/>
+<area shape="rect" id="Node000004" href="$tst__settings_8cpp.html#ad7d06a20b0bcf6053d09ee6efe4ddade" title=" " alt="" coords="5,77,100,102"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="135,92,100,92,100,87,135,87"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="148,116,95,133,94,127,146,111"/>
 </map>
