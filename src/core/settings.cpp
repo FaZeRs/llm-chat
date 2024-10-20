@@ -13,8 +13,7 @@ Settings::Settings(QObject *parent) : QSettings(parent) {}
 QString Settings::defaultLanguage() const { return "en_GB"; }
 
 QString Settings::language() const {
-  return contains("language") ? value("language").toString()
-                              : defaultLanguage();
+  return value("language", defaultLanguage()).toString();
 }
 
 void Settings::setLanguage(const QString &language) {
@@ -27,8 +26,7 @@ void Settings::setLanguage(const QString &language) {
 qreal Settings::defaultWindowOpacity() const { return 1.0; }
 
 qreal Settings::windowOpacity() const {
-  return contains("windowOpacity") ? value("windowOpacity").toReal()
-                                   : defaultWindowOpacity();
+  return value("windowOpacity", defaultWindowOpacity()).toReal();
 }
 
 void Settings::setWindowOpacity(const qreal opacity) {
@@ -53,32 +51,21 @@ void Settings::setFpsVisible(const bool fps_visible) {
 }
 
 void Settings::resetShortcutsToDefaults() {
-  static QVector<QString> all_shortcuts;
-  if (all_shortcuts.isEmpty()) {
-    all_shortcuts.append(QLatin1String("quitShortcut"));
-    all_shortcuts.append(QLatin1String("optionsShortcut"));
-    all_shortcuts.append(QLatin1String("fullScreenShortcut"));
-  }
-
-  foreach (const QString &shortcut, all_shortcuts) {
+  static const QVector<QString> all_shortcuts = {
+      QLatin1String("quitShortcut"), QLatin1String("optionsShortcut"),
+      QLatin1String("fullScreenShortcut")};
+  for (const auto &shortcut : all_shortcuts) {
     remove(shortcut);
   }
 }
 
-#define GET_SHORTCUT(shortcut_name, defaultValueFunction)          \
-  return contains(shortcut_name) ? value(shortcut_name).toString() \
-                                 : defaultValueFunction();
+#define GET_SHORTCUT(shortcut_name, defaultValueFunction) \
+  return value(shortcut_name, defaultValueFunction()).toString();
 
-#define SET_SHORTCUT(shortcut_name, defaultValueFunction, notifySignal) \
-  const QVariant existing_value = value(shortcut_name);                 \
-  QString existing_string_value = defaultValueFunction();               \
-  if (contains(shortcut_name)) {                                        \
-    existing_string_value = existing_value.toString();                  \
-  }                                                                     \
-                                                                        \
-  if (shortcut == existing_string_value) return;                        \
-                                                                        \
-  setValue(shortcut_name, shortcut);                                    \
+#define SET_SHORTCUT(shortcut_name, defaultValueFunction, notifySignal)    \
+  if (shortcut == value(shortcut_name, defaultValueFunction()).toString()) \
+    return;                                                                \
+  setValue(shortcut_name, shortcut);                                       \
   emit notifySignal();
 
 QString Settings::defaultQuitShortcut() const {
@@ -88,6 +75,7 @@ QString Settings::defaultQuitShortcut() const {
 QString Settings::quitShortcut() const {
   GET_SHORTCUT("quitShortcut", defaultQuitShortcut)
 }
+
 void Settings::setQuitShortcut(const QString &shortcut){
     SET_SHORTCUT("quitShortcut", defaultQuitShortcut, quitShortcutChanged)}
 
