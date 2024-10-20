@@ -4,7 +4,6 @@ project(unit-tests LANGUAGES CXX)
 
 find_package(Qt6 REQUIRED COMPONENTS Core Test)
 
-enable_testing(true)
 add_executable(unit-tests tst_settings.cpp tst_chat_thread.cpp tst_chat_message.cpp)
 
 cpmaddpackage(
