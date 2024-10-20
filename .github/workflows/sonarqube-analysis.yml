@@ -14,11 +14,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: ["cpp"]
-        # CodeQL supports [ 'cpp', 'csharp', 'go', 'java', 'javascript', 'python', 'ruby' ]
-        # Learn more about CodeQL language support at https://git.io/codeql-language-support
         compiler:
-          # you can specify the version after `-` like "llvm-13.0.0".
           - gcc-14
         generator:
           - "Ninja Multi-Config"
@@ -28,9 +24,6 @@ jobs:
           - linux
         qt_arch:
           - linux_gcc_64
-
-    env:
-      BUILD_WRAPPER_OUT_DIR: build_wrapper_output_directory # Directory where build-wrapper output will be placed
     steps:
       - name: Install dependencies
         run: sudo apt-get install -y libcurl4-openssl-dev libxcb-xinerama0 libxkbcommon-dev libxkbcommon-x11-dev
@@ -78,19 +71,20 @@ jobs:
         uses: SonarSource/sonarcloud-github-c-cpp@v3
 
       - name: Create Build Environment
-        run: cmake -E make_directory ./build
+        run: cmake -E make_directory ${{ runner.workspace }}/build
 
       - name: Configure CMake
+        working-directory: ${{ runner.workspace }}/build
         run: |
-          cmake -S . -B build -G "${{ matrix.generator }}" -DCMAKE_BUILD_TYPE:STRING=${{ matrix.build_type }} -DENABLE_DOCS:BOOL=FALSE -DCOMPILE_TESTS:BOOL=FALSE -DENABLE_CLANG_TIDY:BOOL=FALSE -DENABLE_CPPCHECK:BOOL=FALSE -DENABLE_INCLUDE_WHAT_YOU_USE:BOOL=FALSE
+          cmake -G "${{ matrix.generator }}" $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE:STRING=${{ matrix.build_type }} -DCOMPILE_TESTS:BOOL=FALSE -DENABLE_COVERAGE:BOOL=FALSE -DENABLE_DOCS:BOOL=FALSE -DENABLE_CLANG_TIDY:BOOL=FALSE -DENABLE_CPPCHECK:BOOL=FALSE -DENABLE_INCLUDE_WHAT_YOU_USE:BOOL=FALSE
 
-      - name: Run build-wrapper
-        run: |
-          build-wrapper-linux-x86-64 --out-dir ${{ env.BUILD_WRAPPER_OUT_DIR }} cmake --build ./build --parallel ${{ env.nproc }} --config ${{matrix.build_type}}
+      - name: Build
+        working-directory: ${{ runner.workspace }}/build
+        run: cmake --build . --parallel ${{ env.nproc }} --config ${{ matrix.build_type }}
 
       - name: Run sonar-scanner
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
-          sonar-scanner --define sonar.cfamily.build-wrapper-output="${{ env.BUILD_WRAPPER_OUT_DIR }}"
+          sonar-scanner --define sonar.cfamily.compile-commands="${{ runner.workspace }}/build/compile_commands.json"
