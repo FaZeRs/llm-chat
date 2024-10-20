@@ -59,49 +59,54 @@ void Settings::resetShortcutsToDefaults() {
   }
 }
 
-#define GET_SHORTCUT(shortcut_name, defaultValueFunction) \
-  return value(shortcut_name, defaultValueFunction()).toString();
-
-#define SET_SHORTCUT(shortcut_name, defaultValueFunction, notifySignal)    \
-  if (shortcut == value(shortcut_name, defaultValueFunction()).toString()) \
-    return;                                                                \
-  setValue(shortcut_name, shortcut);                                       \
-  emit notifySignal();
-
 QString Settings::defaultQuitShortcut() const {
   return QKeySequence(Qt::CTRL | Qt::Key_Q).toString();
 }
 
 QString Settings::quitShortcut() const {
-  GET_SHORTCUT("quitShortcut", defaultQuitShortcut)
+  return value("quitShortcut", defaultQuitShortcut()).toString();
 }
 
-void Settings::setQuitShortcut(const QString &shortcut){
-    SET_SHORTCUT("quitShortcut", defaultQuitShortcut, quitShortcutChanged)}
+void Settings::setQuitShortcut(const QString &shortcut) {
+  if (shortcut == value("quitShortcut", defaultQuitShortcut()).toString()) {
+    return;
+  }
+  setValue("quitShortcut", shortcut);
+  emit quitShortcutChanged();
+}
 
 QString Settings::defaultOptionsShortcut() const {
   return QKeySequence(Qt::CTRL | Qt::Key_O).toString();
 }
 
 QString Settings::optionsShortcut() const {
-  GET_SHORTCUT("optionsShortcut", defaultOptionsShortcut)
+  return value("optionsShortcut", defaultOptionsShortcut()).toString();
 }
 
-void Settings::setOptionsShortcut(const QString &shortcut){
-    SET_SHORTCUT("optionsShortcut", defaultOptionsShortcut,
-                 optionsShortcutChanged)}
+void Settings::setOptionsShortcut(const QString &shortcut) {
+  if (shortcut ==
+      value("optionsShortcut", defaultOptionsShortcut()).toString()) {
+    return;
+  }
+  setValue("optionsShortcut", shortcut);
+  emit optionsShortcutChanged();
+}
 
 QString Settings::defaultFullScreenShortcut() const {
   return QKeySequence(Qt::CTRL | Qt::Key_F).toString();
 }
 
 QString Settings::fullScreenShortcut() const {
-  GET_SHORTCUT("fullScreenShortcut", defaultFullScreenShortcut)
+  return value("fullScreenShortcut", defaultFullScreenShortcut()).toString();
 }
 
 void Settings::setFullScreenShortcut(const QString &shortcut) {
-  SET_SHORTCUT("fullScreenShortcut", defaultFullScreenShortcut,
-               fullScreenShortcutChanged)
+  if (shortcut ==
+      value("fullScreenShortcut", defaultFullScreenShortcut()).toString()) {
+    return;
+  }
+  setValue("fullScreenShortcut", shortcut);
+  emit fullScreenShortcutChanged();
 }
 
 }  // namespace llm_chat
