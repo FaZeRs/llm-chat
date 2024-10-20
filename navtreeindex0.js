@@ -5,6 +5,7 @@ var NAVTREEINDEX0 =
 "application_8h.html":[3,0,0,1,1],
 "application_8h_source.html":[3,0,0,1,1],
 "backend_8cpp.html":[3,0,0,0,0],
+"backend_8cpp.html#af04da3e106729f73b4b8f77f2b70fe66":[3,0,0,0,0,0],
 "backend_8h.html":[3,0,0,0,1],
 "backend_8h_source.html":[3,0,0,0,1],
 "classKeySequenceEditor.html":[2,0,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "dir_aebb8dcc11953d78e620bbef0b9e2183.html":[3,0,0,1],
 "files.html":[3,0],
 "functions.html":[2,3,0],
-"functions_enum.html":[2,3,2],
-"functions_eval.html":[2,3,3]
+"functions_enum.html":[2,3,2]
 };

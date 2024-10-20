@@ -7,5 +7,6 @@ var namespacellm__chat =
     [ "Settings", "classllm__chat_1_1Settings.html", "classllm__chat_1_1Settings" ],
     [ "Thread", "classllm__chat_1_1Thread.html", "classllm__chat_1_1Thread" ],
     [ "ThreadList", "classllm__chat_1_1ThreadList.html", "classllm__chat_1_1ThreadList" ],
-    [ "ThreadProxyList", "classllm__chat_1_1ThreadProxyList.html", "classllm__chat_1_1ThreadProxyList" ]
+    [ "ThreadProxyList", "classllm__chat_1_1ThreadProxyList.html", "classllm__chat_1_1ThreadProxyList" ],
+    [ "OLLAMA_HOST", "namespacellm__chat.html#af04da3e106729f73b4b8f77f2b70fe66", null ]
 ];
