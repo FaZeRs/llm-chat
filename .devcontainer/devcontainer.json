@@ -37,7 +37,6 @@
         "ms-vscode.cpptools",
         "ms-vscode.cmake-tools",
         "twxs.cmake",
-        "josetr.cmake-language-support-vscode",
         "cheshirekow.cmake-format",
         "jeff-hykin.better-cpp-syntax",
         "ms-vscode.makefile-tools",

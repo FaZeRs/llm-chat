@@ -10,9 +10,9 @@ LABEL version="1.0"
 ARG VARIANT
 RUN if [ "$VARIANT" = "noble" ]; then \
         if id "ubuntu" &>/dev/null; then \
-            echo "Deleting user 'ubuntu'  for $VARIANT" && userdel -f -r ubuntu || echo "Failed to delete ubuntu user for $VARIANT"; \  
+            echo "Deleting user 'ubuntu'  for $VARIANT" && userdel -f -r ubuntu || echo "Failed to delete ubuntu user for $VARIANT"; \
         else \
-            echo "User 'ubuntu' does not exist for $VARIANT"; \ 
+            echo "User 'ubuntu' does not exist for $VARIANT"; \
         fi; \
     fi
 
@@ -140,7 +140,7 @@ RUN aqt install-qt --outputdir ${QT_PATH} ${QT_HOST} ${QT_TARGET} ${QT_VERSION} 
 RUN aqt install-tool --outputdir ${QT_PATH} ${QT_HOST} ${QT_TARGET} tools_ifw
 
 ENV PATH /opt/qt/${QT_VERSION}/gcc_64/bin:$PATH
-ENV PATH /opt/qt/Tools/QtInstallerFramework/4.8/bin:$PATH
+ENV PATH /opt/qt/Tools/QtInstallerFramework/4.7/bin:$PATH
 
 ## Cleanup cached apt data we don't need anymore
 RUN apt-get autoremove -y && apt-get clean && \
