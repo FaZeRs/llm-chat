@@ -39,7 +39,7 @@
         "twxs.cmake",
         "josetr.cmake-language-support-vscode",
         "cheshirekow.cmake-format",
-        "ms-vscode.cpptools-themes",
+        "jeff-hykin.better-cpp-syntax",
         "ms-vscode.makefile-tools",
         "cschlosser.doxdocgen",
         "eamodio.gitlens",
@@ -50,10 +50,10 @@
         "xaver.clang-format",
         "sonarsource.sonarlint-vscode",
         "felgo.felgo",
-        "josetr.cmake-language-support-vscode",
         "bbenoist.qml",
         "delgan.qml-format",
-        "ms-azuretools.vscode-docker"
+        "ms-azuretools.vscode-docker",
+        "editorconfig.editorconfig"
       ]
     }
   },
