@@ -150,7 +150,7 @@ jobs:
         if: ${{ startsWith(github.ref, 'refs/tags/') && matrix.build_type == 'Release' }}
         with:
           files: |
-            build/LLM-Chat-*${{ github.ref_name }}*-*.*
+            build/LLM-Chat-${{ github.ref_name }}-*.*
 
       - name: Publish to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
