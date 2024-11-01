@@ -16,24 +16,27 @@ ChatBackend::ChatBackend(QObject *parent) : QObject(parent) {
   fetchModelList();
 
   m_ThreadProxyList->setSourceModel(m_ThreadList.get());
-
-  connect(this, &ChatBackend::sendMessage, this, &ChatBackend::onSendMessage,
-          Qt::QueuedConnection);
 }
 
-void ChatBackend::onSendMessage(const int index, const QString &message) {
+void ChatBackend::sendMessage(const int index, const QString &message) {
   Thread *thread = nullptr;
+  bool new_thread = false;
   if (index >= 0) {
     const auto proxy_index = m_ThreadProxyList->index(index, 0);
     const auto source_index = m_ThreadProxyList->mapToSource(proxy_index);
     thread = m_ThreadList->getThread(source_index);
+    if (!thread) {
+      thread = m_ThreadList->createNewThread();
+      new_thread = true;
+    }
     thread->addMessage(message, true, {});
   } else {
     thread = m_ThreadList->createNewThread();
     thread->addMessage(message, true, {});
-    emit newThreadCreated();
+    new_thread = true;
   }
   sendRequestToOllama(thread, message);
+  if (new_thread) emit newThreadCreated();
 }
 
 void ChatBackend::sendRequestToOllama(Thread *thread, const QString &prompt) {

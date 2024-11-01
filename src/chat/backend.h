@@ -34,6 +34,11 @@ class ChatBackend : public QObject {
   [[nodiscard]] QString model() const;
   /// @brief Get the list of available models.
   [[nodiscard]] QStringList modelList() const { return m_ModelList; }
+  /// @brief Set the network manager.
+  /// @param manager The network manager to set.
+  void setNetworkManager(QNetworkAccessManager *manager) {
+    m_Manager.reset(manager);
+  }
 
  public Q_SLOTS:
   /// @brief Sets the model name.
@@ -52,15 +57,11 @@ class ChatBackend : public QObject {
   void deleteThread(const int index);
   /// @brief Removes all the threads.
   void clearThreads();
-
- private Q_SLOTS:
   /// @brief Sends a message to the Ollama server.
   /// @param message The message to send.
-  void onSendMessage(const int index, const QString &message);
+  void sendMessage(const int index, const QString &message);
 
  signals:
-  /// @brief Emitted
-  void sendMessage(const int index, const QString &message);
   /// @brief Emitted when the list of models is fetched.
   void modelListFetched();
   /// @brief Emitted when the model is changed.
