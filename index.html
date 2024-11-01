@@ -102,16 +102,103 @@ $(function(){initNavTree('index.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">LLM Chat </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md_README"></a> </p>
+<div class="textblock"><p><a class="anchor" id="md_README"></a> A modern desktop chat application built with Qt 6 for interacting with Large Language Models through Ollama.</p>
 <h1><a class="anchor" id="autotoc_md1"></a>
-Build</h1>
+Features</h1>
+<ul>
+<li>🎨 Modern Material Design UI</li>
+<li>💬 Chat interface with message history</li>
+<li>🔄 Real-time streaming responses</li>
+<li>🌙 Dark mode</li>
+<li>⚡ High-performance C++ backend</li>
+<li>⚙️ Customizable settings</li>
+<li>🔍 Full-text search capabilities</li>
+<li>🖥️ Cross-platform support (Windows, Linux)</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Prerequisites</h1>
+<ul>
+<li>Qt 6.8.0 or higher</li>
+<li>CMake 3.27 or higher</li>
+<li>C++17 compatible compiler</li>
+<li>Ollama server running locally</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Build Instructions</h1>
+<ol type="1">
+<li>Clone the repository:</li>
+</ol>
+<div class="fragment"><div class="line">git clone https://github.com/FaZeRs/llm-chat.git</div>
+</div><!-- fragment --><ol type="1">
+<li>Build the project:</li>
+</ol>
 <div class="fragment"><div class="line">cmake -E make_directory build &amp;&amp; cd build</div>
-<div class="line">cmake -G Ninja .. -DCMAKE_BUILD_TYPE=Release</div>
-<div class="line">cmake --build . --parallel --config Release</div>
-<div class="line">ctest -C Release --output-on-failure --output-junit test-results.xml</div>
-<div class="line">cmake --install .</div>
-<div class="line">cmake --build . --config Release --target package</div>
-</div><!-- fragment --> </div></div><!-- PageDoc -->
+<div class="line">cmake ..</div>
+<div class="line">make</div>
+</div><!-- fragment --><ol type="1">
+<li>Run the tests:</li>
+</ol>
+<div class="fragment"><div class="line">ctest --output-on-failure</div>
+</div><!-- fragment --><ol type="1">
+<li>Install the application:</li>
+</ol>
+<div class="fragment"><div class="line">cmake --install .</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md4"></a>
+Development Setup</h1>
+<p>The project includes a complete development environment using Dev Containers. To use it:</p>
+<ol type="1">
+<li>Install Docker and VS Code with the Dev Containers extension</li>
+<li>Open the project in VS Code</li>
+<li>Click "Reopen in Container" when prompted</li>
+</ol>
+<p>The container includes all necessary development tools:</p><ul>
+<li>GCC 14 / Clang 18</li>
+<li>CMake</li>
+<li>Qt 6.8.0</li>
+<li>Code analysis tools (clang-tidy, cppcheck)</li>
+<li>Formatting tools (clang-format, cmake-format)</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md5"></a>
+Project Structure</h1>
+<ul>
+<li><code>src/</code> - Source code<ul>
+<li><code>core/</code> - Core application functionality</li>
+<li><code>chat/</code> - Chat backend and models</li>
+<li><code>quick/</code> - Qt Quick UI components</li>
+<li><code>qml/</code> - QML UI files</li>
+</ul>
+</li>
+<li><code>tests/</code> - Unit tests</li>
+<li><code>cmake/</code> - CMake modules and configuration</li>
+<li><code>.github/</code> - CI/CD workflows</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md6"></a>
+Contributing</h1>
+<ol type="1">
+<li>Fork the repository</li>
+<li>Create a feature branch</li>
+<li>Commit your changes</li>
+<li>Push to the branch</li>
+<li>Create a Pull Request</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md7"></a>
+License</h1>
+<p>This project is licensed under the MIT License - see the LICENSE file for details.</p>
+<h1><a class="anchor" id="autotoc_md8"></a>
+Acknowledgments</h1>
+<ul>
+<li>Qt Framework</li>
+<li>Ollama</li>
+<li>Catch2 Testing Framework</li>
+<li>CPM.cmake</li>
+<li>Material Design</li>
+<li>Font Awesome Icons</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md9"></a>
+Contact</h1>
+<p>Nauris Linde - <a href="https://github.com/FaZeRs">@FaZeRs</a></p>
+<p>Project Link: <a href="https://github.com/FaZeRs/llm-chat">https://github.com/FaZeRs/llm-chat</a> </p>
+</div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"/>
 </div><!-- contents -->
 </div><!-- doc-content -->

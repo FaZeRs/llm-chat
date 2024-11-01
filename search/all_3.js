@@ -9,6 +9,7 @@ var searchData=
   ['defaultwindowopacity_6',['defaultWindowOpacity',['../classllm__chat_1_1Settings.html#a0452110a8d81edd8999d83f3b87d2d37',1,'llm_chat::Settings']]],
   ['deleteallthreads_7',['deleteAllThreads',['../classllm__chat_1_1ThreadList.html#a78aa6b6ca26e666aa4e86d28da36c598',1,'llm_chat::ThreadList']]],
   ['deletethread_8',['deleteThread',['../classllm__chat_1_1ChatBackend.html#a7cc0c0cba4def9335c391b4a7872c8c0',1,'llm_chat::ChatBackend::deleteThread()'],['../classllm__chat_1_1ThreadList.html#a14315239c4bd8d0bf9da34b110ad16f1',1,'llm_chat::ThreadList::deleteThread()']]],
-  ['displaysequence_9',['displaySequence',['../classKeySequenceEditor.html#aee0fe2808c51f62b42c0a0e233eaab5c',1,'KeySequenceEditor::displaySequence'],['../classKeySequenceEditor.html#a1ae3ddaeb400ad0f8d5ad89fab14078e',1,'KeySequenceEditor::displaySequence() const']]],
-  ['displaysequencechanged_10',['displaySequenceChanged',['../classKeySequenceEditor.html#ab6bdf43e6b9bc3f54de37095cf25f2d1',1,'KeySequenceEditor']]]
+  ['development_20setup_9',['Development Setup',['../index.html#autotoc_md4',1,'']]],
+  ['displaysequence_10',['displaySequence',['../classKeySequenceEditor.html#aee0fe2808c51f62b42c0a0e233eaab5c',1,'KeySequenceEditor::displaySequence'],['../classKeySequenceEditor.html#a1ae3ddaeb400ad0f8d5ad89fab14078e',1,'KeySequenceEditor::displaySequence() const']]],
+  ['displaysequencechanged_11',['displaySequenceChanged',['../classKeySequenceEditor.html#ab6bdf43e6b9bc3f54de37095cf25f2d1',1,'KeySequenceEditor']]]
 ];
