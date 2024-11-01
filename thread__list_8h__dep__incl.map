@@ -1,15 +1,17 @@
 <map id="src/chat/thread_list.h" name="src/chat/thread_list.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="280,5,439,31"/>
-<area shape="rect" id="Node000002" href="$backend_8h.html" title=" " alt="" coords="105,86,248,111"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="321,39,204,88,202,84,319,34"/>
-<area shape="rect" id="Node000007" href="$thread__list_8cpp.html" title=" " alt="" coords="273,86,446,111"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="362,44,362,86,357,86,357,44"/>
-<area shape="rect" id="Node000008" href="$thread__proxy__list_8cpp.html" title=" " alt="" coords="470,79,633,119"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="401,33,506,76,504,81,399,38"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="372,5,531,31"/>
+<area shape="rect" id="Node000002" href="$backend_8h.html" title=" " alt="" coords="197,86,340,111"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="413,39,296,88,294,84,411,34"/>
+<area shape="rect" id="Node000008" href="$thread__list_8cpp.html" title=" " alt="" coords="365,86,538,111"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="454,44,454,86,449,86,449,44"/>
+<area shape="rect" id="Node000009" href="$thread__proxy__list_8cpp.html" title=" " alt="" coords="562,79,725,119"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="493,33,598,76,596,81,491,38"/>
 <area shape="rect" id="Node000003" href="$backend_8cpp.html" title=" " alt="" coords="5,167,164,192"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="154,122,100,168,97,164,151,118"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="231,119,112,169,110,164,229,114"/>
 <area shape="rect" id="Node000004" href="$application_8h.html" title=" " alt="" coords="188,167,349,192"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="202,118,257,164,253,168,199,122"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="271,125,271,166,266,166,266,125"/>
+<area shape="rect" id="Node000007" href="$tst__chat__backend_8cpp.html" title=" " alt="" coords="373,167,572,192"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="312,114,444,164,442,169,310,119"/>
 <area shape="rect" id="Node000005" href="$application_8cpp.html" title=" " alt="" coords="98,240,274,265"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="247,203,201,242,198,238,243,199"/>
 <area shape="rect" id="Node000006" href="$main_8cpp.html" title=" " alt="" coords="299,240,404,265"/>

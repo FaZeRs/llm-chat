@@ -1,0 +1,7 @@
+<map id="llm_chat::ChatBackend::threadProxyList" name="llm_chat::ChatBackend::threadProxyList">
+<area shape="rect" id="Node000001" title="Returns the sorted chat threads." alt="" coords="419,5,589,45"/>
+<area shape="rect" id="Node000002" href="$classTestChatBackend.html#af562d2160fc789f9f0037353d08fd9c4" title=" " alt="" coords="148,13,371,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="405,28,371,28,371,23,405,23"/>
+<area shape="rect" id="Node000003" href="$tst__chat__backend_8cpp.html#a6816054bbf7d4d7f2445f46164344ce4" title=" " alt="" coords="5,13,100,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="134,28,100,28,100,23,134,23"/>
+</map>

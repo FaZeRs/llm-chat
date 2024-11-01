@@ -9,5 +9,6 @@ var annotated_dup =
       [ "ThreadList", "classllm__chat_1_1ThreadList.html", "classllm__chat_1_1ThreadList" ],
       [ "ThreadProxyList", "classllm__chat_1_1ThreadProxyList.html", "classllm__chat_1_1ThreadProxyList" ]
     ] ],
-    [ "KeySequenceEditor", "classKeySequenceEditor.html", "classKeySequenceEditor" ]
+    [ "KeySequenceEditor", "classKeySequenceEditor.html", "classKeySequenceEditor" ],
+    [ "TestChatBackend", "classTestChatBackend.html", "classTestChatBackend" ]
 ];

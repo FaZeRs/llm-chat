@@ -12,6 +12,7 @@ var classllm__chat_1_1ChatBackend =
     [ "newThreadCreated", "classllm__chat_1_1ChatBackend.html#a0475fb238ffc3bcb7f5c302418cba889", null ],
     [ "sendMessage", "classllm__chat_1_1ChatBackend.html#aba6d494c5dc8d5e44c07923d24f020b7", null ],
     [ "setModel", "classllm__chat_1_1ChatBackend.html#a1ef4ab1213d40fd60cd6449ae9fd22f5", null ],
+    [ "setNetworkManager", "classllm__chat_1_1ChatBackend.html#a356aa689715099936674ecaa596bf351", null ],
     [ "threadList", "classllm__chat_1_1ChatBackend.html#a485f83026181715e22e94971b6d691a9", null ],
     [ "threadProxyList", "classllm__chat_1_1ChatBackend.html#a7f21be8825905cc619abfe0c51a73f45", null ],
     [ "model", "classllm__chat_1_1ChatBackend.html#ac172c50863f53f5fd662d2316e348027", null ],

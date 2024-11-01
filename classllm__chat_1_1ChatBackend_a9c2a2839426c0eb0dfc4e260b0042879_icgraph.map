@@ -1,0 +1,5 @@
+<map id="llm_chat::ChatBackend::getThread" name="llm_chat::ChatBackend::getThread">
+<area shape="rect" id="Node000001" title="Returns the thread at the given index." alt="" coords="148,5,319,45"/>
+<area shape="rect" id="Node000002" href="$tst__chat__backend_8cpp.html#a620e4af469adb1307d92dc038838fc1a" title=" " alt="" coords="5,13,100,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="134,28,100,28,100,23,134,23"/>
+</map>
