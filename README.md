@@ -2,6 +2,8 @@
 
 A modern desktop chat application built with Qt 6 for interacting with Large Language Models through Ollama.
 
+![Screenshot](docs/screenshot.png)
+
 ## Features
 
 - 🎨 Modern Material Design UI
