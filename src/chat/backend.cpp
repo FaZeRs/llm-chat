@@ -70,7 +70,8 @@ void ChatBackend::sendRequestToOllama(Thread *thread, const QString &prompt) {
     json["system"] = systemPrompt();
   }
 
-  QNetworkReply *reply = m_Manager->post(request, QJsonDocument(json).toJson());
+  QNetworkReply *reply = m_Manager->post(
+      request, QJsonDocument(json).toJson(QJsonDocument::Compact));
 
   thread->addMessage("", false, {});
 
