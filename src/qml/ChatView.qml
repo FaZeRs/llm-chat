@@ -125,9 +125,13 @@ RowLayout {
             clip: true
             model: chat.getThread(threadList.currentIndex)
             delegate: Rectangle {
-                x: model.isUser ? 0 : chatThread.width - width
                 width: Math.min(messageText.implicitWidth + 24, (chatThread.width * 0.8))
                 height: messageText.implicitHeight + 20
+                anchors {
+                    left: model.isUser ? undefined : parent.left
+                    right: model.isUser ? parent.right : undefined
+                    margins: 10
+                }
                 gradient: Gradient {
                     orientation: Gradient.Horizontal
                     GradientStop {
