@@ -12,6 +12,7 @@ var classllm__chat_1_1ChatBackend =
     [ "newThreadCreated", "classllm__chat_1_1ChatBackend.html#a0475fb238ffc3bcb7f5c302418cba889", null ],
     [ "ollamaServerUrl", "classllm__chat_1_1ChatBackend.html#af7aed9a440c31d403b3d6ccd2a237090", null ],
     [ "ollamaServerUrlChanged", "classllm__chat_1_1ChatBackend.html#a68c336c17a262344cac86b6c31a7ed82", null ],
+    [ "retryLatestMessage", "classllm__chat_1_1ChatBackend.html#ae25dae432287fe85911999968cbafa02", null ],
     [ "sendMessage", "classllm__chat_1_1ChatBackend.html#aba6d494c5dc8d5e44c07923d24f020b7", null ],
     [ "setModel", "classllm__chat_1_1ChatBackend.html#a1ef4ab1213d40fd60cd6449ae9fd22f5", null ],
     [ "setOllamaServerUrl", "classllm__chat_1_1ChatBackend.html#aaea9260f932bf9f307bf63abdfcf18c4", null ],

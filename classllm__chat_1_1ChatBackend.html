@@ -150,6 +150,9 @@ Public Slots</h2></td></tr>
 <tr class="memitem:aaea9260f932bf9f307bf63abdfcf18c4" id="r_aaea9260f932bf9f307bf63abdfcf18c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaea9260f932bf9f307bf63abdfcf18c4">setOllamaServerUrl</a> (const QString &amp;url)</td></tr>
 <tr class="memdesc:aaea9260f932bf9f307bf63abdfcf18c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the ollama server url.  <br /></td></tr>
 <tr class="separator:aaea9260f932bf9f307bf63abdfcf18c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae25dae432287fe85911999968cbafa02" id="r_ae25dae432287fe85911999968cbafa02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae25dae432287fe85911999968cbafa02">retryLatestMessage</a> (const int index)</td></tr>
+<tr class="memdesc:ae25dae432287fe85911999968cbafa02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retries the latest message.  <br /></td></tr>
+<tr class="separator:ae25dae432287fe85911999968cbafa02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
 Signals</h2></td></tr>
@@ -597,6 +600,39 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Emitted when the ollama server url is changed. </p>
+
+</div>
+</div>
+<a id="ae25dae432287fe85911999968cbafa02" name="ae25dae432287fe85911999968cbafa02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae25dae432287fe85911999968cbafa02">&#9670;&#160;</a></span>retryLatestMessage</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void llm_chat::ChatBackend::retryLatestMessage </td>
+          <td>(</td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retries the latest message. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The index of the thread in proxy model. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

@@ -11,6 +11,7 @@ var classllm__chat_1_1Thread =
     [ "createdAt", "classllm__chat_1_1Thread.html#a321058fae2af36a500f49dbb3696ca60", null ],
     [ "data", "classllm__chat_1_1Thread.html#a5d6b691962bf5ee1778f1d737305d731", null ],
     [ "messages", "classllm__chat_1_1Thread.html#a7ee68d9bb2a638b3c1d4fdd1a76298ca", null ],
+    [ "removeLatestMessage", "classllm__chat_1_1Thread.html#a1382a738ed0523694c63760bf887dae0", null ],
     [ "roleNames", "classllm__chat_1_1Thread.html#ae438a74449d75f090c3d4817e8bdfb45", null ],
     [ "rowCount", "classllm__chat_1_1Thread.html#ad23ed053b4dd9334a73115052b3a9d0c", null ],
     [ "updateLatestMessage", "classllm__chat_1_1Thread.html#ae66dd5c32459f0cb7ccf3132c34b3006", null ],
