@@ -93,11 +93,11 @@ void ChatBackend::sendRequestToOllama(Thread *thread, const QString &prompt) {
 void ChatBackend::handleStreamResponse(Thread *thread,
                                        QNetworkReply *reply) const {
   if (!thread) return;
-  QByteArray data = reply->readAll();
-  QStringList lines = QString(data).split("\n", Qt::SkipEmptyParts);
+  const auto data = reply->readAll();
+  const auto lines = QString(data).split("\n", Qt::SkipEmptyParts);
 
-  for (const QString &line : lines) {
-    QJsonDocument json_response = QJsonDocument::fromJson(line.toUtf8());
+  for (const auto &line : lines) {
+    const auto json_response = QJsonDocument::fromJson(line.toUtf8());
     thread->updateLatestMessage(json_response.object());
   }
 }
@@ -120,10 +120,10 @@ void ChatBackend::fetchModelList() {
   QNetworkReply *reply = m_Manager->get(request);
   connect(reply, &QNetworkReply::finished, this, [this, reply]() {
     if (reply->error() == QNetworkReply::NoError) {
-      QJsonDocument json_response = QJsonDocument::fromJson(reply->readAll());
-      QJsonArray json_array = json_response.object()["models"].toArray();
+      const auto json_response = QJsonDocument::fromJson(reply->readAll());
+      const auto json_array = json_response.object()["models"].toArray();
       QStringList model_list;
-      for (const QJsonValue &value : json_array) {
+      for (const auto &value : json_array) {
         model_list.append(value.toObject()["name"].toString());
       }
       m_ModelList = model_list;
