@@ -166,7 +166,7 @@ RowLayout {
                             font.pixelSize: 12
                             font.weight: 900
                             focusPolicy: Qt.NoFocus
-                            visible: index === chatThread.count - 1
+                            visible: index === chatThread.count - 1 && model.finished
 
                             ToolTip.visible: hovered
                             ToolTip.delay: 800

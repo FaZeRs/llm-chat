@@ -17,7 +17,12 @@ class Thread : public QAbstractListModel {
 
  public:
   /// @brief The data roles for the model.
-  enum MessageRoles { TextRole = Qt::UserRole + 1, IsUserRole, ContextRole };
+  enum MessageRoles {
+    TextRole = Qt::UserRole + 1,
+    IsUserRole,
+    ContextRole,
+    FinishedRole
+  };
 
   /// @brief Constructs a new Thread object.
   /// @param parent The parent object.
@@ -40,8 +45,10 @@ class Thread : public QAbstractListModel {
   /// @param text The message text.
   /// @param is_user Whether the message is from the user.
   /// @param context The message context.
+  /// @param in_progress Whether the message is in progress.
   Q_INVOKABLE void addMessage(const QString &text, bool is_user,
-                              const QVector<QVariant> &context);
+                              const QVector<QVariant> &context = {},
+                              const bool in_progress = false);
 
   /// @brief Returns the list of messages.
   /// @return The list of messages.
@@ -50,14 +57,6 @@ class Thread : public QAbstractListModel {
   }
   /// @brief Clears the list of messages.
   void clearMessages();
-
-  /// @brief Update latest message text
-  /// @param text The message text.
-  void updateLatestMessage(const QString &text);
-
-  /// @brief Update latest message from json
-  /// @param json The json object.
-  void updateLatestMessage(const QJsonObject &json);
 
   /// @brief Returns the creation time of the chat thread.
   /// @return The creation time of the chat thread.
@@ -71,16 +70,6 @@ class Thread : public QAbstractListModel {
  private:
   QList<Message *> m_Messages;
   QDateTime m_CreatedAt;
-
-  /// @brief Updates the text of a message.
-  /// @param index The index of the message.
-  /// @param new_text The new text of the message.
-  void updateMessageText(const qsizetype index, const QString &new_text);
-  /// @brief Updates the context of a message.
-  /// @param index The index of the message.
-  /// @param new_context The new context of the message.
-  void updateMessageContext(const qsizetype index,
-                            const QVector<QVariant> &new_context);
 };
 
 }  // namespace llm_chat

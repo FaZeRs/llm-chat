@@ -64,8 +64,8 @@ class ChatBackend : public QObject {
   /// @brief Removes all the threads.
   void clearThreads();
   /// @brief Sends a message to the Ollama server.
-  /// @param message The message to send.
-  void sendMessage(const int index, const QString &message);
+  /// @param prompt The message to send.
+  void sendMessage(const int index, const QString &prompt);
   /// @brief Set the system prompt.
   /// @param prompt The system prompt to set.
   void setSystemPrompt(const QString &prompt);
@@ -99,6 +99,7 @@ class ChatBackend : public QObject {
   /// @param prompt The prompt to send.
   void sendRequestToOllama(Thread *thread, const QString &prompt);
   /// @brief Handles the response from the Ollama server.
+  /// @param thread The thread to update.
   /// @param reply The response from the Ollama server.
   void handleStreamResponse(Thread *thread, QNetworkReply *reply) const;
 };

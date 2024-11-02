@@ -19,7 +19,7 @@ ChatBackend::ChatBackend(QObject *parent) : QObject(parent) {
   m_Manager->connectToHost(ollamaServerUrl());
 }
 
-void ChatBackend::sendMessage(const int index, const QString &message) {
+void ChatBackend::sendMessage(const int index, const QString &prompt) {
   auto [thread, is_new_thread] = [&]() -> std::pair<Thread *, bool> {
     if (index >= 0) {
       if (auto existing_thread =
@@ -31,8 +31,15 @@ void ChatBackend::sendMessage(const int index, const QString &message) {
     return {m_ThreadList->createNewThread(), true};
   }();
 
-  thread->addMessage(message, true, {});
-  sendRequestToOllama(thread, message);
+  if (!thread->messages().empty()) {
+    const auto &message = thread->messages().last();
+    if (message && message->inProgress()) {
+      return;
+    }
+  }
+
+  thread->addMessage(prompt, true);
+  sendRequestToOllama(thread, prompt);
   if (is_new_thread) emit newThreadCreated();
 }
 
@@ -69,24 +76,40 @@ void ChatBackend::sendRequestToOllama(Thread *thread, const QString &prompt) {
   auto *reply = m_Manager->post(
       request, QJsonDocument(json).toJson(QJsonDocument::Compact));
 
-  thread->addMessage({}, false, {});
+  thread->addMessage({}, false, {}, true);
 
   connect(reply, &QNetworkReply::readyRead, this,
           [this, thread, reply]() { handleStreamResponse(thread, reply); });
 
   connect(reply, &QNetworkReply::errorOccurred, this,
           [thread, reply](QNetworkReply::NetworkError error) {
-            thread->updateLatestMessage(
-                "Error: " + reply->errorString() +
-                ", Code: " + QString::number(static_cast<int>(error)));
+            auto &message = thread->messages().last();
+            if (message) {
+              message->setText("Error: " + reply->errorString() + ", Code: " +
+                               QString::number(static_cast<int>(error)));
+              const auto msg_index = thread->index(thread->rowCount() - 1, 0);
+              emit thread->dataChanged(msg_index, msg_index,
+                                       {Thread::TextRole});
+            }
           });
 
-  connect(reply, &QNetworkReply::finished, reply, &QObject::deleteLater);
+  connect(reply, &QNetworkReply::finished, this, [thread, reply]() {
+    auto &message = thread->messages().last();
+    if (message) {
+      message->setInProgress(false);
+      const auto msg_index = thread->index(thread->rowCount() - 1, 0);
+      emit thread->dataChanged(msg_index, msg_index, {Thread::FinishedRole});
+    }
+    reply->deleteLater();
+  });
 }
 
 void ChatBackend::handleStreamResponse(Thread *thread,
                                        QNetworkReply *reply) const {
-  if (!thread || thread->messages().isEmpty()) return;
+  if (!thread) return;
+
+  auto &message = thread->messages().last();
+  if (!message) return;
 
   const auto data = reply->readAll();
   const auto lines =
@@ -97,7 +120,10 @@ void ChatBackend::handleStreamResponse(Thread *thread,
     if (const auto json_response =
             QJsonDocument::fromJson(line.toUtf8(), &error);
         error.error == QJsonParseError::NoError) {
-      thread->updateLatestMessage(json_response.object());
+      message->updateFromJson(json_response.object());
+      const auto msg_index = thread->index(thread->rowCount() - 1, 0);
+      emit thread->dataChanged(msg_index, msg_index,
+                               {Thread::TextRole, Thread::ContextRole});
     } else {
       qWarning() << "Error: " << error.errorString() << ", Message: " << line;
     }

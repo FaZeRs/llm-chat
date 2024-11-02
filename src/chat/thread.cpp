@@ -27,6 +27,8 @@ QVariant Thread::data(const QModelIndex &index, int role) const {
       return message->isUser();
     case ContextRole:
       return message->context();
+    case FinishedRole:
+      return !message->inProgress();
     default:
       return {};
   }
@@ -37,30 +39,16 @@ QHash<int, QByteArray> Thread::roleNames() const {
   roles[TextRole] = "text";
   roles[IsUserRole] = "isUser";
   roles[ContextRole] = "context";
+  roles[FinishedRole] = "finished";
   return roles;
 }
 
 void Thread::addMessage(const QString &text, bool isUser,
-                        const QVector<QVariant> &context) {
+                        const QVector<QVariant> &context,
+                        const bool in_progress) {
   beginInsertRows(QModelIndex(), rowCount(), rowCount());
-  m_Messages.append(new Message(text, isUser, context, this));
+  m_Messages.append(new Message(text, isUser, context, in_progress, this));
   endInsertRows();
-}
-
-void Thread::updateMessageText(const qsizetype index, const QString &new_text) {
-  if (index >= 0 && index < m_Messages.size()) {
-    const auto text = m_Messages[index]->text() + new_text;
-    m_Messages[index]->setText(text);
-    QModelIndex model_index = this->index(static_cast<int>(index), 0);
-    emit dataChanged(model_index, model_index, {TextRole});
-  }
-}
-
-void Thread::updateMessageContext(const qsizetype index,
-                                  const QVector<QVariant> &context) {
-  if (index >= 0 && index < m_Messages.size()) {
-    m_Messages[index]->setContext(context);
-  }
 }
 
 void Thread::clearMessages() {
@@ -68,25 +56,6 @@ void Thread::clearMessages() {
   qDeleteAll(m_Messages);
   m_Messages.clear();
   endResetModel();
-}
-
-void Thread::updateLatestMessage(const QString &text) {
-  if (!m_Messages.empty()) {
-    updateMessageText(m_Messages.size() - 1, text);
-  }
-}
-
-void Thread::updateLatestMessage(const QJsonObject &json) {
-  if (m_Messages.empty()) {
-    return;
-  }
-  if (const auto content = json["response"].toString(); !content.isEmpty()) {
-    updateMessageText(m_Messages.size() - 1, content);
-  }
-  if (const auto context = json["context"].toArray().toVariantList();
-      !context.isEmpty()) {
-    updateMessageContext(m_Messages.size() - 1, context);
-  }
 }
 
 void Thread::removeLatestMessage() {

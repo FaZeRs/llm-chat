@@ -36,32 +36,10 @@ TEST_CASE("Test add message", "[Thread]") {
       QVariantList({"context"}));
 }
 
-TEST_CASE("Test update latest message text", "[Thread]") {
-  llm_chat::Thread thread;
-  thread.addMessage("Hello", true, {});
-  thread.updateLatestMessage(" World");
-  REQUIRE(
-      thread.data(thread.index(0, 0), llm_chat::Thread::TextRole).toString() ==
-      "Hello World");
-}
-
-TEST_CASE("Test update latest message from json", "[Thread]") {
-  llm_chat::Thread thread;
-  thread.addMessage("Hello", true, {});
-  thread.updateLatestMessage(
-      {{"response", " World"}, {"context", QJsonArray{"Context"}}});
-  REQUIRE(
-      thread.data(thread.index(0, 0), llm_chat::Thread::TextRole).toString() ==
-      "Hello World");
-  REQUIRE(
-      thread.data(thread.index(0, 0), llm_chat::Thread::ContextRole).toList() ==
-      QVariantList({"Context"}));
-}
-
 TEST_CASE("Test clear messages", "[Thread]") {
   llm_chat::Thread thread;
-  thread.addMessage("Hello", true, {});
-  thread.addMessage("World", false, {});
+  thread.addMessage("Hello", true);
+  thread.addMessage("World", false);
   REQUIRE(thread.rowCount() == 2);
   thread.clearMessages();
   REQUIRE(thread.rowCount() == 0);
