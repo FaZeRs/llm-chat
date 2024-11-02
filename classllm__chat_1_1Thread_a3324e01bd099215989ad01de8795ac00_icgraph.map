@@ -1,0 +1,7 @@
+<map id="llm_chat::Thread::addMessage" name="llm_chat::Thread::addMessage">
+<area shape="rect" id="Node000001" title="Adds a new message to the model." alt="" coords="148,31,369,56"/>
+<area shape="rect" id="Node000002" href="$tst__chat__thread_8cpp.html#a6dd2e7534ba2ec91b05e3aae796ecb21" title=" " alt="" coords="5,5,100,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="141,32,100,26,101,21,142,26"/>
+<area shape="rect" id="Node000003" href="$tst__chat__thread_8cpp.html#a05f07c583eac73f030a43a5d1e954556" title=" " alt="" coords="5,55,100,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="137,60,101,65,100,59,136,55"/>
+</map>

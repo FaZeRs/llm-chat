@@ -2,7 +2,7 @@ var searchData=
 [
   ['main_0',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
   ['main_2ecpp_1',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['message_2',['Message',['../classllm__chat_1_1Message.html',1,'llm_chat::Message'],['../classllm__chat_1_1Message.html#a9e5a7f5184b04c7850216086a4a3c644',1,'llm_chat::Message::Message()']]],
+  ['message_2',['Message',['../classllm__chat_1_1Message.html',1,'llm_chat::Message'],['../classllm__chat_1_1Message.html#a9b1f30e6f3f78a75afeb33b959adc6ad',1,'llm_chat::Message::Message()']]],
   ['message_2ecpp_3',['message.cpp',['../message_8cpp.html',1,'']]],
   ['message_2eh_4',['message.h',['../message_8h.html',1,'']]],
   ['messageroles_5',['MessageRoles',['../classllm__chat_1_1Thread.html#a32c191e8d496d4b5ed8a950b40d1a926',1,'llm_chat::Thread']]],

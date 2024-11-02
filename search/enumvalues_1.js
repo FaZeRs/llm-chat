@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['isuserrole_0',['IsUserRole',['../classllm__chat_1_1Thread.html#a32c191e8d496d4b5ed8a950b40d1a926aa7448a4e06c63d53e3e55dc41ac843fd',1,'llm_chat::Thread']]]
+  ['finishedrole_0',['FinishedRole',['../classllm__chat_1_1Thread.html#a32c191e8d496d4b5ed8a950b40d1a926aa2df299898658901bc6102d5235686c9',1,'llm_chat::Thread']]]
 ];

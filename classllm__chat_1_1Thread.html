@@ -128,6 +128,7 @@ Public Types</h2></td></tr>
 <tr class="memitem:a32c191e8d496d4b5ed8a950b40d1a926" id="r_a32c191e8d496d4b5ed8a950b40d1a926"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32c191e8d496d4b5ed8a950b40d1a926">MessageRoles</a> { <a class="el" href="#a32c191e8d496d4b5ed8a950b40d1a926a5a4d956141bada32e8da475cf4c47980">TextRole</a> = Qt::UserRole + 1
 , <a class="el" href="#a32c191e8d496d4b5ed8a950b40d1a926aa7448a4e06c63d53e3e55dc41ac843fd">IsUserRole</a>
 , <a class="el" href="#a32c191e8d496d4b5ed8a950b40d1a926a4186df25decb69a13a5c3323f17c70c4">ContextRole</a>
+, <a class="el" href="#a32c191e8d496d4b5ed8a950b40d1a926aa2df299898658901bc6102d5235686c9">FinishedRole</a>
  }</td></tr>
 <tr class="memdesc:a32c191e8d496d4b5ed8a950b40d1a926"><td class="mdescLeft">&#160;</td><td class="mdescRight">The data roles for the model.  <a href="#a32c191e8d496d4b5ed8a950b40d1a926">More...</a><br /></td></tr>
 <tr class="separator:a32c191e8d496d4b5ed8a950b40d1a926"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -146,21 +147,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae438a74449d75f090c3d4817e8bdfb45" id="r_ae438a74449d75f090c3d4817e8bdfb45"><td class="memItemLeft" align="right" valign="top">QHash&lt; int, QByteArray &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae438a74449d75f090c3d4817e8bdfb45">roleNames</a> () const override</td></tr>
 <tr class="memdesc:ae438a74449d75f090c3d4817e8bdfb45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the role names for the model.  <br /></td></tr>
 <tr class="separator:ae438a74449d75f090c3d4817e8bdfb45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec5638ae53473ed7d9918db4d60a5f7a" id="r_aec5638ae53473ed7d9918db4d60a5f7a"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec5638ae53473ed7d9918db4d60a5f7a">addMessage</a> (const QString &amp;text, bool is_user, const QVector&lt; QVariant &gt; &amp;context)</td></tr>
-<tr class="memdesc:aec5638ae53473ed7d9918db4d60a5f7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new message to the model.  <br /></td></tr>
-<tr class="separator:aec5638ae53473ed7d9918db4d60a5f7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3324e01bd099215989ad01de8795ac00" id="r_a3324e01bd099215989ad01de8795ac00"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3324e01bd099215989ad01de8795ac00">addMessage</a> (const QString &amp;text, bool is_user, const QVector&lt; QVariant &gt; &amp;context={}, const bool in_progress=false)</td></tr>
+<tr class="memdesc:a3324e01bd099215989ad01de8795ac00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new message to the model.  <br /></td></tr>
+<tr class="separator:a3324e01bd099215989ad01de8795ac00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ee68d9bb2a638b3c1d4fdd1a76298ca" id="r_a7ee68d9bb2a638b3c1d4fdd1a76298ca"><td class="memItemLeft" align="right" valign="top">const QList&lt; <a class="el" href="classllm__chat_1_1Message.html">Message</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ee68d9bb2a638b3c1d4fdd1a76298ca">messages</a> () const</td></tr>
 <tr class="memdesc:a7ee68d9bb2a638b3c1d4fdd1a76298ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the list of messages.  <br /></td></tr>
 <tr class="separator:a7ee68d9bb2a638b3c1d4fdd1a76298ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adbb087cabe9e3e73def029ca996d036f" id="r_adbb087cabe9e3e73def029ca996d036f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adbb087cabe9e3e73def029ca996d036f">clearMessages</a> ()</td></tr>
 <tr class="memdesc:adbb087cabe9e3e73def029ca996d036f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the list of messages.  <br /></td></tr>
 <tr class="separator:adbb087cabe9e3e73def029ca996d036f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d9ae81730a873141a3f9aecb917f897" id="r_a3d9ae81730a873141a3f9aecb917f897"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d9ae81730a873141a3f9aecb917f897">updateLatestMessage</a> (const QString &amp;text)</td></tr>
-<tr class="memdesc:a3d9ae81730a873141a3f9aecb917f897"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update latest message text.  <br /></td></tr>
-<tr class="separator:a3d9ae81730a873141a3f9aecb917f897"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae66dd5c32459f0cb7ccf3132c34b3006" id="r_ae66dd5c32459f0cb7ccf3132c34b3006"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae66dd5c32459f0cb7ccf3132c34b3006">updateLatestMessage</a> (const QJsonObject &amp;json)</td></tr>
-<tr class="memdesc:ae66dd5c32459f0cb7ccf3132c34b3006"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update latest message from json.  <br /></td></tr>
-<tr class="separator:ae66dd5c32459f0cb7ccf3132c34b3006"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a321058fae2af36a500f49dbb3696ca60" id="r_a321058fae2af36a500f49dbb3696ca60"><td class="memItemLeft" align="right" valign="top">const QDateTime &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a321058fae2af36a500f49dbb3696ca60">createdAt</a> () const</td></tr>
 <tr class="memdesc:a321058fae2af36a500f49dbb3696ca60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the creation time of the chat thread.  <br /></td></tr>
 <tr class="separator:a321058fae2af36a500f49dbb3696ca60"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -195,6 +190,7 @@ Properties</h2></td></tr>
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a32c191e8d496d4b5ed8a950b40d1a926a5a4d956141bada32e8da475cf4c47980" name="a32c191e8d496d4b5ed8a950b40d1a926a5a4d956141bada32e8da475cf4c47980"></a>TextRole&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a32c191e8d496d4b5ed8a950b40d1a926aa7448a4e06c63d53e3e55dc41ac843fd" name="a32c191e8d496d4b5ed8a950b40d1a926aa7448a4e06c63d53e3e55dc41ac843fd"></a>IsUserRole&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a32c191e8d496d4b5ed8a950b40d1a926a4186df25decb69a13a5c3323f17c70c4" name="a32c191e8d496d4b5ed8a950b40d1a926a4186df25decb69a13a5c3323f17c70c4"></a>ContextRole&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a32c191e8d496d4b5ed8a950b40d1a926aa2df299898658901bc6102d5235686c9" name="a32c191e8d496d4b5ed8a950b40d1a926aa2df299898658901bc6102d5235686c9"></a>FinishedRole&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>
@@ -234,8 +230,8 @@ Properties</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aec5638ae53473ed7d9918db4d60a5f7a" name="aec5638ae53473ed7d9918db4d60a5f7a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec5638ae53473ed7d9918db4d60a5f7a">&#9670;&#160;</a></span>addMessage()</h2>
+<a id="a3324e01bd099215989ad01de8795ac00" name="a3324e01bd099215989ad01de8795ac00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3324e01bd099215989ad01de8795ac00">&#9670;&#160;</a></span>addMessage()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -253,7 +249,12 @@ Properties</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const QVector&lt; QVariant &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>context</em></span>&#160;)</td>
+          <td class="paramtype">const QVector&lt; QVariant &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>context</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool</td>          <td class="paramname"><span class="paramname"><em>in_progress</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -264,18 +265,19 @@ Properties</h2></td></tr>
     <tr><td class="paramname">text</td><td>The message text. </td></tr>
     <tr><td class="paramname">is_user</td><td>Whether the message is from the user. </td></tr>
     <tr><td class="paramname">context</td><td>The message context. </td></tr>
+    <tr><td class="paramname">in_progress</td><td>Whether the message is in progress. </td></tr>
   </table>
   </dd>
 </dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classllm__chat_1_1Thread_aec5638ae53473ed7d9918db4d60a5f7a_cgraph.svg" width="482" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classllm__chat_1_1Thread_a3324e01bd099215989ad01de8795ac00_cgraph.svg" width="482" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classllm__chat_1_1Thread_aec5638ae53473ed7d9918db4d60a5f7a_icgraph.svg" width="375" height="184"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classllm__chat_1_1Thread_a3324e01bd099215989ad01de8795ac00_icgraph.svg" width="375" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -370,7 +372,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classllm__chat_1_1Thread_a5d6b691962bf5ee1778f1d737305d731_icgraph.svg" width="322" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classllm__chat_1_1Thread_a5d6b691962bf5ee1778f1d737305d731_icgraph.svg" width="322" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -488,62 +490,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classllm__chat_1_1Thread_ad23ed053b4dd9334a73115052b3a9d0c_icgraph.svg" width="624" height="238"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="ae66dd5c32459f0cb7ccf3132c34b3006" name="ae66dd5c32459f0cb7ccf3132c34b3006"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae66dd5c32459f0cb7ccf3132c34b3006">&#9670;&#160;</a></span>updateLatestMessage() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void llm_chat::Thread::updateLatestMessage </td>
-          <td>(</td>
-          <td class="paramtype">const QJsonObject &amp;</td>          <td class="paramname"><span class="paramname"><em>json</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Update latest message from json. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">json</td><td>The json object. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a3d9ae81730a873141a3f9aecb917f897" name="a3d9ae81730a873141a3f9aecb917f897"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d9ae81730a873141a3f9aecb917f897">&#9670;&#160;</a></span>updateLatestMessage() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void llm_chat::Thread::updateLatestMessage </td>
-          <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Update latest message text. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">text</td><td>The message text. </td></tr>
-  </table>
-  </dd>
-</dl>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classllm__chat_1_1Thread_a3d9ae81730a873141a3f9aecb917f897_icgraph.svg" width="338" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classllm__chat_1_1Thread_ad23ed053b4dd9334a73115052b3a9d0c_icgraph.svg" width="624" height="176"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>

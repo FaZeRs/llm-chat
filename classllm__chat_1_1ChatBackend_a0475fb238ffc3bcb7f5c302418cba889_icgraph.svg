@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="classllm__chat_1_1ChatBackend.html#aba6d494c5dc8d5e44c07923d24f020b7" target="_top" xlink:title="Sends a message to the Ollama server.">
+<g id="a_Node000002"><a xlink:href="classllm__chat_1_1ChatBackend.html#ab9806e8e7fcad9ace0594fd3312eac79" target="_top" xlink:title="Sends a message to the Ollama server.">
 <polygon fill="white" stroke="#666666" points="235,-42.5 107,-42.5 107,-12.5 235,-12.5 235,-42.5"/>
 <text text-anchor="start" x="115" y="-30.5" font-family="Helvetica,sans-Serif" font-size="10.00">llm_chat::ChatBackend</text>
 <text text-anchor="middle" x="171" y="-19.5" font-family="Helvetica,sans-Serif" font-size="10.00">::sendMessage</text>

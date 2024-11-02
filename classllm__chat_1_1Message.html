@@ -124,9 +124,9 @@ Collaboration diagram for llm_chat::Message:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9e5a7f5184b04c7850216086a4a3c644" id="r_a9e5a7f5184b04c7850216086a4a3c644"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e5a7f5184b04c7850216086a4a3c644">Message</a> (const QString <a class="el" href="#a1a938bc8af6a2a04c86f1f6d848d1e55">text</a>, const bool is_user, const QVector&lt; QVariant &gt; &amp;<a class="el" href="#a05a6253a59116c657dcab21d322b5892">context</a>, QObject *parent=nullptr)</td></tr>
-<tr class="memdesc:a9e5a7f5184b04c7850216086a4a3c644"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="classllm__chat_1_1Message.html" title="The Message class represents a chat message.">Message</a> object.  <br /></td></tr>
-<tr class="separator:a9e5a7f5184b04c7850216086a4a3c644"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b1f30e6f3f78a75afeb33b959adc6ad" id="r_a9b1f30e6f3f78a75afeb33b959adc6ad"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b1f30e6f3f78a75afeb33b959adc6ad">Message</a> (const QString <a class="el" href="#a1a938bc8af6a2a04c86f1f6d848d1e55">text</a>, const bool is_user, const QVector&lt; QVariant &gt; &amp;<a class="el" href="#a05a6253a59116c657dcab21d322b5892">context</a>, const bool in_progress=false, QObject *parent=nullptr)</td></tr>
+<tr class="memdesc:a9b1f30e6f3f78a75afeb33b959adc6ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="classllm__chat_1_1Message.html" title="The Message class represents a chat message.">Message</a> object.  <br /></td></tr>
+<tr class="separator:a9b1f30e6f3f78a75afeb33b959adc6ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac299023227a94f08ce2ca44dbd96215" id="r_aac299023227a94f08ce2ca44dbd96215"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac299023227a94f08ce2ca44dbd96215">text</a> () const</td></tr>
 <tr class="memdesc:aac299023227a94f08ce2ca44dbd96215"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the text of the message.  <br /></td></tr>
 <tr class="separator:aac299023227a94f08ce2ca44dbd96215"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -142,6 +142,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a000a2cb5562efbab323a6bca82bf22bf" id="r_a000a2cb5562efbab323a6bca82bf22bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a000a2cb5562efbab323a6bca82bf22bf">setContext</a> (const QVector&lt; QVariant &gt; &amp;<a class="el" href="#a05a6253a59116c657dcab21d322b5892">context</a>)</td></tr>
 <tr class="memdesc:a000a2cb5562efbab323a6bca82bf22bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the context of the message.  <br /></td></tr>
 <tr class="separator:a000a2cb5562efbab323a6bca82bf22bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a54bfe00c3a3257cd7617685d7458f0" id="r_a0a54bfe00c3a3257cd7617685d7458f0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a54bfe00c3a3257cd7617685d7458f0">inProgress</a> () const</td></tr>
+<tr class="memdesc:a0a54bfe00c3a3257cd7617685d7458f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the in progress flag of the message.  <br /></td></tr>
+<tr class="separator:a0a54bfe00c3a3257cd7617685d7458f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33da12a8665a3180c2c705deed7c4b7e" id="r_a33da12a8665a3180c2c705deed7c4b7e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a33da12a8665a3180c2c705deed7c4b7e">setInProgress</a> (const bool in_progress)</td></tr>
+<tr class="memdesc:a33da12a8665a3180c2c705deed7c4b7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the in progress flag of the message.  <br /></td></tr>
+<tr class="separator:a33da12a8665a3180c2c705deed7c4b7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6eecdbcf4536d84af28b90312b8b7892" id="r_a6eecdbcf4536d84af28b90312b8b7892"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6eecdbcf4536d84af28b90312b8b7892">updateFromJson</a> (const QJsonObject &amp;json)</td></tr>
+<tr class="memdesc:a6eecdbcf4536d84af28b90312b8b7892"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the message from a JSON object.  <br /></td></tr>
+<tr class="separator:a6eecdbcf4536d84af28b90312b8b7892"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
@@ -151,12 +160,14 @@ Properties</h2></td></tr>
 <tr class="separator:a594f41773cf5f36046a1ffcee5dd622a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05a6253a59116c657dcab21d322b5892" id="r_a05a6253a59116c657dcab21d322b5892"><td class="memItemLeft" align="right" valign="top">QVector&lt; QVariant &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a05a6253a59116c657dcab21d322b5892">context</a></td></tr>
 <tr class="separator:a05a6253a59116c657dcab21d322b5892"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87642643467482cb0349e22d787fdfac" id="r_a87642643467482cb0349e22d787fdfac"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a87642643467482cb0349e22d787fdfac">inProgress</a></td></tr>
+<tr class="separator:a87642643467482cb0349e22d787fdfac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="classllm__chat_1_1Message.html" title="The Message class represents a chat message.">Message</a> class represents a chat message. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a9e5a7f5184b04c7850216086a4a3c644" name="a9e5a7f5184b04c7850216086a4a3c644"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e5a7f5184b04c7850216086a4a3c644">&#9670;&#160;</a></span>Message()</h2>
+<a id="a9b1f30e6f3f78a75afeb33b959adc6ad" name="a9b1f30e6f3f78a75afeb33b959adc6ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b1f30e6f3f78a75afeb33b959adc6ad">&#9670;&#160;</a></span>Message()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -179,6 +190,11 @@ Properties</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const bool</td>          <td class="paramname"><span class="paramname"><em>in_progress</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">QObject *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;)</td>
         </tr>
       </table>
@@ -190,6 +206,7 @@ Properties</h2></td></tr>
     <tr><td class="paramname">text</td><td>The text of the message. </td></tr>
     <tr><td class="paramname">is_user</td><td>True if the message was sent by the user, false otherwise. </td></tr>
     <tr><td class="paramname">context</td><td>The context of the message. </td></tr>
+    <tr><td class="paramname">in_progress</td><td>Whether the message is in progress. </td></tr>
     <tr><td class="paramname">parent</td><td>The parent object. </td></tr>
   </table>
   </dd>
@@ -223,6 +240,34 @@ Properties</h2></td></tr>
 
 <p>Returns the context of the message. </p>
 <p>This is used to provide additional information to the LLM. </p><dl class="section return"><dt>Returns</dt><dd>The context of the message. </dd></dl>
+
+</div>
+</div>
+<a id="a0a54bfe00c3a3257cd7617685d7458f0" name="a0a54bfe00c3a3257cd7617685d7458f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a54bfe00c3a3257cd7617685d7458f0">&#9670;&#160;</a></span>inProgress()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool llm_chat::Message::inProgress </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the in progress flag of the message. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if the message is in progress, false otherwise. </dd></dl>
 
 </div>
 </div>
@@ -284,6 +329,31 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a33da12a8665a3180c2c705deed7c4b7e" name="a33da12a8665a3180c2c705deed7c4b7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33da12a8665a3180c2c705deed7c4b7e">&#9670;&#160;</a></span>setInProgress()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void llm_chat::Message::setInProgress </td>
+          <td>(</td>
+          <td class="paramtype">const bool</td>          <td class="paramname"><span class="paramname"><em>in_progress</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the in progress flag of the message. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">in_progress</td><td>The new in progress flag of the message. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a916757211cf59cfef980e5872eee74db" name="a916757211cf59cfef980e5872eee74db"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a916757211cf59cfef980e5872eee74db">&#9670;&#160;</a></span>setText()</h2>
 
@@ -342,6 +412,31 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a6eecdbcf4536d84af28b90312b8b7892" name="a6eecdbcf4536d84af28b90312b8b7892"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6eecdbcf4536d84af28b90312b8b7892">&#9670;&#160;</a></span>updateFromJson()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void llm_chat::Message::updateFromJson </td>
+          <td>(</td>
+          <td class="paramtype">const QJsonObject &amp;</td>          <td class="paramname"><span class="paramname"><em>json</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Updates the message from a JSON object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">json</td><td>The JSON object to update the message from. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Property Documentation</h2>
 <a id="a05a6253a59116c657dcab21d322b5892" name="a05a6253a59116c657dcab21d322b5892"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a05a6253a59116c657dcab21d322b5892">&#9670;&#160;</a></span>context</h2>
@@ -354,6 +449,28 @@ Here is the caller graph for this function:</div>
       <table class="memname">
         <tr>
           <td class="memname">QVector&lt;QVariant&gt; llm_chat::Message::context</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a87642643467482cb0349e22d787fdfac" name="a87642643467482cb0349e22d787fdfac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87642643467482cb0349e22d787fdfac">&#9670;&#160;</a></span>inProgress</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool llm_chat::Message::inProgress</td>
         </tr>
       </table>
   </td>

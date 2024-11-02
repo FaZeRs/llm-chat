@@ -2,7 +2,7 @@
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,45,100,70"/>
 <area shape="rect" id="Node000002" href="$classllm__chat_1_1ChatBackend.html#a9c2a2839426c0eb0dfc4e260b0042879" title="Returns the thread at the given index." alt="" coords="148,5,319,45"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,46,134,40,135,45,101,52"/>
-<area shape="rect" id="Node000003" href="$classllm__chat_1_1ChatBackend.html#aba6d494c5dc8d5e44c07923d24f020b7" title="Sends a message to the Ollama server." alt="" coords="148,69,319,109"/>
+<area shape="rect" id="Node000003" href="$classllm__chat_1_1ChatBackend.html#ab9806e8e7fcad9ace0594fd3312eac79" title="Sends a message to the Ollama server." alt="" coords="148,69,319,109"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="101,63,135,69,134,74,100,68"/>
 <area shape="rect" id="Node000004" href="$classllm__chat_1_1ChatBackend.html#a0475fb238ffc3bcb7f5c302418cba889" title="Emitted when the current thread is changed." alt="" coords="367,69,537,109"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="319,87,353,87,353,92,319,92"/>

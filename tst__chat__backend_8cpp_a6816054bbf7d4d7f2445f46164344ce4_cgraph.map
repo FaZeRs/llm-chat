@@ -10,7 +10,7 @@
 <area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="100,193,135,193,135,199,100,199"/>
 <area shape="rect" id="Node000008" href="$classllm__chat_1_1ThreadList.html#a0323b6b8ca6c6edf1dd8b661ef5ba07d" title="Returns the number of rows under the given parent." alt="" coords="186,233,341,273"/>
 <area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="101,206,177,227,176,232,99,211"/>
-<area shape="rect" id="Node000009" href="$classllm__chat_1_1ChatBackend.html#aba6d494c5dc8d5e44c07923d24f020b7" title="Sends a message to the Ollama server." alt="" coords="178,297,349,337"/>
+<area shape="rect" id="Node000009" href="$classllm__chat_1_1ChatBackend.html#ab9806e8e7fcad9ace0594fd3312eac79" title="Sends a message to the Ollama server." alt="" coords="178,297,349,337"/>
 <area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="66,207,100,245,124,266,149,283,167,292,164,296,147,288,120,270,97,249,62,211"/>
 <area shape="rect" id="Node000011" href="$classllm__chat_1_1ChatBackend.html#a1ef4ab1213d40fd60cd6449ae9fd22f5" title="Sets the model name." alt="" coords="178,361,349,401"/>
 <area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="61,208,72,237,91,275,116,314,150,347,166,358,164,362,146,351,112,317,86,277,67,239,56,210"/>
