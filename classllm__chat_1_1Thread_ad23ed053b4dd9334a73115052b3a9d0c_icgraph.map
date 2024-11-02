@@ -1,21 +1,15 @@
 <map id="llm_chat::Thread::rowCount" name="llm_chat::Thread::rowCount">
-<area shape="rect" id="Node000001" title="Returns the number of rows under the given parent." alt="" coords="636,120,837,145"/>
-<area shape="rect" id="Node000002" href="$classllm__chat_1_1Thread.html#aec5638ae53473ed7d9918db4d60a5f7a" title="Adds a new message to the model." alt="" coords="367,120,588,145"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="622,135,588,135,588,130,622,130"/>
-<area shape="rect" id="Node000006" href="$tst__chat__thread_8cpp.html#a6dd2e7534ba2ec91b05e3aae796ecb21" title=" " alt="" coords="186,5,281,31"/>
-<area shape="poly" id="edge9_Node000001_Node000006" title=" " alt="" coords="666,119,280,31,281,26,667,114"/>
-<area shape="rect" id="Node000007" href="$tst__chat__thread_8cpp.html#a05f07c583eac73f030a43a5d1e954556" title=" " alt="" coords="186,219,281,244"/>
-<area shape="poly" id="edge10_Node000001_Node000007" title=" " alt="" coords="658,151,282,225,280,220,657,145"/>
-<area shape="rect" id="Node000003" href="$classllm__chat_1_1ChatBackend.html#aba6d494c5dc8d5e44c07923d24f020b7" title="Sends a message to the Ollama server." alt="" coords="148,55,319,95"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="409,119,318,98,320,93,410,114"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="441,115,318,46,280,32,282,27,320,41,444,111"/>
-<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="441,154,385,182,320,210,282,222,280,217,318,205,382,177,439,149"/>
-<area shape="rect" id="Node000008" href="$tst__chat__thread_8cpp.html#a5ae9eb7eb9bce825d5784e7dbd9ca04f" title=" " alt="" coords="186,120,281,145"/>
-<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="353,135,281,135,281,130,353,130"/>
-<area shape="rect" id="Node000009" href="$tst__chat__thread_8cpp.html#a8a3124b4aa32bdc8049e4e5500b27cd5" title=" " alt="" coords="186,169,281,195"/>
-<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="401,151,282,175,280,170,400,146"/>
-<area shape="rect" id="Node000004" href="$tst__chat__backend_8cpp.html#a6816054bbf7d4d7f2445f46164344ce4" title=" " alt="" coords="5,39,100,64"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="134,65,100,60,101,55,135,60"/>
-<area shape="rect" id="Node000005" href="$tst__chat__backend_8cpp.html#a620e4af469adb1307d92dc038838fc1a" title=" " alt="" coords="5,88,100,113"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="135,92,101,97,100,91,134,87"/>
+<area shape="rect" id="Node000001" title="Returns the number of rows under the given parent." alt="" coords="417,68,619,93"/>
+<area shape="rect" id="Node000002" href="$classllm__chat_1_1Thread.html#aec5638ae53473ed7d9918db4d60a5f7a" title="Adds a new message to the model." alt="" coords="148,68,369,93"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="403,83,369,83,369,78,403,78"/>
+<area shape="rect" id="Node000003" href="$tst__chat__thread_8cpp.html#a6dd2e7534ba2ec91b05e3aae796ecb21" title=" " alt="" coords="5,5,100,31"/>
+<area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="433,68,369,58,100,25,100,20,370,53,434,63"/>
+<area shape="rect" id="Node000004" href="$tst__chat__thread_8cpp.html#a05f07c583eac73f030a43a5d1e954556" title=" " alt="" coords="5,153,100,179"/>
+<area shape="poly" id="edge7_Node000001_Node000004" title=" " alt="" coords="435,98,101,160,100,155,434,93"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="202,67,95,33,96,28,204,61"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="213,101,149,127,83,156,81,151,147,122,211,96"/>
+<area shape="rect" id="Node000005" href="$tst__chat__thread_8cpp.html#a5ae9eb7eb9bce825d5784e7dbd9ca04f" title=" " alt="" coords="5,55,100,80"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="134,75,100,73,101,68,134,70"/>
+<area shape="rect" id="Node000006" href="$tst__chat__thread_8cpp.html#a8a3124b4aa32bdc8049e4e5500b27cd5" title=" " alt="" coords="5,104,100,129"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="173,98,101,111,100,106,172,93"/>
 </map>

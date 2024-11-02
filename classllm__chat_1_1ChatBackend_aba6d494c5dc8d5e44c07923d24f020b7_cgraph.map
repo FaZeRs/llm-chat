@@ -1,9 +1,5 @@
 <map id="llm_chat::ChatBackend::sendMessage" name="llm_chat::ChatBackend::sendMessage">
-<area shape="rect" id="Node000001" title="Sends a message to the Ollama server." alt="" coords="5,27,176,67"/>
-<area shape="rect" id="Node000002" href="$classllm__chat_1_1Thread.html#aec5638ae53473ed7d9918db4d60a5f7a" title="Adds a new message to the model." alt="" coords="224,5,445,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,34,215,30,216,35,176,40"/>
-<area shape="rect" id="Node000004" href="$classllm__chat_1_1ChatBackend.html#a0475fb238ffc3bcb7f5c302418cba889" title="Emitted when the current thread is changed." alt="" coords="249,55,420,95"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="176,54,236,61,235,67,176,60"/>
-<area shape="rect" id="Node000003" href="$classllm__chat_1_1Thread.html#ad23ed053b4dd9334a73115052b3a9d0c" title="Returns the number of rows under the given parent." alt="" coords="493,5,695,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="446,15,480,15,480,21,446,21"/>
+<area shape="rect" id="Node000001" title="Sends a message to the Ollama server." alt="" coords="5,5,176,45"/>
+<area shape="rect" id="Node000002" href="$classllm__chat_1_1ChatBackend.html#a0475fb238ffc3bcb7f5c302418cba889" title="Emitted when the current thread is changed." alt="" coords="224,5,395,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,23,210,23,210,28,176,28"/>
 </map>

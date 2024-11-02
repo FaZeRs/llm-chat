@@ -4,10 +4,6 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,46,134,40,135,45,101,52"/>
 <area shape="rect" id="Node000003" href="$classllm__chat_1_1ChatBackend.html#aba6d494c5dc8d5e44c07923d24f020b7" title="Sends a message to the Ollama server." alt="" coords="148,69,319,109"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="101,63,135,69,134,74,100,68"/>
-<area shape="rect" id="Node000004" href="$classllm__chat_1_1Thread.html#aec5638ae53473ed7d9918db4d60a5f7a" title="Adds a new message to the model." alt="" coords="367,47,588,73"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="318,76,358,72,358,77,319,82"/>
-<area shape="rect" id="Node000006" href="$classllm__chat_1_1ChatBackend.html#a0475fb238ffc3bcb7f5c302418cba889" title="Emitted when the current thread is changed." alt="" coords="392,97,563,137"/>
-<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="319,96,379,103,378,109,318,102"/>
-<area shape="rect" id="Node000005" href="$classllm__chat_1_1Thread.html#ad23ed053b4dd9334a73115052b3a9d0c" title="Returns the number of rows under the given parent." alt="" coords="636,47,837,73"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="588,57,622,57,622,63,588,63"/>
+<area shape="rect" id="Node000004" href="$classllm__chat_1_1ChatBackend.html#a0475fb238ffc3bcb7f5c302418cba889" title="Emitted when the current thread is changed." alt="" coords="367,69,537,109"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="319,87,353,87,353,92,319,92"/>
 </map>
