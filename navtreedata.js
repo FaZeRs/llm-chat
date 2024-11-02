@@ -58,7 +58,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"functions.html"
+"classllm__chat_1_1ThreadList.html#af3be464cbc29ff2d05f5cde859b66e60"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

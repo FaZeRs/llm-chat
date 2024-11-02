@@ -6,12 +6,15 @@ var searchData=
   ['setfullscreenshortcut_3',['setFullScreenShortcut',['../classllm__chat_1_1Settings.html#a57e93503eb392912cf52ebc53e39542c',1,'llm_chat::Settings']]],
   ['setlanguage_4',['setLanguage',['../classllm__chat_1_1Settings.html#a5759e014bd8a211be9cec65e4f28abb7',1,'llm_chat::Settings']]],
   ['setmodel_5',['setModel',['../classllm__chat_1_1ChatBackend.html#a1ef4ab1213d40fd60cd6449ae9fd22f5',1,'llm_chat::ChatBackend']]],
-  ['setnetworkmanager_6',['setNetworkManager',['../classllm__chat_1_1ChatBackend.html#a356aa689715099936674ecaa596bf351',1,'llm_chat::ChatBackend']]],
+  ['setollamaserverurl_6',['setOllamaServerUrl',['../classllm__chat_1_1ChatBackend.html#aaea9260f932bf9f307bf63abdfcf18c4',1,'llm_chat::ChatBackend']]],
   ['setoptionsshortcut_7',['setOptionsShortcut',['../classllm__chat_1_1Settings.html#a34c867c8c8b5847cada71fe0e4cbb0ec',1,'llm_chat::Settings']]],
   ['setoriginalsequence_8',['setOriginalSequence',['../classKeySequenceEditor.html#a9cd0a9658bb1963b598afd87c0ae6db0',1,'KeySequenceEditor']]],
   ['setquitshortcut_9',['setQuitShortcut',['../classllm__chat_1_1Settings.html#a9728c290bc0427482ff18a15d86ebecb',1,'llm_chat::Settings']]],
-  ['settext_10',['setText',['../classllm__chat_1_1Message.html#a916757211cf59cfef980e5872eee74db',1,'llm_chat::Message']]],
-  ['settings_11',['Settings',['../classllm__chat_1_1Settings.html#ab2d09464f476b88c225313df98ab2d0d',1,'llm_chat::Settings']]],
-  ['settings_12',['settings',['../classllm__chat_1_1Application.html#a29fab1c16a4072ed18ee05bf3aa18294',1,'llm_chat::Application']]],
-  ['setwindowopacity_13',['setWindowOpacity',['../classllm__chat_1_1Settings.html#a34aaf6dc7fe9c205de69dc71ab76c045',1,'llm_chat::Settings']]]
+  ['setsystemprompt_10',['setSystemPrompt',['../classllm__chat_1_1ChatBackend.html#a7f834e933ac9f55f22c1a4cb44cf4f10',1,'llm_chat::ChatBackend']]],
+  ['settext_11',['setText',['../classllm__chat_1_1Message.html#a916757211cf59cfef980e5872eee74db',1,'llm_chat::Message']]],
+  ['settings_12',['Settings',['../classllm__chat_1_1Settings.html#ab2d09464f476b88c225313df98ab2d0d',1,'llm_chat::Settings']]],
+  ['settings_13',['settings',['../classllm__chat_1_1Application.html#a29fab1c16a4072ed18ee05bf3aa18294',1,'llm_chat::Application']]],
+  ['setwindowopacity_14',['setWindowOpacity',['../classllm__chat_1_1Settings.html#a34aaf6dc7fe9c205de69dc71ab76c045',1,'llm_chat::Settings']]],
+  ['systemprompt_15',['systemPrompt',['../classllm__chat_1_1ChatBackend.html#a5a2a21997125330dd3244a76e503d9a0',1,'llm_chat::ChatBackend']]],
+  ['systempromptchanged_16',['systemPromptChanged',['../classllm__chat_1_1ChatBackend.html#a88e1b267768326d4c6dfb0456dcb5a3b',1,'llm_chat::ChatBackend']]]
 ];
