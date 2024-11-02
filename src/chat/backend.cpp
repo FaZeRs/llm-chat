@@ -62,7 +62,7 @@ void ChatBackend::sendRequestToOllama(Thread *thread, const QString &prompt) {
   }
 
   QJsonObject json;
-  json["model"] = model();
+  json["model"] = model().isEmpty() ? m_ModelList.constFirst() : model();
   json["prompt"] = prompt;
   json["stream"] = true;
   json["context"] = context;
