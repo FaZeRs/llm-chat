@@ -2,6 +2,7 @@
 
 #include <QNetworkAccessManager>
 #include <QObject>
+#include <QSettings>
 
 #include "thread.h"
 #include "thread_list.h"
@@ -89,6 +90,7 @@ class ChatBackend : public QObject {
   QScopedPointer<ThreadList> m_ThreadList{new ThreadList};
   QScopedPointer<ThreadProxyList> m_ThreadProxyList{new ThreadProxyList};
   QList<QString> m_ModelList;
+  QSettings m_Settings;
 
   /// @brief Sends a request to the Ollama server.
   /// @param prompt The prompt to send.

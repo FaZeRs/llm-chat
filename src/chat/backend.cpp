@@ -4,13 +4,13 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QNetworkReply>
-#include <QSettings>
+#include <ranges>
 
 #include "message.h"
 
 namespace llm_chat {
 
-constexpr auto OLLAMA_HOST = "http://localhost:11434";
+static constexpr auto OLLAMA_HOST = "http://localhost:11434";
 
 ChatBackend::ChatBackend(QObject *parent) : QObject(parent) {
   fetchModelList();
@@ -20,24 +20,20 @@ ChatBackend::ChatBackend(QObject *parent) : QObject(parent) {
 }
 
 void ChatBackend::sendMessage(const int index, const QString &message) {
-  Thread *thread = nullptr;
-  bool new_thread = false;
-  if (index >= 0) {
-    const auto proxy_index = m_ThreadProxyList->index(index, 0);
-    const auto source_index = m_ThreadProxyList->mapToSource(proxy_index);
-    thread = m_ThreadList->getThread(source_index);
-    if (!thread) {
-      thread = m_ThreadList->createNewThread();
-      new_thread = true;
+  auto [thread, is_new_thread] = [&]() -> std::pair<Thread *, bool> {
+    if (index >= 0) {
+      if (auto existing_thread =
+              m_ThreadList->getThread(m_ThreadProxyList->mapToSource(
+                  m_ThreadProxyList->index(index, 0)))) {
+        return {existing_thread, false};
+      }
     }
-    thread->addMessage(message, true, {});
-  } else {
-    thread = m_ThreadList->createNewThread();
-    thread->addMessage(message, true, {});
-    new_thread = true;
-  }
+    return {m_ThreadList->createNewThread(), true};
+  }();
+
+  thread->addMessage(message, true, {});
   sendRequestToOllama(thread, message);
-  if (new_thread) emit newThreadCreated();
+  if (is_new_thread) emit newThreadCreated();
 }
 
 void ChatBackend::sendRequestToOllama(Thread *thread, const QString &prompt) {
@@ -46,73 +42,76 @@ void ChatBackend::sendRequestToOllama(Thread *thread, const QString &prompt) {
     return;
   }
 
-  QNetworkRequest request(
-      QUrl(QString("%1/api/generate").arg(ollamaServerUrl())));
+  auto request =
+      QNetworkRequest(QUrl(QString("%1/api/generate").arg(ollamaServerUrl())));
   request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+  request.setAttribute(QNetworkRequest::Http2AllowedAttribute, true);
+  request.setAttribute(QNetworkRequest::HttpPipeliningAllowedAttribute, true);
 
-  // Get all the messages from the model that were sent by AI
-  QJsonArray context;
-  for (const auto &message : thread->messages()) {
-    if (!message->isUser()) {
-      const auto message_context = message->context();
-      for (const auto &context_item : message_context) {
-        context.append(QJsonValue::fromVariant(context_item));
-      }
-    }
+  const auto messages = thread->messages();
+  auto context = QJsonArray::fromVariantList(
+      messages |
+      std::views::filter([](const auto &msg) { return !msg->isUser(); }) |
+      std::views::transform([](const auto &msg) { return msg->context(); }) |
+      std::views::join | std::ranges::to<QVariantList>());
+
+  const auto &current_model = model();
+  QJsonObject json{{"model", current_model.isEmpty() ? m_ModelList.constFirst()
+                                                     : current_model},
+                   {"prompt", prompt},
+                   {"stream", true},
+                   {"context", context}};
+
+  if (const auto &system_prompt = systemPrompt(); !system_prompt.isEmpty()) {
+    json["system"] = system_prompt;
   }
 
-  QJsonObject json;
-  json["model"] = model().isEmpty() ? m_ModelList.constFirst() : model();
-  json["prompt"] = prompt;
-  json["stream"] = true;
-  json["context"] = context;
-  if (!systemPrompt().isEmpty()) {
-    json["system"] = systemPrompt();
-  }
-
-  QNetworkReply *reply = m_Manager->post(
+  auto *reply = m_Manager->post(
       request, QJsonDocument(json).toJson(QJsonDocument::Compact));
 
-  thread->addMessage("", false, {});
+  thread->addMessage({}, false, {});
 
   connect(reply, &QNetworkReply::readyRead, this,
           [this, thread, reply]() { handleStreamResponse(thread, reply); });
 
-  connect(reply, &QNetworkReply::finished, this, [thread, reply]() {
-    if (reply->error() != QNetworkReply::NoError) {
-      qWarning()
-          << "Error: " << reply->error()
-          << ", Message: " << reply->errorString() << ", Code: "
-          << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
-      const auto error_message = "Error: " + reply->errorString();
-      thread->updateLatestMessage(error_message);
-    }
-    reply->deleteLater();
-  });
+  connect(reply, &QNetworkReply::errorOccurred, this,
+          [thread, reply](QNetworkReply::NetworkError error) {
+            thread->updateLatestMessage(
+                "Error: " + reply->errorString() +
+                ", Code: " + QString::number(static_cast<int>(error)));
+          });
+
+  connect(reply, &QNetworkReply::finished, reply, &QObject::deleteLater);
 }
 
 void ChatBackend::handleStreamResponse(Thread *thread,
                                        QNetworkReply *reply) const {
-  if (!thread) return;
+  if (!thread || thread->messages().isEmpty()) return;
+
   const auto data = reply->readAll();
-  const auto lines = QString(data).split("\n", Qt::SkipEmptyParts);
+  const auto lines =
+      QString::fromUtf8(QByteArrayView{data}).split("\n", Qt::SkipEmptyParts);
 
   for (const auto &line : lines) {
-    const auto json_response = QJsonDocument::fromJson(line.toUtf8());
-    thread->updateLatestMessage(json_response.object());
+    QJsonParseError error;
+    if (const auto json_response =
+            QJsonDocument::fromJson(line.toUtf8(), &error);
+        error.error == QJsonParseError::NoError) {
+      thread->updateLatestMessage(json_response.object());
+    } else {
+      qWarning() << "Error: " << error.errorString() << ", Message: " << line;
+    }
   }
 }
 
 QString ChatBackend::model() const {
-  QSettings settings;
-  return settings.value("model", "").toString();
+  return m_Settings.value("model", "").toString();
 }
 
 void ChatBackend::setModel(const QString &model) {
-  QSettings settings;
-  if (model == settings.value("model").toString()) return;
+  if (model == m_Settings.value("model").toString()) return;
 
-  settings.setValue("model", model);
+  m_Settings.setValue("model", model);
   emit modelChanged();
 }
 
@@ -151,28 +150,24 @@ void ChatBackend::deleteThread(const int index) {
 void ChatBackend::clearThreads() { m_ThreadList->deleteAllThreads(); }
 
 QString ChatBackend::systemPrompt() const {
-  QSettings settings;
-  return settings.value("system_prompt", "").toString();
+  return m_Settings.value("system_prompt", "").toString();
 }
 
 void ChatBackend::setSystemPrompt(const QString &prompt) {
-  QSettings settings;
-  if (prompt == settings.value("system_prompt").toString()) return;
+  if (prompt == m_Settings.value("system_prompt").toString()) return;
 
-  settings.setValue("system_prompt", prompt);
+  m_Settings.setValue("system_prompt", prompt);
   emit systemPromptChanged();
 }
 
 QString ChatBackend::ollamaServerUrl() const {
-  QSettings settings;
-  return settings.value("ollama_host", OLLAMA_HOST).toString();
+  return m_Settings.value("ollama_host", OLLAMA_HOST).toString();
 }
 
 void ChatBackend::setOllamaServerUrl(const QString &url) {
-  QSettings settings;
-  if (url == settings.value("ollama_server_url").toString()) return;
+  if (url == m_Settings.value("ollama_server_url").toString()) return;
 
-  settings.setValue("ollama_server_url", url);
+  m_Settings.setValue("ollama_server_url", url);
   m_Manager->connectToHost(url);
   emit ollamaServerUrlChanged();
 }
