@@ -16,6 +16,7 @@ ChatBackend::ChatBackend(QObject *parent) : QObject(parent) {
   fetchModelList();
 
   m_ThreadProxyList->setSourceModel(m_ThreadList.get());
+  m_Manager->connectToHost(ollamaServerUrl());
 }
 
 void ChatBackend::sendMessage(const int index, const QString &message) {
@@ -171,6 +172,7 @@ void ChatBackend::setOllamaServerUrl(const QString &url) {
   if (url == settings.value("ollama_server_url").toString()) return;
 
   settings.setValue("ollama_server_url", url);
+  m_Manager->connectToHost(url);
   emit ollamaServerUrlChanged();
 }
 
