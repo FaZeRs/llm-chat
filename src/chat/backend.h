@@ -16,6 +16,10 @@ class ChatBackend : public QObject {
   Q_PROPERTY(ThreadProxyList *sortedThreads READ threadProxyList CONSTANT FINAL)
   Q_PROPERTY(QString model READ model WRITE setModel NOTIFY modelChanged)
   Q_PROPERTY(QStringList modelList READ modelList NOTIFY modelListFetched)
+  Q_PROPERTY(QString systemPrompt READ systemPrompt WRITE setSystemPrompt NOTIFY
+                 systemPromptChanged)
+  Q_PROPERTY(QString ollamaServerUrl READ ollamaServerUrl WRITE
+                 setOllamaServerUrl NOTIFY ollamaServerUrlChanged)
 
  public:
   /// @brief Constructs a new ChatBackend object.
@@ -30,15 +34,16 @@ class ChatBackend : public QObject {
     return m_ThreadProxyList.get();
   }
   /// @brief Get the name of the model.
-  /// @return The name of the model as a QString.
+  /// @return The name of the model.
   [[nodiscard]] QString model() const;
   /// @brief Get the list of available models.
   [[nodiscard]] QStringList modelList() const { return m_ModelList; }
-  /// @brief Set the network manager.
-  /// @param manager The network manager to set.
-  void setNetworkManager(QNetworkAccessManager *manager) {
-    m_Manager.reset(manager);
-  }
+  /// @brief Get the system prompt.
+  /// @return The system prompt .
+  [[nodiscard]] QString systemPrompt() const;
+  /// @brief Get ollama server url.
+  /// @return The ollama server url.
+  [[nodiscard]] QString ollamaServerUrl() const;
 
  public Q_SLOTS:
   /// @brief Sets the model name.
@@ -60,6 +65,12 @@ class ChatBackend : public QObject {
   /// @brief Sends a message to the Ollama server.
   /// @param message The message to send.
   void sendMessage(const int index, const QString &message);
+  /// @brief Set the system prompt.
+  /// @param prompt The system prompt to set.
+  void setSystemPrompt(const QString &prompt);
+  /// @brief Set the ollama server url.
+  /// @param url The ollama server url to set.
+  void setOllamaServerUrl(const QString &url);
 
  signals:
   /// @brief Emitted when the list of models is fetched.
@@ -68,6 +79,10 @@ class ChatBackend : public QObject {
   void modelChanged();
   /// @brief Emitted when the current thread is changed.
   void newThreadCreated();
+  /// @brief Emitted when the system prompt is changed.
+  void systemPromptChanged();
+  /// @brief Emitted when the ollama server url is changed.
+  void ollamaServerUrlChanged();
 
  private:
   QScopedPointer<QNetworkAccessManager> m_Manager{new QNetworkAccessManager};

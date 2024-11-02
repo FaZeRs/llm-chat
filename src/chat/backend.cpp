@@ -45,7 +45,8 @@ void ChatBackend::sendRequestToOllama(Thread *thread, const QString &prompt) {
     return;
   }
 
-  QNetworkRequest request(QUrl(QString("%1/api/generate").arg(OLLAMA_HOST)));
+  QNetworkRequest request(
+      QUrl(QString("%1/api/generate").arg(ollamaServerUrl())));
   request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
 
   // Get all the messages from the model that were sent by AI
@@ -64,6 +65,9 @@ void ChatBackend::sendRequestToOllama(Thread *thread, const QString &prompt) {
   json["prompt"] = prompt;
   json["stream"] = true;
   json["context"] = context;
+  if (!systemPrompt().isEmpty()) {
+    json["system"] = systemPrompt();
+  }
 
   QNetworkReply *reply = m_Manager->post(request, QJsonDocument(json).toJson());
 
@@ -111,7 +115,7 @@ void ChatBackend::setModel(const QString &model) {
 }
 
 void ChatBackend::fetchModelList() {
-  QNetworkRequest request(QUrl(QString("%1/api/tags").arg(OLLAMA_HOST)));
+  QNetworkRequest request(QUrl(QString("%1/api/tags").arg(ollamaServerUrl())));
   QNetworkReply *reply = m_Manager->get(request);
   connect(reply, &QNetworkReply::finished, this, [this, reply]() {
     if (reply->error() == QNetworkReply::NoError) {
@@ -143,5 +147,31 @@ void ChatBackend::deleteThread(const int index) {
 }
 
 void ChatBackend::clearThreads() { m_ThreadList->deleteAllThreads(); }
+
+QString ChatBackend::systemPrompt() const {
+  QSettings settings;
+  return settings.value("system_prompt", "").toString();
+}
+
+void ChatBackend::setSystemPrompt(const QString &prompt) {
+  QSettings settings;
+  if (prompt == settings.value("system_prompt").toString()) return;
+
+  settings.setValue("system_prompt", prompt);
+  emit systemPromptChanged();
+}
+
+QString ChatBackend::ollamaServerUrl() const {
+  QSettings settings;
+  return settings.value("ollama_host", OLLAMA_HOST).toString();
+}
+
+void ChatBackend::setOllamaServerUrl(const QString &url) {
+  QSettings settings;
+  if (url == settings.value("ollama_server_url").toString()) return;
+
+  settings.setValue("ollama_server_url", url);
+  emit ollamaServerUrlChanged();
+}
 
 }  // namespace llm_chat

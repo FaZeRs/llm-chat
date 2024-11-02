@@ -22,11 +22,13 @@ Dialog {
     function applyChangesToSettings() {
         settingsTab.applyChangesToSettings();
         shortcutsTab.applyChangesToSettings();
+        chatSettingsTab.applyChangesToSettings();
     }
 
     function revertToOldSettings() {
         settingsTab.revertToOldSettings();
         shortcutsTab.revertToOldSettings();
+        chatSettingsTab.revertToOldSettings();
     }
 
     header: TabBar {
@@ -41,6 +43,11 @@ Dialog {
         }
 
         TabButton {
+            objectName: "chatSettingsTabButton"
+            text: qsTr("Chat")
+        }
+
+        TabButton {
             objectName: "shortcutsTabButton"
             text: qsTr("Shortcuts")
         }
@@ -52,6 +59,10 @@ Dialog {
 
         SettingsTab {
             id: settingsTab
+        }
+
+        ChatSettingsTab {
+            id: chatSettingsTab
         }
 
         ShortcutsTab {

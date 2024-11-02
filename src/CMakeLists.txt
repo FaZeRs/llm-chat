@@ -19,6 +19,7 @@ set(QML_FILES
     qml/AboutDialog.qml
     qml/OptionsDialog.qml
     qml/SettingsTab.qml
+    qml/ChatSettingsTab.qml
     qml/ShortcutsTab.qml
     qml/ShortcutRow.qml
     qml/StatusBar.qml

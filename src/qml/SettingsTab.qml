@@ -1,7 +1,6 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
-import QtQuick.Controls.Material
 
 import "." as App
 
@@ -29,9 +28,6 @@ ColumnLayout {
 
         ScrollBar.horizontal.policy: ScrollBar.AsNeeded
 
-        Layout.fillWidth: true
-        Layout.fillHeight: true
-
         GridLayout {
             columns: 2
             columnSpacing: 12
@@ -56,23 +52,6 @@ ColumnLayout {
                         display: "English"
                     }
                 ]
-            }
-
-            Label {
-                text: qsTr("Model")
-            }
-            ComboBox {
-                id: modelComboBox
-                Layout.fillWidth: true
-                model: chat.modelList
-                onActivated: chat.setModel(currentText)
-            }
-
-            Connections {
-                target: chat
-                function onModelListFetched() {
-                    modelComboBox.currentIndex = modelComboBox.indexOfValue(chat.model);
-                }
             }
 
             Label {
