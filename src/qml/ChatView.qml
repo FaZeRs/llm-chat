@@ -141,14 +141,41 @@ RowLayout {
                 }
                 radius: 12
 
-                Text {
-                    id: messageText
-                    text: model.text
-                    color: "#FFFFFF"
-                    wrapMode: Text.Wrap
+                ColumnLayout {
                     anchors.fill: parent
                     anchors.margins: 10
-                    textFormat: Text.MarkdownText
+                    spacing: 5
+
+                    Text {
+                        id: messageText
+                        text: model.text
+                        color: "#FFFFFF"
+                        wrapMode: Text.Wrap
+                        Layout.fillWidth: true
+                        textFormat: Text.MarkdownText
+                    }
+
+                    RowLayout {
+                        visible: !model.isUser
+                        Layout.alignment: Qt.AlignRight
+                        spacing: 5
+
+                        ToolButton {
+                            text: "\uf01e"
+                            font.family: "Font Awesome 6 Free Solid"
+                            font.pixelSize: 12
+                            font.weight: 900
+                            focusPolicy: Qt.NoFocus
+                            visible: index === chatThread.count - 1
+
+                            ToolTip.visible: hovered
+                            ToolTip.delay: 800
+                            ToolTip.timeout: 5000
+                            ToolTip.text: qsTr("Retry last message")
+
+                            onClicked: chat.retryLatestMessage(threadList.currentIndex)
+                        }
+                    }
                 }
             }
             ScrollBar.vertical: ScrollBar {}

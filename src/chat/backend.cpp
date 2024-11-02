@@ -172,4 +172,22 @@ void ChatBackend::setOllamaServerUrl(const QString &url) {
   emit ollamaServerUrlChanged();
 }
 
+void ChatBackend::retryLatestMessage(const int index) {
+  auto thread = getThread(index);
+  if (!thread || thread->messages().isEmpty()) return;
+
+  const auto messages = thread->messages();
+  QString last_user_message;
+  for (auto it = messages.rbegin(); it != messages.rend(); ++it) {
+    if ((*it)->isUser()) {
+      last_user_message = (*it)->text();
+      break;
+    }
+  }
+
+  if (last_user_message.isEmpty()) return;
+
+  thread->removeLatestMessage();
+  sendRequestToOllama(thread, last_user_message);
+}
 }  // namespace llm_chat

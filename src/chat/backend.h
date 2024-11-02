@@ -72,6 +72,9 @@ class ChatBackend : public QObject {
   /// @brief Set the ollama server url.
   /// @param url The ollama server url to set.
   void setOllamaServerUrl(const QString &url);
+  /// @brief Retries the latest message.
+  /// @param index The index of the thread in proxy model.
+  void retryLatestMessage(const int index);
 
  signals:
   /// @brief Emitted when the list of models is fetched.

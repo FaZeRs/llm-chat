@@ -89,4 +89,12 @@ void Thread::updateLatestMessage(const QJsonObject &json) {
   }
 }
 
+void Thread::removeLatestMessage() {
+  if (!m_Messages.empty()) {
+    beginRemoveRows(QModelIndex(), rowCount() - 1, rowCount() - 1);
+    delete m_Messages.takeLast();
+    endRemoveRows();
+  }
+}
+
 }  // namespace llm_chat

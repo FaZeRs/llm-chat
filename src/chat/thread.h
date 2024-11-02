@@ -65,6 +65,9 @@ class Thread : public QAbstractListModel {
     return m_CreatedAt;
   }
 
+  /// @brief Removes the latest message from the model.
+  void removeLatestMessage();
+
  private:
   QList<Message *> m_Messages;
   QDateTime m_CreatedAt;
