@@ -5,7 +5,7 @@ import QtQuick.Controls
 import "." as App
 
 ColumnLayout {
-    id: settingsTab
+    id: root
 
     function applyChangesToSettings() {
         settings.language = languageComboBox.currentValue;
@@ -28,10 +28,17 @@ ColumnLayout {
 
         ScrollBar.horizontal.policy: ScrollBar.AsNeeded
 
+        contentHeight: parent.height
+        contentWidth: parent.width
+
         GridLayout {
             columns: 2
             columnSpacing: 12
-            width: parent.width
+            rowSpacing: 12
+
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.margins: 12
 
             Label {
                 text: qsTr("Language")
@@ -64,6 +71,7 @@ ColumnLayout {
                 to: 1
                 stepSize: 0.05
                 objectName: "windowOpacitySlider"
+                Layout.fillWidth: true
 
                 ToolTip.text: qsTr("Changes the opacity of the window. Useful for tracing over an image in another window.")
                 ToolTip.visible: hovered

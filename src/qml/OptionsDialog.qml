@@ -59,14 +59,17 @@ Dialog {
 
         SettingsTab {
             id: settingsTab
+            anchors.fill: parent
         }
 
         ChatSettingsTab {
             id: chatSettingsTab
+            anchors.fill: parent
         }
 
         ShortcutsTab {
             id: shortcutsTab
+            anchors.fill: parent
         }
     }
 }

@@ -4,7 +4,7 @@ import QtQuick.Layouts
 import QtQuick.Controls
 
 ColumnLayout {
-    id: shortcutsTab
+    id: root
 
     function applyChangesToSettings() {
         for (var i = 0; i < shortcutModel.count; ++i) {
@@ -40,6 +40,7 @@ ColumnLayout {
         GridLayout {
             columns: 2
             columnSpacing: 12
+            anchors.margins: 12
             width: parent.width
 
             Repeater {

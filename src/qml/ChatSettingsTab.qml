@@ -5,7 +5,7 @@ import QtQuick.Controls
 import "." as App
 
 ColumnLayout {
-    id: chatSettingsTab
+    id: root
 
     function applyChangesToSettings() {
         chat.setModel(modelComboBox.currentText);
@@ -28,16 +28,24 @@ ColumnLayout {
 
         ScrollBar.horizontal.policy: ScrollBar.AsNeeded
 
+        contentHeight: chatSettingsTab.height
+        contentWidth: chatSettingsTab.width
+
         GridLayout {
             columns: 2
             columnSpacing: 12
             rowSpacing: 12
+
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.margins: 12
 
             Label {
                 text: qsTr("Ollama server URL")
             }
             TextField {
                 id: ollamaServerUrlTextField
+                Layout.fillWidth: true
                 text: chat.ollamaServerUrl
             }
 
@@ -46,7 +54,7 @@ ColumnLayout {
             }
             ComboBox {
                 id: modelComboBox
-
+                Layout.fillWidth: true
                 model: chat.modelList
             }
 
@@ -64,6 +72,7 @@ ColumnLayout {
                 id: systemPromptTextField
                 placeholderText: qsTr("Enter a system prompt")
                 text: chat.systemPrompt
+                Layout.fillWidth: true
             }
         }
     }
